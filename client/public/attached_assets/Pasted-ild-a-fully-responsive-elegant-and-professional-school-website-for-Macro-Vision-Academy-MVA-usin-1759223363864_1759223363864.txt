@@ -1,0 +1,126 @@
+ild a fully responsive, elegant, and professional school website for Macro Vision Academy (MVA) using React with TypeScript (.tsx). The design must follow a blue and white color scheme, inspired by the clean, modern aesthetic of https://www.dais.edu.in/aboutus.html .
+
+Do not reduce, summarize, or omit any content—include every single item exactly as listed below, in the exact order provided. Use diverse, non-card-only layouts: consider timelines, full-width sections, image galleries (for drone shots), embedded video placeholders, accordions, multi-column grids, hero banners, and interactive elements where appropriate.
+
+The navbar must be global (shared across all pages), sticky/fixed at the top, mobile-responsive (hamburger menu on small screens), and include all main items with dropdowns as specified. Ensure smooth scrolling, hover effects, and transitions for a premium feel.
+
+Use TypeScript interfaces for structured data (e.g., for leadership team, achievements, etc.), and organize components logically (e.g., Navbar.tsx, Footer.tsx, AboutUsPage.tsx, etc.).
+
+Color Theme: Primary = shades of blue (#003366, #0055A4, #1E88E5); Secondary = white, light gray backgrounds; Accent = subtle gold or teal if needed for highlights.
+
+Typography: Clean, modern sans-serif (e.g., Inter, Poppins, or system fonts).
+
+All pages and sections must include the following content in full: 
+
+📄 Website Structure & Full Content (Do Not Modify)
+1. About Us
+a. Our Story → Include an interactive timeline
+b. Mission and Vision
+c. Founder's Vision → Embed placeholder for Anand Sir and Manju Mam’s video
+d. Our Society
+e. Our Leadership
+f. Our Knowledge Partners
+g. Community and CSR
+2. Life at MVA
+MVA Boarding
+Overview
+Residential Wings
+Hostel Life
+Food and Nutrition
+Safety Measures
+Health and Medical Facilities
+MVA Culture
+Darbaar
+Sports and Athletics
+Zenith Circle
+Maharath
+Art & Craft
+Performing Arts
+Financial Literacy
+V-MAT
+Tours
+School Events
+Infrastructure → Use drone photo gallery
+Vision Udaan
+Vision Paradise
+Vision Petals
+Vision Mantra
+Vision Divine
+Vision Vista
+Swad Sansad
+Anhad Anand Auditorium
+Josh Club
+Chronosphere
+White House
+3. Academics
+Grade Groups
+Teaching Methodology
+Academic Calendar
+Results
+Chronosphere (Outcomes)
+Career and College Counseling
+4. Admissions
+Procedure
+Online Registration
+Fee Structure
+Sample Papers
+FAQ
+5. Alumni
+Update your contact
+Alumni Connect (Portal)
+Events
+Campus Visit and Reunion
+Alumni Showcase
+6. Achievements
+Academics
+IIT/JEE
+NEET
+CA
+CBSE Class 10
+CBSE Class 12
+Foreign Education
+CLAT
+IPMAT
+Sports
+Others
+7. Careers
+Join our team
+Teaching Position
+Administrative Positions
+Current Openings
+Employee Benefits
+8. Blogs & Insights
+Parenting Tips
+Student Stories
+Article by Teacher
+Tech in Education
+9. Contact Us
+🧭 Navigation Bar (Global – All Pages)
+The navbar must include the following main items with dropdowns:
+
+About Us → dropdown: Our Story, Mission and Vision, Founder's Vision, Our Society, Our Leadership, Our Knowledge Partners, Community and CSR
+Life at MVA → dropdown:
+MVA Boarding (sub-dropdown: Overview, Residential Wings, Hostel Life, Food and Nutrition, Safety Measures, Health and Medical Facilities)
+MVA Culture (sub-dropdown: Darbaar, Sports and Athletics, Zenith Circle, Maharath, Art & Craft, Performing Arts, Financial Literacy, V-MAT, Tours, School Events)
+Infrastructure (sub-dropdown: Vision Udaan, Vision Paradise, Vision Petals, Vision Mantra, Vision Divine, Vision Vista, Swad Sansad, Anhad Anand Auditorium, Josh Club, Chronosphere, White House)
+Academics → dropdown: Grade Groups, Teaching Methodology, Academic Calendar, Results, Chronosphere (Outcomes), Career and College Counseling
+Admissions → dropdown: Procedure, Online Registration, Fee Structure, Sample Papers, FAQ
+Alumni → dropdown: Update your contact, Alumni Connect (Portal), Events, Campus Visit and Reunion, Alumni Showcase
+Achievements → dropdown: Academics (with nested list), Sports, Others
+Careers → dropdown: Join our team, Teaching Position, Administrative Positions, Current Openings, Employee Benefits
+Blogs & Insights → dropdown: Parenting Tips, Student Stories, Article by Teacher, Tech in Education
+Contact Us → (no dropdown)
+Ensure the navbar is accessible, keyboard-navigable, and collapses into a hamburger menu on mobile with smooth animation. 
+
+🎨 Design Requirements
+Layout Variety: Avoid repetitive card grids. Use:
+Full-width hero sections
+Side-by-side text + media blocks
+Vertical timelines (for “Our Story”)
+Masonry or carousel for infrastructure drone images
+Tabbed interfaces for “Achievements” categories
+Embedded video container for Founder’s Vision
+FAQ accordion in Admissions
+Responsive: Works flawlessly on mobile, tablet, and desktop.
+Performance: Optimize images (use placeholders if needed), lazy-load videos.
+Footer: Include quick links, contact info, social media icons, and copyright.
