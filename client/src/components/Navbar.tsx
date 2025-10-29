@@ -111,66 +111,75 @@ const menuItems: MenuItem[] = [
   },
   {
     label: "Alumni",
-    path: "/alumni",
-    dropdown: [
-      { label: "Update your contact", path: "/alumni/update-contact" },
-      { label: "Alumni Connect (Portal)", path: "/alumni/connect-portal" },
-      { label: "Events", path: "/alumni/events" },
-      { label: "Campus Visit and Reunion", path: "/alumni/campus-visit" },
-      { label: "Alumni Showcase", path: "/alumni/showcase" },
+    path: "/alumni/connect",
+     dropdown: [
+    { label: "Update your contact", path: "/alumni/connect#update-contact" },
+    { label: "Alumni Connect (Portal)", path: "/alumni/connect#alumni-connect" },
+    { label: "Events", path: "/alumni/connect#events" },
+    { label: "Campus Visit and Reunion", path: "/alumni/connect#campus-visit" },
+    { label: "Alumni Showcase", path: "/alumni/connect#showcase"},
     ],
   },
-  {
-    label: "Achievements",
-    path: "/achievements",
-    subDropdowns: [
-      {
-        label: "Academics",
-        items: [
-          { label: "IIT/JEE", path: "/achievements/academics/iit-jee" },
-          { label: "NEET", path: "/achievements/academics/neet" },
-          { label: "CA", path: "/achievements/academics/ca" },
-          { label: "CBSE Class 10", path: "/achievements/academics/cbse-10" },
-          { label: "CBSE Class 12", path: "/achievements/academics/cbse-12" },
-          { label: "Foreign Education", path: "/achievements/academics/foreign-education" },
-          { label: "CLAT", path: "/achievements/academics/clat" },
-          { label: "IPMAT", path: "/achievements/academics/ipmat" },
-        ],
-      },
-      {
-        label: "Sports",
-        items: [
-          { label: "Sports Achievements", path: "/achievements/sports" },
-        ],
-      },
-      {
-        label: "Others",
-        items: [
-          { label: "Other Achievements", path: "/achievements/others" },
-        ],
-      },
-    ],
-  },
+ {
+  label: "Achievements",
+  path: "/achievements",
+  // dropdown: [
+  //   { label: "Academics", path: "/achievements#academics" },
+  //   { label: "Sports", path: "/achievements#sports" },
+  //   { label: "Competitive Exams", path: "/achievements#competitive" },
+  // ],
+},
+  // {
+  //   label: "Achievements",
+  //   path: "/achievements",
+  //   subDropdowns: [
+  //     {
+  //       label: "Academics",
+  //       items: [
+  //         { label: "IIT/JEE", path: "/achievements/academics/iit-jee" },
+  //         { label: "NEET", path: "/achievements/academics/neet" },
+  //         { label: "CA", path: "/achievements/academics/ca" },
+  //         { label: "CBSE Class 10", path: "/achievements/academics/cbse-10" },
+  //         { label: "CBSE Class 12", path: "/achievements/academics/cbse-12" },
+  //         { label: "Foreign Education", path: "/achievements/academics/foreign-education" },
+  //         { label: "CLAT", path: "/achievements/academics/clat" },
+  //         { label: "IPMAT", path: "/achievements/academics/ipmat" },
+  //       ],
+  //     },
+  //     {
+  //       label: "Sports",
+  //       items: [
+  //         { label: "Sports Achievements", path: "/achievements/sports" },
+  //       ],
+  //     },
+  //     {
+  //       label: "Others",
+  //       items: [
+  //         { label: "Other Achievements", path: "/achievements/others" },
+  //       ],
+  //     },
+  //   ],
+  // },
   {
     label: "Careers",
     path: "/careers",
-    dropdown: [
-      { label: "Join our team", path: "/careers/join-our-team" },
-      { label: "Teaching Position", path: "/careers/teaching-position" },
-      { label: "Administrative Positions", path: "/careers/administrative-positions" },
-      { label: "Current Openings", path: "/careers/current-openings" },
-      { label: "Employee Benefits", path: "/careers/employee-benefits" },
-    ],
+    // dropdown: [
+    //   { label: "Join our team", path: "/careers/join-our-team" },
+    //   { label: "Teaching Position", path: "/careers/teaching-position" },
+    //   { label: "Administrative Positions", path: "/careers/administrative-positions" },
+    //   { label: "Current Openings", path: "/careers/current-openings" },
+    //   { label: "Employee Benefits", path: "/careers/employee-benefits" },
+    // ],
   },
   {
     label: "Blogs & Insights",
     path: "/blogs",
-    dropdown: [
-      { label: "Parenting Tips", path: "/blogs/parenting-tips" },
-      { label: "Student Stories", path: "/blogs/student-stories" },
-      { label: "Article by Teacher", path: "/blogs/article-by-teacher" },
-      { label: "Tech in Education", path: "/blogs/tech-in-education" },
-    ],
+    // dropdown: [
+    //   { label: "Parenting Tips", path: "/blogs/parenting-tips" },
+    //   { label: "Student Stories", path: "/blogs/student-stories" },
+    //   { label: "Article by Teacher", path: "/blogs/article-by-teacher" },
+    //   { label: "Tech in Education", path: "/blogs/tech-in-education" },
+    // ],
   },
   {
     label: "Contact Us",

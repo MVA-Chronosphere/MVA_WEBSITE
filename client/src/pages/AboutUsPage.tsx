@@ -276,7 +276,7 @@ export default function AboutUsPage() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 sm:mb-8 text-center">Founder's Vision</h2>
           <VideoEmbed 
-            title="Message from Our Founders - Anand Sir and Manju Mam"
+            title="Message from Our Founders - Anand Sir and Manjusha Mam"
             description="Hear directly from our visionary founders about their dream of creating an institution that transforms lives through education."
           />
         </div>

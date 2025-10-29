@@ -74,17 +74,20 @@ export default function Footer() {
               <li className="flex items-start space-x-3">
                 <MapPin className="h-4 w-4 mt-1 text-white/80" />
                 <span className="text-sm text-white/80">
-                  Macro Vision Academy,<br />
-                  Educational District, City
+                   Macro Vision Academy<br />
+                      Post Box No.12,<br />
+                      Renuka Mata Road,<br />
+                      Behind Collectorate,<br />
+                      Burhanpur(M.P.) Pin-450331<br />
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-4 w-4 text-white/80" />
-                <span className="text-sm text-white/80">+91 XXXX XXXXXX</span>
+                <span className="text-sm text-white/80">+91 93025 11111</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-white/80" />
-                <span className="text-sm text-white/80">info@macrovisionacademy.edu</span>
+                <span className="text-sm text-white/80">Digitalmarketing@mvaburhanpur.com</span>
               </li>
             </ul>
           </div>

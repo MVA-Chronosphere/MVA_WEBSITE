@@ -2,8 +2,56 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function ContactPage() {
+  const [selectedTopic, setSelectedTopic] = useState("");
+  const [selectedSubTopic, setSelectedSubTopic] = useState("");
+  const location = useLocation();
+
+
+  useEffect(() => {
+  const params = new URLSearchParams(location.search);
+  if (params.get("topic") === "career") {
+    setSelectedTopic("Career Enquiry");
+  }
+}, [location]);
+  // Define options for second dropdown based on first dropdown selection
+  const subTopicOptions: Record<string, string[]> = {
+    "Career Enquiry": [
+      "Teaching Position",
+      "Administrative Position",
+      "Developer Position",
+      "Support Staff",
+      "Internship Opportunity",
+    ],
+    "Admissions": [
+      "New Admission",
+      "Transfer Student",
+      "Boarding Facility",
+      "Fee Structure",
+    ],
+    "General Inquiry": [
+      "Campus Visit",
+      "Academic Programs",
+      "Extra-Curricular Activities",
+      "Infrastructure",
+    ],
+    "Technical Support": [
+      "Website Issue",
+      "Online Portal Access",
+      "Payment Gateway",
+      "SchoolKnot Technical Issue",
+    ],
+  };
+
+  // Reset second dropdown when first dropdown changes
+  const handleTopicChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedTopic(e.target.value);
+    setSelectedSubTopic("");
+  };
+
   return (
     <div className="min-h-screen">
       <div className="bg-gradient-to-r from-primary to-[#0055A4] text-white py-16">
@@ -57,16 +105,45 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                  Subject
+                <label htmlFor="topic" className="block text-sm font-medium text-foreground mb-2">
+                  Enquiry Topic
                 </label>
-                <Input
-                  id="subject"
-                  type="text"
-                  placeholder="What is this regarding?"
-                  data-testid="input-subject"
-                />
+                <select
+                  id="topic"
+                  value={selectedTopic}
+                  onChange={handleTopicChange}
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  data-testid="select-topic"
+                >
+                  <option value="">Select a topic</option>
+                  <option value="Career Enquiry">Career Enquiry</option>
+                  <option value="Admissions">Admissions</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Technical Support">Technical Support</option>
+                </select>
               </div>
+
+              {selectedTopic && (
+                <div>
+                  <label htmlFor="subtopic" className="block text-sm font-medium text-foreground mb-2">
+                    Specific Area
+                  </label>
+                  <select
+                    id="subtopic"
+                    value={selectedSubTopic}
+                    onChange={(e) => setSelectedSubTopic(e.target.value)}
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                    data-testid="select-subtopic"
+                  >
+                    <option value="">Select an option</option>
+                    {subTopicOptions[selectedTopic]?.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
@@ -98,8 +175,10 @@ export default function ContactPage() {
                     <h3 className="text-lg font-semibold text-card-foreground mb-2">Address</h3>
                     <p className="text-muted-foreground">
                       Macro Vision Academy<br />
-                      Educational District, Sector 5<br />
-                      City, State - 123456
+                      Post Box No.12,<br />
+                      Renuka Mata Road,<br />
+                      Behind Collectorate,<br />
+                      Burhanpur(M.P.) Pin-450331<br />
                     </p>
                   </div>
                 </div>
@@ -113,8 +192,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-card-foreground mb-2">Phone</h3>
                     <p className="text-muted-foreground">
-                      +91 XXXX XXXXXX<br />
-                      +91 XXXX XXXXXX (Admissions)
+                      +91 93025 11111<br />
+                      +91 93001 10033 (Admissions)
                     </p>
                   </div>
                 </div>
@@ -128,8 +207,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-card-foreground mb-2">Email</h3>
                     <p className="text-muted-foreground">
-                      info@macrovisionacademy.edu<br />
-                      admissions@macrovisionacademy.edu
+                      Digitalmarketing@mvaburhanpur.com
                     </p>
                   </div>
                 </div>

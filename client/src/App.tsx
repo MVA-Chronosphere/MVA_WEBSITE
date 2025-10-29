@@ -17,6 +17,8 @@ import CareersPage from "@/pages/CareersPage";
 import BlogsPage from "@/pages/BlogsPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/not-found";
+import StudentAdmissionForm from "./pages/StudentAdmissionForm";
+import AlumniConnectPage from "./pages/AlumniConnectPage";
 
 function Router() {
   return (
@@ -32,6 +34,8 @@ function Router() {
       <Route path="/careers/:section?" element={<CareersPage />} />
       <Route path="/blogs/:category?" element={<BlogsPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/studentAdmissionForm" element={<StudentAdmissionForm />} />
+      <Route path="/alumni/connect" element={<AlumniConnectPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

@@ -16,7 +16,7 @@ All pages and sections must include the following content in full:
 1. About Us
 a. Our Story → Include an interactive timeline
 b. Mission and Vision
-c. Founder's Vision → Embed placeholder for Anand Sir and Manju Mam’s video
+c. Founder's Vision → Embed placeholder for Anand Sir and Manjusha Mam’s video
 d. Our Society
 e. Our Leadership
 f. Our Knowledge Partners
