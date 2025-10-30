@@ -123,11 +123,11 @@ const menuItems: MenuItem[] = [
  {
   label: "Achievements",
   path: "/achievements",
-  // dropdown: [
-  //   { label: "Academics", path: "/achievements#academics" },
-  //   { label: "Sports", path: "/achievements#sports" },
-  //   { label: "Competitive Exams", path: "/achievements#competitive" },
-  // ],
+  dropdown: [
+    { label: "Academics", path: "/achievements#academics" },
+    { label: "Sports", path: "/achievements#sports" },
+    { label: "Competitive Exams", path: "/achievements#competitive" },
+  ],
 },
   // {
   //   label: "Achievements",

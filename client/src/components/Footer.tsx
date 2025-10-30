@@ -96,7 +96,8 @@ export default function Footer() {
             <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6">Follow Us</h3>
             <div className="flex space-x-3 md:space-x-4 mb-4 md:mb-6">
               <a
-                href="#"
+                href="https://www.facebook.com/macrovisionacademy"
+                target="_blank"
                 className="hover-elevate active-elevate-2 p-2.5 md:p-3 rounded-lg bg-white/10 transition-all hover:bg-white/20"
                 data-testid="social-facebook"
               >
@@ -104,20 +105,23 @@ export default function Footer() {
               </a>
               <a
                 href="#"
+                target="_blank"
                 className="hover-elevate active-elevate-2 p-2.5 md:p-3 rounded-lg bg-white/10 transition-all hover:bg-white/20"
                 data-testid="social-twitter"
               >
                 <Twitter className="h-5 w-5 md:h-6 md:w-6" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/macro.vision.academy?igsh=cHMwb3pzNGZ2YW8z"
+                target="_blank"
                 className="hover-elevate active-elevate-2 p-2.5 md:p-3 rounded-lg bg-white/10 transition-all hover:bg-white/20"
                 data-testid="social-instagram"
               >
                 <Instagram className="h-5 w-5 md:h-6 md:w-6" />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/school/mvaburhanpur/"
+                target="_blank"
                 className="hover-elevate active-elevate-2 p-2.5 md:p-3 rounded-lg bg-white/10 transition-all hover:bg-white/20"
                 data-testid="social-linkedin"
               >

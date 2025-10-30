@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -135,14 +136,15 @@ const sportsAchievements = [
 export default function TabbedAchievements() {
   const [activeCategory, setActiveCategory] = useState("academics");
   const [activeSubCategory, setActiveSubCategory] = useState("CBSE Class 10");
-  const [isScrolling, setIsScrolling] = useState(false);
+  const location = useLocation();
 
-  // Handle hash navigation
+  // Handle hash navigation - same as LifeAtMVAPage
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash && ['academics', 'sports', 'competitive'].includes(hash)) {
-        setIsScrolling(true);
+    if (location.hash) {
+      const hash = location.hash.substring(1);
+      
+      // Determine which tab should be active for this hash
+      if (['academics', 'sports', 'competitive'].includes(hash)) {
         setActiveCategory(hash);
         
         // Set appropriate subcategory based on the main category
@@ -152,42 +154,24 @@ export default function TabbedAchievements() {
           setActiveSubCategory('IIT-JEE');
         }
 
-        // Scroll to the section after a small delay to ensure content is rendered
+        // Wait a tick for tab content to render, then scroll accounting for sticky navbar
         setTimeout(() => {
-          const element = document.getElementById(hash);
-          if (element) {
+          const el = document.getElementById(hash);
+          if (el) {
             const navbar = document.querySelector('nav.sticky');
-            const navbarHeight = navbar ? navbar.getBoundingClientRect().height : 0;
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-            const offsetPosition = elementPosition - navbarHeight - 20;
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
+            const navbarHeight = navbar ? (navbar as HTMLElement).getBoundingClientRect().height : 0;
+            const rect = el.getBoundingClientRect();
+            const targetY = window.scrollY + rect.top - navbarHeight - 8;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
           }
-          setIsScrolling(false);
-        }, 100);
+        }, 120);
       }
-    };
-
-    // Initial load
-    handleHashChange();
-
-    // Listen for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-    
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, []);
+    }
+  }, [location.hash]);
 
   // Handle tab change
   const handleTabChange = (value: string) => {
     setActiveCategory(value);
-    
-    // Update URL hash without triggering scroll
-    window.history.replaceState(null, '', `/achievements#${value}`);
     
     // Reset subcategory when switching main tabs
     if (value === 'academics') {
@@ -195,6 +179,9 @@ export default function TabbedAchievements() {
     } else if (value === 'competitive') {
       setActiveSubCategory('IIT-JEE');
     }
+
+    // Update URL hash
+    window.history.replaceState(null, '', `/achievements#${value}`);
   };
 
   // Handle subcategory change
@@ -242,7 +229,7 @@ export default function TabbedAchievements() {
         </TabsList>
 
         {/* Academics Tab */}
-        <TabsContent value="academics" id="academics" className="space-y-8 scroll-mt-24">
+        <TabsContent value="academics" id="academics" className="space-y-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-foreground mb-4">Board Examination Highlights</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -286,7 +273,7 @@ export default function TabbedAchievements() {
         </TabsContent>
 
         {/* Sports Tab */}
-        <TabsContent value="sports" id="sports" className="space-y-8 scroll-mt-24">
+        <TabsContent value="sports" id="sports" className="space-y-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-foreground mb-4">Sports Achievements</h3>
             <div className="max-w-3xl mx-auto space-y-4 text-muted-foreground leading-relaxed">
@@ -346,7 +333,7 @@ export default function TabbedAchievements() {
         </TabsContent>
 
         {/* Competitive Exams Tab */}
-        <TabsContent value="competitive" id="competitive" className="space-y-8 scroll-mt-24">
+        <TabsContent value="competitive" id="competitive" className="space-y-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-foreground mb-4">Competitive Exam Success</h3>
             <p className="text-muted-foreground max-w-3xl mx-auto">

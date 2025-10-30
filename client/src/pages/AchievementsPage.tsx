@@ -1,5 +1,6 @@
 import TabbedAchievements from "@/components/TabbedAchievements";
 
+// Main AchievementsPage component
 export default function AchievementsPage() {
   return (
     <div className="min-h-screen">
