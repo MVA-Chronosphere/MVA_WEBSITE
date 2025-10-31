@@ -19,6 +19,8 @@ import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/not-found";
 import StudentAdmissionForm from "./pages/StudentAdmissionForm";
 import AlumniConnectPage from "./pages/AlumniConnectPage";
+import { Navigate } from "react-router-dom";
+
 
 function Router() {
   return (
@@ -36,7 +38,8 @@ function Router() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/studentAdmissionForm" element={<StudentAdmissionForm />} />
       <Route path="/alumni/connect" element={<AlumniConnectPage />} />
-      <Route path="*" element={<NotFound />} />
+      {/* <Route path="*" element={<NotFound />} /> */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }

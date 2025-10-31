@@ -893,7 +893,7 @@ export default function AboutUsPage() {
                       <strong>Qualification:</strong> M.Com, MBA & B.Ed
                     </p>
                     <p className="text-muted-foreground text-xs leading-tight font-['Maven_Pro']">
-                      With 20+ years in commerce education, Ms. Suri combines academic excellence with practical business insights to prepare students for modern commercial challenges.
+                      With 20+ years in commerce education, Mrs. Suri combines academic excellence with practical business insights to prepare students for modern commercial challenges.
                     </p>
                   </div>
                 </div>
@@ -966,7 +966,7 @@ export default function AboutUsPage() {
                       <strong>Qualification:</strong> M.Sc. Zoology, PGD & B.Ed
                     </p>
                     <p className="text-muted-foreground text-xs leading-tight font-['Maven_Pro']">
-                      Ms. Nair brings 22+ years of educational leadership, specializing in life sciences and academic administration with a focus on student-centered learning approaches.
+                      Mrs. Nair brings 22+ years of educational leadership, specializing in life sciences and academic administration with a focus on student-centered learning approaches.
                     </p>
                   </div>
                 </div>
@@ -1091,7 +1091,7 @@ export default function AboutUsPage() {
                       <strong>Qualification:</strong> M.A Sociology & B.Ed
                     </p>
                     <p className="text-muted-foreground text-xs leading-tight font-['Maven_Pro']">
-                      With 23+ years of experience in educational leadership, Ms. Jetly brings expertise in sociology and educational development to guide our middle wing students.
+                      With 23+ years of experience in educational leadership, Mrs. Jetly brings expertise in sociology and educational development to guide our middle wing students.
                     </p>
                   </div>
                 </div>
@@ -1127,7 +1127,7 @@ export default function AboutUsPage() {
                       <strong>Qualification:</strong> M.Sc (Mathematics) & B.Ed
                     </p>
                     <p className="text-muted-foreground text-xs leading-tight font-['Maven_Pro']">
-                      Ms. Chhabra coordinates academic programs with 10+ years of expertise in mathematics education, ensuring excellence in STEM learning for middle wing students.
+                      Mrs. Chhabra coordinates academic programs with 10+ years of expertise in mathematics education, ensuring excellence in STEM learning for middle wing students.
                     </p>
                   </div>
                 </div>
@@ -1251,7 +1251,7 @@ export default function AboutUsPage() {
                         <strong>Qualification:</strong> M.A & B.Ed
                       </p>
                       <p className="text-muted-foreground text-xs leading-tight font-['Maven_Pro']">
-                        With 24+ years of experience in educational leadership, Ms. Popli brings expertise in arts and education to guide our junior wing students with care and dedication.
+                        With 24+ years of experience in educational leadership, Mrs. Popli brings expertise in arts and education to guide our junior wing students with care and dedication.
                       </p>
                     </div>
                   </div>
@@ -1287,7 +1287,7 @@ export default function AboutUsPage() {
                         <strong>Qualification:</strong> B.Com (Comp) & D.El.Ed
                       </p>
                       <p className="text-muted-foreground text-xs leading-tight font-['Maven_Pro']">
-                        Ms. Syed coordinates academic programs with 16+ years of expertise in commerce and elementary education, ensuring quality learning experiences for junior wing students.
+                        Mrs. Syed coordinates academic programs with 16+ years of expertise in commerce and elementary education, ensuring quality learning experiences for junior wing students.
                       </p>
                     </div>
                   </div>

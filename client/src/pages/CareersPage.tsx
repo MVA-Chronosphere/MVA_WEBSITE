@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
 
 
 export default function CareersPage() {
@@ -99,29 +100,30 @@ export default function CareersPage() {
     },
   ];
 
-  const currentOpenings = [
-    {
-      role: "Senior Mathematics Teacher",
-      type: "Full-time • Teaching Position",
-      desc: "Experienced Mathematics teacher for grades 9-12 with strong conceptual clarity and innovative pedagogy.",
-      tags: ["M.Sc/B.Ed Required", "5+ Years Experience"],
-      department: "Academics",
-    },
-    {
-      role: "Sports Coach - Cricket",
-      type: "Full-time • Coaching Position",
-      desc: "Professional cricket coach to train students and lead our school team to excellence.",
-      tags: ["Certified Coach", "3+ Years Experience"],
-      department: "Sports",
-    },
-    {
-      role: "Administrative Officer",
-      type: "Full-time • Administrative Position",
-      desc: "Manage administrative operations, student data, and inter-departmental coordination efficiently.",
-      tags: ["MBA/Graduate", "4+ Years Experience"],
-      department: "Administration",
-    },
-  ];
+  // const currentOpenings = [
+  //   {
+  //     role: "Senior Mathematics Teacher",
+  //     type: "Full-time • Teaching Position",
+  //     desc: "Experienced Mathematics teacher for grades 9-12 with strong conceptual clarity and innovative pedagogy.",
+  //     tags: ["M.Sc/B.Ed Required", "5+ Years Experience"],
+  //     department: "Academics",
+  //   },
+  //   {
+  //     role: "Sports Coach - Cricket",
+  //     type: "Full-time • Coaching Position",
+  //     desc: "Professional cricket coach to train students and lead our school team to excellence.",
+  //     tags: ["Certified Coach", "3+ Years Experience"],
+  //     department: "Sports",
+  //   },
+  //   {
+  //     role: "Administrative Officer",
+  //     type: "Full-time • Administrative Position",
+  //     desc: "Manage administrative operations, student data, and inter-departmental coordination efficiently.",
+  //     tags: ["MBA/Graduate", "4+ Years Experience"],
+  //     department: "Administration",
+  //   },
+  // ];
+const currentOpenings: any[] = [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -195,56 +197,62 @@ export default function CareersPage() {
       </section>
 
       {/* Current Openings */}
-      <section className="py-20 lg:py-28 bg-muted/30">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-4">
-              Current Openings
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Explore opportunities to join our growing team
-            </p>
-          </div>
+    <section className="py-20 lg:py-28 bg-muted/30">
+  <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-4">
+        Current Openings
+      </h2>
+      <p className="text-xl text-muted-foreground">
+        Explore opportunities to join our growing team
+      </p>
+    </div>
 
-          <div className="space-y-6">
-            {currentOpenings.map((job, index) => (
-              <Card key={index} className="hover-lift border-border">
-                <CardContent className="p-6 lg:p-8">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                    <div className="flex-1 space-y-4">
-                      <div>
-                        <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2">
-                          {job.role}
-                        </h3>
-                        <p className="text-muted-foreground mb-3">{job.type}</p>
-                        <Badge variant="secondary" className="text-xs">
-                          {job.department}
-                        </Badge>
-                      </div>
-                      
-                      <p className="text-muted-foreground leading-relaxed">
-                        {job.desc}
-                      </p>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {job.tags.map((tag, idx) => (
-                          <Badge key={idx} variant="outline" className="text-xs">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <Button onClick={() => navigate("/contact?topic=career")} className="lg:w-auto w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                      Apply Now
-                    </Button>
+    <div className="space-y-6">
+      {currentOpenings.length > 0 ? (
+        currentOpenings.map((job, index) => (
+          <Card key={index} className="hover-lift border-border">
+            <CardContent className="p-6 lg:p-8">
+              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                <div className="flex-1 space-y-4">
+                  <div>
+                    <h3 className="text-xl lg:text-2xl font-semibold text-foreground mb-2">
+                      {job.role}
+                    </h3>
+                    <p className="text-muted-foreground mb-3">{job.type}</p>
+                    <Badge variant="secondary" className="text-xs">
+                      {job.department}
+                    </Badge>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {job.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {job.tags.map((tag: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined, idx: Key | null | undefined) => (
+                      <Badge key={idx} variant="outline" className="text-xs">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                <Button
+                  onClick={() => navigate("/contact?topic=career")}
+                  className="lg:w-auto w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  Apply Now
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))
+      ) : (
+        <p className="text-center text-lg text-muted-foreground">
+          Currently No Openings
+        </p>
+      )}
+    </div>
+  </div>
+</section>
 
       {/* CTA Section */}
       <section className="py-20 lg:py-28">

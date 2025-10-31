@@ -46,12 +46,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/achievements/academics/iit-jee" className="text-white/80 hover:text-white transition-colors text-sm" data-testid="footer-link-achievements">
+                <Link to="/achievements" className="text-white/80 hover:text-white transition-colors text-sm" data-testid="footer-link-achievements">
                   Achievements
                 </Link>
               </li>
               <li>
-                <Link to="/alumni/connect-portal" className="text-white/80 hover:text-white transition-colors text-sm" data-testid="footer-link-alumni">
+                <Link to="/alumni/connect" className="text-white/80 hover:text-white transition-colors text-sm" data-testid="footer-link-alumni">
                   Alumni Portal
                 </Link>
               </li>
