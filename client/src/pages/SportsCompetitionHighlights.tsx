@@ -19,9 +19,9 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Our athletes showcased exceptional performance in track and field events, securing multiple qualifications for national level competitions.",
       achievements: ["4 Gold Medals", "6 Silver Medals", "4 Bronze Medals", "12 National Qualifiers"],
       images: [
-        "/sports-competitions/athletics-1.jpg",
-        "/sports-competitions/athletics-2.jpg",
-        "/sports-competitions/athletics-3.jpg"
+        "./public/DSC03495.JPG",
+        "./public/DSC04001.JPG",
+        "./public/DSC04056.JPG"
       ],
       videos: []
     },
@@ -34,9 +34,9 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Dominant performance by both boys and girls teams, with exceptional raiding and defensive strategies.",
       achievements: ["2 Gold Medals (U-14 Boys & Girls)", "1 Silver Medal (U-17 Girls)", "1 Bronze Medal (U-17 Boys)"],
       images: [
-        "/sports-competitions/kabaddi-1.jpg",
-        "/sports-competitions/kabaddi-2.jpg",
-        "/sports-competitions/kabaddi-3.jpg"
+        "./public/DSC04086.JPG",
+        "./public/DSC09236.JPG",
+        "./public/DSC09273.JPG"
       ],
       videos: []
     },
@@ -49,8 +49,8 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Precision and skill on display as our table tennis players competed against top schools in the region.",
       achievements: ["1 Bronze Medal", "National Qualification", "Best Emerging Player Award"],
       images: [
-        "/sports-competitions/table-tennis-1.jpg",
-        "/sports-competitions/table-tennis-2.jpg"
+        "./public/DSC09289.JPG",
+        "./public/DSC03986.JPG"
       ],
       videos: []
     },
@@ -63,8 +63,8 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Grace, flexibility, and mental focus showcased in both individual and team yoga performances.",
       achievements: ["1 Bronze Medal (Individual)", "1 Silver Medal (Team)", "Artistic Performance Award"],
       images: [
-        "/sports-competitions/yogasana-1.jpg",
-        "/sports-competitions/yogasana-2.jpg"
+        "./public/DSC09255.JPG",
+        // "./public/DSC09256.JPG"
       ],
       videos: []
     },
@@ -77,8 +77,8 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Teamwork and speed combined as our relay teams demonstrated perfect coordination and timing.",
       achievements: ["1 Gold Medal (U-17, 4×400m)", "1 Silver Medal (U-19, 4×400m)", "Fastest Lap Record"],
       images: [
-        "/sports-competitions/relay-1.jpg",
-        "/sports-competitions/relay-2.jpg"
+        "./public/DSC09298.JPG",
+        "./public/DSC04081.JPG"
       ],
       videos: []
     },
@@ -91,9 +91,9 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Celebrating the achievements and dedication of our young athletes in a grand ceremony.",
       achievements: ["30+ Medals Distributed", "5 Special Achievement Awards", "Sportsmanship Awards"],
       images: [
-        "/sports-competitions/ceremony-1.jpg",
-        "/sports-competitions/ceremony-2.jpg",
-        "/sports-competitions/ceremony-3.jpg"
+        "./public/DSC09314.JPG",
+        "./public/DSC09308.JPG",
+        "./public/DSC08148.JPG"
       ],
       videos: []
     }
@@ -123,6 +123,18 @@ const SportsCompetitionHighlights: React.FC = () => {
 
   const closeImageModal = () => {
     setSelectedImage(null);
+  };
+
+  // Fallback images for different sports categories
+  const getFallbackImage = (category: string) => {
+    const fallbacks: { [key: string]: string } = {
+      Athletics: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      Kabaddi: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "Table Tennis": "https://images.unsplash.com/photo-1611956422829-f=auto&fit=crop&w=800&q=80",
+      Yogasana: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      Awards: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+    };
+    return fallbacks[category] || "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
   };
 
   return (
@@ -251,27 +263,32 @@ const SportsCompetitionHighlights: React.FC = () => {
                   <div>
                     <h4 className="text-xl font-semibold text-gray-800 mb-4">Photo Gallery</h4>
                     <div className={`grid gap-4 ${
-                      competition.images.length === 1 ? 'grid-cols-1' :
+                      competition.images.length === 1 ? 'grid-cols-1 max-w-2xl mx-auto' :
                       competition.images.length === 2 ? 'grid-cols-1 md:grid-cols-2' :
                       'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
                     }`}>
                       {competition.images.map((image, index) => (
                         <div
                           key={index}
-                          className="relative overflow-hidden rounded-lg shadow-md cursor-pointer"
+                          className="relative group overflow-hidden rounded-lg shadow-md cursor-pointer bg-gray-100"
                           onClick={() => openImageModal(image)}
                         >
-                          <img
-                            src={image}
-                            alt={`${competition.title} - Image ${index + 1}`}
-                            className="w-full h-64 object-cover"
-                            onError={(e) => {
-                              e.currentTarget.src = "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
-                            }}
-                          />
-                          <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-end p-4">
-                            <div className="text-white opacity-0 hover:opacity-100 transition-opacity">
-                              <div className="font-semibold">Click to enlarge</div>
+                          <div className="aspect-[4/3] w-full overflow-hidden">
+                            <img
+                              src={image}
+                              alt={`${competition.title} - Image ${index + 1}`}
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              onError={(e) => {
+                                e.currentTarget.src = getFallbackImage(competition.category);
+                              }}
+                            />
+                          </div>
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                            <div className="transform translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                              <div className="bg-black/70 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+                                <ZoomIn className="w-4 h-4" />
+                                <span className="font-medium">Click to enlarge</span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -314,15 +331,23 @@ const SportsCompetitionHighlights: React.FC = () => {
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
           onClick={closeImageModal}
         >
-          <div className="relative max-w-4xl max-h-full">
-            <img
-              src={selectedImage}
-              alt="Enlarged view"
-              className="max-w-full max-h-full object-contain rounded"
-            />
+          <div className="relative max-w-6xl max-h-full w-full">
+            <div className="flex items-center justify-center h-full">
+              <img
+                src={selectedImage}
+                alt="Enlarged view"
+                className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                onError={(e) => {
+                  const category = filteredCompetitions.find(comp => 
+                    comp.images.includes(selectedImage)
+                  )?.category || "Athletics";
+                  e.currentTarget.src = getFallbackImage(category);
+                }}
+              />
+            </div>
             <button
               onClick={closeImageModal}
-              className="absolute top-4 right-4 w-10 h-10 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition-colors"
+              className="absolute top-4 right-4 w-12 h-12 bg-black/70 text-white rounded-full flex items-center justify-center hover:bg-black/90 transition-colors text-xl font-bold"
             >
               ×
             </button>
