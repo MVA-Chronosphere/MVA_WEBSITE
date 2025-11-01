@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,6 +8,8 @@ import { useLocation } from "react-router-dom";
 export default function ContactPage() {
   const [selectedTopic, setSelectedTopic] = useState("");
   const [selectedSubTopic, setSelectedSubTopic] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const location = useLocation();
 
   useEffect(() => {
@@ -35,6 +37,51 @@ export default function ContactPage() {
     setSelectedSubTopic("");
   };
 
+ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  setSubmitStatus("idle");
+
+  // Store the form element reference before async operations
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+  
+  // Add the subtopic to formData if it exists
+  if (selectedSubTopic) {
+    formData.append('subtopic', selectedSubTopic);
+  }
+  
+  // Add FormSubmit specific fields
+  formData.append('_subject', `New Contact Form: ${formData.get('topic')}`);
+  formData.append('_template', 'table');
+  formData.append('_captcha', 'false');
+
+  try {
+    const response = await fetch("https://formsubmit.co/ajax/digitalmarketing@mvaburhanpur.com", {
+      method: "POST",
+      body: formData,
+    });
+
+    // Parse the JSON response to check the actual success status
+    const result = await response.json();
+    
+    if (response.ok && result.success === "true") {
+      setSubmitStatus("success");
+      // Use the stored form reference instead of e.currentTarget
+      form.reset();
+      setSelectedTopic("");
+      setSelectedSubTopic("");
+    } else {
+      setSubmitStatus("error");
+      console.error('Form submission failed:', result);
+    }
+  } catch (error) {
+    setSubmitStatus("error");
+    console.error('Form submission error:', error);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <div className="min-h-screen">
       <div className="bg-gradient-to-r from-primary to-[#0055A4] text-white py-16">
@@ -51,16 +98,52 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div>
             <h2 className="text-3xl font-bold text-foreground mb-8">Get In Touch</h2>
-            <form className="space-y-6">
-              <Input id="name" type="text" placeholder="Enter your name" />
-              <Input id="email" type="email" placeholder="Enter your email" />
-              <Input id="phone" type="tel" placeholder="Enter your phone number" />
+            
+            {/* Status Messages */}
+            {submitStatus === "success" && (
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
+                <p className="text-green-800 font-medium">
+                  ✅ Thank you for your message! We'll get back to you soon.
+                </p>
+              </div>
+            )}
+            
+            {submitStatus === "error" && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                <p className="text-red-800 font-medium">
+                  ❌ There was an error sending your message. Please try again or contact us directly.
+                </p>
+              </div>
+            )}
+
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <Input 
+                name="name"
+                type="text" 
+                placeholder="Enter your name" 
+                required
+                minLength={2}
+              />
+              <Input 
+                name="email"
+                type="email" 
+                placeholder="Enter your email" 
+                required
+              />
+              <Input 
+                name="phone"
+                type="tel" 
+                placeholder="Enter your phone number" 
+                required
+                minLength={10}
+              />
 
               <select
-                id="topic"
+                name="topic"
                 value={selectedTopic}
                 onChange={handleTopicChange}
                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                required
               >
                 <option value="">Select a topic</option>
                 <option value="Career Enquiry">Career Enquiry</option>
@@ -71,26 +154,46 @@ export default function ContactPage() {
 
               {selectedTopic && (
                 <select
-                  id="subtopic"
+                  name="subtopic"
                   value={selectedSubTopic}
                   onChange={(e) => setSelectedSubTopic(e.target.value)}
                   className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  required
                 >
                   <option value="">Select an option</option>
                   {subTopicOptions[selectedTopic]?.map((option) => (
-                    <option key={option}>{option}</option>
+                    <option key={option} value={option}>{option}</option>
                   ))}
                 </select>
               )}
 
-              <Textarea id="message" rows={5} placeholder="Write your message here..." />
-              <Button size="lg" className="w-full">
-                Send Message
+              <Textarea 
+                name="message"
+                rows={5} 
+                placeholder="Write your message here..." 
+                required
+                minLength={10}
+              />
+              
+              <Button 
+                size="lg" 
+                className="w-full" 
+                type="submit"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
               </Button>
             </form>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info remains the same */}
           <div>
             <h2 className="text-3xl font-bold text-foreground mb-8">Contact Information</h2>
             <div className="space-y-6">
@@ -130,7 +233,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Map */}
+        {/* Map section remains the same */}
         <div className="mt-16 text-center">
           <h2 className="text-3xl font-bold mb-8">Visit Our Campus</h2>
           <div className="aspect-video rounded-lg overflow-hidden shadow-lg">

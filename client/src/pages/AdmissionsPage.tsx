@@ -13,15 +13,64 @@ const AdmissionsPage: React.FC = () => {
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   
-  // Updated samplePapers array with new content
+  // Updated samplePapers array with PDF file names
   const samplePapers = [
-    { class: "IX", title: "IX Sample Paper - I", answerKey: "IX Sample Paper-I Answer Key" },
-    { class: "X", title: "X Sample Paper - I", answerKey: "X Sample Paper-I Answer Key" },
-    { class: "XI", subject: "Mathematics", title: "XI Mathematics Sample Paper-I", answerKey: "XI Mathematics Sample Paper-I Answer Key" },
-    { class: "XI", subject: "Biology", title: "XI Biology Sample Paper-I", answerKey: "XI Biology Sample Paper-I Answer Key" },
-    { class: "XI", subject: "Commerce", title: "XI Commerce Sample Paper-I", answerKey: "XI Commerce Sample Paper-I Answer Key" }
+    { 
+      class: "IX", 
+      title: "IX Sample Paper - I", 
+      answerKey: "IX Sample Paper-I Answer Key",
+      pdfFile: "./public/IX_Sample_Paper-I.pdf",
+      answerKeyPdf: "./public/IX_Sample_Paper-I_Answer_Key.pdf"
+    },
+    { 
+      class: "X", 
+      title: "X Sample Paper - I", 
+      answerKey: "X Sample Paper-I Answer Key",
+      pdfFile: "./public/X_Sample_Paper-I.pdf",
+      answerKeyPdf: "./public/X_Sample_Paper-I_Answer_Key.pdf"
+    },
+    { 
+      class: "XI", 
+      subject: "Mathematics", 
+      title: "XI Mathematics Sample Paper-I", 
+      answerKey: "XI Mathematics Sample Paper-I Answer Key",
+      pdfFile: "./public/XI_Mathematics_Sample_Paper-I.pdf",
+      answerKeyPdf: "./public/XI_Mathematics_Sample_Paper-I_Answer_Key.pdf"
+    },
+    { 
+      class: "XI", 
+      subject: "Biology", 
+      title: "XI Biology Sample Paper-I", 
+      answerKey: "XI Biology Sample Paper-I Answer Key",
+      pdfFile: "./public/XI_Biology_Sample_Paper-I.pdf",
+      answerKeyPdf: "./public/XI_Biology_Sample_Paper-I_Answer_Key.pdf"
+    },
+    { 
+      class: "XI", 
+      subject: "Commerce", 
+      title: "XI Commerce Sample Paper-I", 
+      answerKey: "XI Commerce Sample Paper-I Answer Key",
+      pdfFile: "./public/XI_Commerce_Sample_Paper-I.pdf",
+      answerKeyPdf: "./public/XI_Commerce_Sample_Paper-I_Answer_Key.pdf"
+    }
   ];
-  
+
+  // Syllabus PDF files
+  const syllabusFiles = [
+    {
+      title: "Syllabus for Class 9th and 11th Entrance Examination 2025–26",
+      pdfFile: "./public/Syllabus_Entrance_Examination_2025-261.pdf"
+    },
+    {
+      title: "Syllabus for Class 5th to 8th Entrance Examination 2025–26",
+      pdfFile: "./public/Syllabus_Entrance_Examination_2025-26_(CLASS_5TH_TO_8TH).pdf"
+    },
+    {
+      title: "Syllabus for Class 3rd and 4th Entrance Examination 2025–26",
+      pdfFile: "./public/Syllabus_Entrance_Examination_2025-26_3rd_4th.pdf"
+    }
+  ];
+
   const faqs: FAQ[] = [
     {
       q: "Who can apply for admission?",
@@ -65,13 +114,9 @@ const AdmissionsPage: React.FC = () => {
     <div 
       className="font-sans text-gray-800 min-h-screen"
       style={{
-        // ✅ VISIBLE ILLUSTRATIONS: Darker blue, higher contrast
         backgroundImage: `
-          /* Abstract curved shapes in corners */
           radial-gradient(circle at 0% 0%, rgba(147, 197, 253, 0.08) 0%, transparent 40%),
           radial-gradient(circle at 100% 100%, rgba(147, 197, 253, 0.08) 0%, transparent 40%),
-          
-          /* Geometric dot pattern - now clearly visible */
           url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2393c5fd' fill-opacity='0.08'/%3E%3C/svg%3E")
         `,
         backgroundSize: 'cover, cover, 80px 80px',
@@ -261,90 +306,89 @@ const AdmissionsPage: React.FC = () => {
           </div>
 
           {/* SCHOOL FEES TABLE */}
-        <div className="mb-12 overflow-hidden rounded-2xl shadow-sm border border-gray-200">
-  <div className="bg-blue-900 text-white p-4">
-    <h3 className="text-xl font-semibold">Day Scholar - School Fee Structure</h3>
-  </div>
-  
-  {/* Mobile responsive container */}
-  <div className="overflow-x-auto">
-    <table className="min-w-full bg-white">
-      <thead className="bg-gray-50 border-b">
-        <tr>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Class</th>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[140px]">Registration Fees</th>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual School Fees</th>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Remarks</th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gray-100">
-        {[
-          { class: "Class 1st", reg: "₹11,000", school: "₹90,000", remarks: "Non-refundable" },
-          { class: "Class 2nd to 4th", reg: "₹11,000", school: "₹99,000", remarks: "Non-refundable" },
-          { class: "Class 5th to 8th", reg: "₹11,000", school: "₹1,20,000", remarks: "Non-refundable" },
-          { class: "Class 9th & 10th", reg: "₹11,000", school: "₹1,60,000", remarks: "Non-refundable" },
-          { class: "Class 11th & 12th (Science)", reg: "₹11,000", school: "₹2,00,000", remarks: "Non-refundable" },
-          { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", school: "₹1,66,000", remarks: "Non-refundable" },
-        ].map((item, i) => (
-          <tr key={i} className={`hover:bg-blue-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-            <td className="py-3 px-4 font-medium text-blue-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
-            <td className="py-3 px-4 whitespace-nowrap min-w-[140px]">{item.reg}</td>
-            <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td>
-            <td className="py-3 px-4 text-gray-600 whitespace-nowrap min-w-[120px]">{item.remarks}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-  
-  <div className="bg-gray-100 p-4 text-sm text-gray-600">
-    <p>Note: Registration fees are one-time and non-refundable. School fees are annual and may be payable in installments based on academy policies.</p>
-  </div>
-</div>
+          <div className="mb-12 overflow-hidden rounded-2xl shadow-sm border border-gray-200">
+            <div className="bg-blue-900 text-white p-4">
+              <h3 className="text-xl font-semibold">Day Scholar - School Fee Structure</h3>
+            </div>
+            
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white">
+                <thead className="bg-gray-50 border-b">
+                  <tr>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Class</th>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[140px]">Registration Fees</th>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual School Fees</th>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Remarks</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {[
+                    { class: "Class 1st", reg: "₹11,000", school: "₹90,000", remarks: "Non-refundable" },
+                    { class: "Class 2nd to 4th", reg: "₹11,000", school: "₹99,000", remarks: "Non-refundable" },
+                    { class: "Class 5th to 8th", reg: "₹11,000", school: "₹1,20,000", remarks: "Non-refundable" },
+                    { class: "Class 9th & 10th", reg: "₹11,000", school: "₹1,60,000", remarks: "Non-refundable" },
+                    { class: "Class 11th & 12th (Science)", reg: "₹11,000", school: "₹2,00,000", remarks: "Non-refundable" },
+                    { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", school: "₹1,66,000", remarks: "Non-refundable" },
+                  ].map((item, i) => (
+                    <tr key={i} className={`hover:bg-blue-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                      <td className="py-3 px-4 font-medium text-blue-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
+                      <td className="py-3 px-4 whitespace-nowrap min-w-[140px]">{item.reg}</td>
+                      <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td>
+                      <td className="py-3 px-4 text-gray-600 whitespace-nowrap min-w-[120px]">{item.remarks}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="bg-gray-100 p-4 text-sm text-gray-600">
+              <p>Note: Registration fees are one-time and non-refundable. School fees are annual and may be payable in installments based on academy policies.</p>
+            </div>
+          </div>
 
           {/* HOSTEL FEES TABLE */}
-        <div className="mb-12 overflow-hidden rounded-2xl shadow-sm border border-gray-200">
-  <div className="bg-blue-900 text-white p-4">
-    <h3 className="text-xl font-semibold">Hostel Fee Structure</h3>
-  </div>
-  
-  {/* Mobile responsive container */}
-  <div className="overflow-x-auto">
-    <table className="min-w-full bg-white">
-      <thead className="bg-gray-50 border-b">
-        <tr>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Class</th>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[140px]">Registration Fees</th>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual Hostel Fees</th>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual School Fees</th>
-          <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Remarks</th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gray-100">
-        {[
-          { class: "Class 1st", reg: "₹11,000", hostel: "₹1,20,000", school: "₹90,000", remarks: "Non-refundable" },
-          { class: "Class 2nd to 4th", reg: "₹11,000", hostel: "₹1,20,000", school: "₹99,000", remarks: "Non-refundable" },
-          { class: "Class 5th to 8th", reg: "₹11,000", hostel: "₹1,20,000", school: "₹1,20,000", remarks: "Non-refundable" },
-          { class: "Class 9th & 10th", reg: "₹11,000", hostel: "₹1,50,000", school: "₹1,60,000", remarks: "Non-refundable" },
-          { class: "Class 11th & 12th (Science)", reg: "₹11,000", hostel: "₹1,50,000", school: "₹2,00,000", remarks: "Non-refundable" },
-          { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", hostel: "₹1,50,000", school: "₹1,66,000", remarks: "Non-refundable" },
-        ].map((item, i) => (
-          <tr key={i} className={`hover:bg-green-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-            <td className="py-3 px-4 font-medium text-green-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
-            <td className="py-3 px-4 whitespace-nowrap min-w-[140px]">{item.reg}</td>
-            <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.hostel}</td>
-            <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td>
-            <td className="py-3 px-4 text-gray-600 whitespace-nowrap min-w-[120px]">{item.remarks}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-  
-  <div className="bg-gray-100 p-4 text-sm text-gray-600">
-    <p>Note: Registration fees are one-time and non-refundable. Hostel fees include accommodation, meals, and other amenities. School fees are separate and annual.</p>
-  </div>
-</div>
+          <div className="mb-12 overflow-hidden rounded-2xl shadow-sm border border-gray-200">
+            <div className="bg-blue-900 text-white p-4">
+              <h3 className="text-xl font-semibold">Hostel Fee Structure</h3>
+            </div>
+            
+            <div className="overflow-x-auto">
+              <table className="min-w-full bg-white">
+                <thead className="bg-gray-50 border-b">
+                  <tr>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Class</th>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[140px]">Registration Fees</th>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual Hostel Fees</th>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual School Fees</th>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Remarks</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100">
+                  {[
+                    { class: "Class 1st", reg: "₹11,000", hostel: "₹1,20,000", school: "₹90,000", remarks: "Non-refundable" },
+                    { class: "Class 2nd to 4th", reg: "₹11,000", hostel: "₹1,20,000", school: "₹99,000", remarks: "Non-refundable" },
+                    { class: "Class 5th to 8th", reg: "₹11,000", hostel: "₹1,20,000", school: "₹1,20,000", remarks: "Non-refundable" },
+                    { class: "Class 9th & 10th", reg: "₹11,000", hostel: "₹1,50,000", school: "₹1,60,000", remarks: "Non-refundable" },
+                    { class: "Class 11th & 12th (Science)", reg: "₹11,000", hostel: "₹1,50,000", school: "₹2,00,000", remarks: "Non-refundable" },
+                    { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", hostel: "₹1,50,000", school: "₹1,66,000", remarks: "Non-refundable" },
+                  ].map((item, i) => (
+                    <tr key={i} className={`hover:bg-green-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                      <td className="py-3 px-4 font-medium text-green-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
+                      <td className="py-3 px-4 whitespace-nowrap min-w-[140px]">{item.reg}</td>
+                      <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.hostel}</td>
+                      <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td>
+                      <td className="py-3 px-4 text-gray-600 whitespace-nowrap min-w-[120px]">{item.remarks}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="bg-gray-100 p-4 text-sm text-gray-600">
+              <p>Note: Registration fees are one-time and non-refundable. Hostel fees include accommodation, meals, and other amenities. School fees are separate and annual.</p>
+            </div>
+          </div>
+
           {/* CONTACT FOR MORE INFO */}
           <div className="mt-10 text-center">
             <p className="text-gray-600 mb-4">
@@ -352,7 +396,7 @@ const AdmissionsPage: React.FC = () => {
             </p>
             <button 
               className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition-all duration-300"
-              onClick={() => window.location.href = "#registration"} // or link to form
+              onClick={() => window.location.href = "#registration"}
             >
               Click Here to Fill Online Registration Form
             </button>
@@ -392,14 +436,13 @@ const AdmissionsPage: React.FC = () => {
                 <div className="flex-1">
                   <h3 className="font-semibold text-blue-900 mb-1">{paper.title}</h3>
                   <a
-                    href="#"
-                    className="text-blue-600 text-sm font-medium hover:underline"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert(`Downloading: ${paper.title}`);
-                    }}
+                    href={paper.pdfFile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
                   >
-                    Download
+                    <Download className="w-4 h-4" />
+                    Download PDF
                   </a>
                 </div>
               </div>
@@ -421,14 +464,13 @@ const AdmissionsPage: React.FC = () => {
                   <div className="flex-1">
                     <h3 className="font-semibold text-blue-900 mb-1">{paper.answerKey}</h3>
                     <a
-                      href="#"
-                      className="text-blue-600 text-sm font-medium hover:underline"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        alert(`Downloading: ${paper.answerKey}`);
-                      }}
+                      href={paper.answerKeyPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
                     >
-                      Download
+                      <Download className="w-4 h-4" />
+                      Download Answer Key
                     </a>
                   </div>
                 </div>
@@ -449,20 +491,7 @@ const AdmissionsPage: React.FC = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "Syllabus for Class 9th and 11th Entrance Examination 2025–26",
-                link: "#"
-              },
-              {
-                title: "Syllabus for Class 5th to 8th Entrance Examination 2025–26",
-                link: "#"
-              },
-              {
-                title: "Syllabus for Class 3rd and 4th Entrance Examination 2025–26",
-                link: "#"
-              }
-            ].map((item, i) => (
+            {syllabusFiles.map((item, i) => (
               <div
                 key={i}
                 className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
@@ -473,14 +502,13 @@ const AdmissionsPage: React.FC = () => {
                 <div className="flex-1">
                   <h3 className="font-semibold text-blue-900 mb-1">{item.title}</h3>
                   <a
-                    href={item.link}
-                    className="text-blue-600 text-sm font-medium hover:underline"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      alert(`Downloading: ${item.title}`);
-                    }}
+                    href={item.pdfFile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
                   >
-                    Download
+                    <Download className="w-4 h-4" />
+                    Download Syllabus
                   </a>
                 </div>
               </div>
@@ -567,8 +595,6 @@ const AdmissionsPage: React.FC = () => {
           </button>
         </div>
       </section>
-
-      
     </div>
   );
 };

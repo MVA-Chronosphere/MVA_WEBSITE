@@ -109,17 +109,17 @@ const menuItems: MenuItem[] = [
       { label: "FAQ", path: "/admissions/faq" },
     ],
   },
-  {
-    label: "Alumni",
-    path: "/alumni/connect",
-     dropdown: [
-    { label: "Update your contact", path: "/alumni/connect#update-contact" },
-    { label: "Alumni Connect (Portal)", path: "/alumni/connect#alumni-connect" },
-    { label: "Events", path: "/alumni/connect#events" },
-    { label: "Campus Visit and Reunion", path: "/alumni/connect#campus-visit" },
-    { label: "Alumni Showcase", path: "/alumni/connect#showcase"},
-    ],
-  },
+  // {
+  //   label: "Alumni",
+  //   path: "/alumni/connect",
+  //    dropdown: [
+  //   { label: "Update your contact", path: "/alumni/connect#update-contact" },
+  //   { label: "Alumni Connect (Portal)", path: "/alumni/connect#alumni-connect" },
+  //   { label: "Events", path: "/alumni/connect#events" },
+  //   { label: "Campus Visit and Reunion", path: "/alumni/connect#campus-visit" },
+  //   { label: "Alumni Showcase", path: "/alumni/connect#showcase"},
+  //   ],
+  // },
  {
   label: "Achievements",
   path: "/achievements",

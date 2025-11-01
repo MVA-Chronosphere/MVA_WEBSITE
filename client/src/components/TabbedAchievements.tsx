@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -137,6 +137,7 @@ export default function TabbedAchievements() {
   const [activeCategory, setActiveCategory] = useState("academics");
   const [activeSubCategory, setActiveSubCategory] = useState("CBSE Class 10");
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle hash navigation - same as LifeAtMVAPage
   useEffect(() => {
@@ -187,6 +188,11 @@ export default function TabbedAchievements() {
   // Handle subcategory change
   const handleSubCategoryChange = (category: string) => {
     setActiveSubCategory(category);
+  };
+
+  // Handle competition highlights navigation
+  const handleViewCompetitionHighlights = () => {
+    navigate('/sports-competition-highlights');
   };
 
   return (
@@ -299,6 +305,7 @@ export default function TabbedAchievements() {
               <Button 
                 variant="secondary" 
                 className="bg-background text-foreground hover:bg-background/90 font-semibold"
+                onClick={handleViewCompetitionHighlights}
               >
                 View Competition Highlights
               </Button>
