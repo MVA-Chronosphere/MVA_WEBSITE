@@ -435,7 +435,7 @@ export default function Navbar() {
                           onMouseEnter={() => setHoveredSubDropdown(subDropdown.label)}
                         >
                           <div 
-                            className="px-4 py-2 text-xs font-bold text-primary uppercase tracking-wider flex items-center justify-between cursor-pointer hover:bg-primary-foreground/5 rounded transition-colors relative z-10"
+                            className="px-4 py-2 text-xs font-bold text-primary  tracking-wider flex items-center justify-between cursor-pointer hover:bg-primary-foreground/5 rounded transition-colors relative z-10"
                           >
                             {subDropdown.label}
                             <ChevronDown className={`h-3 w-3 transition-transform text-primary ${

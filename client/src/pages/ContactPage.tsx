@@ -247,7 +247,7 @@ export default function ContactPage() {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <p className="text-lg font-medium mt-4 text-muted-foreground">Campus Map</p>
+          {/* <p className="text-lg font-medium mt-4 text-muted-foreground">Campus Map</p> */}
         </div>
       </div>
     </div>

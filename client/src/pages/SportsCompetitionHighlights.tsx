@@ -19,9 +19,9 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Our athletes showcased exceptional performance in track and field events, securing multiple qualifications for national level competitions.",
       achievements: ["4 Gold Medals", "6 Silver Medals", "4 Bronze Medals", "12 National Qualifiers"],
       images: [
-        "./public/DSC03495.JPG",
-        "./public/DSC04001.JPG",
-        "./public/DSC04056.JPG"
+        "DSC03495.JPG",
+        "DSC04001.JPG",
+        "DSC04056.JPG"
       ],
       videos: []
     },
@@ -34,9 +34,9 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Dominant performance by both boys and girls teams, with exceptional raiding and defensive strategies.",
       achievements: ["2 Gold Medals (U-14 Boys & Girls)", "1 Silver Medal (U-17 Girls)", "1 Bronze Medal (U-17 Boys)"],
       images: [
-        "./public/DSC04086.JPG",
-        "./public/DSC09236.JPG",
-        "./public/DSC09273.JPG"
+        "DSC04086.JPG",
+        "DSC09236.JPG",
+        "DSC09273.JPG"
       ],
       videos: []
     },
@@ -49,8 +49,8 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Precision and skill on display as our table tennis players competed against top schools in the region.",
       achievements: ["1 Bronze Medal", "National Qualification", "Best Emerging Player Award"],
       images: [
-        "./public/DSC09289.JPG",
-        "./public/DSC03986.JPG"
+        "DSC09289.JPG",
+        "DSC03986.JPG"
       ],
       videos: []
     },
@@ -63,8 +63,8 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Grace, flexibility, and mental focus showcased in both individual and team yoga performances.",
       achievements: ["1 Bronze Medal (Individual)", "1 Silver Medal (Team)", "Artistic Performance Award"],
       images: [
-        "./public/DSC09255.JPG",
-        // "./public/DSC09256.JPG"
+        "DSC09255.JPG",
+        // "DSC09256.JPG"
       ],
       videos: []
     },
@@ -77,8 +77,8 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Teamwork and speed combined as our relay teams demonstrated perfect coordination and timing.",
       achievements: ["1 Gold Medal (U-17, 4×400m)", "1 Silver Medal (U-19, 4×400m)", "Fastest Lap Record"],
       images: [
-        "./public/DSC09298.JPG",
-        "./public/DSC04081.JPG"
+        "DSC09298.JPG",
+        "DSC04081.JPG"
       ],
       videos: []
     },
@@ -91,9 +91,9 @@ const SportsCompetitionHighlights: React.FC = () => {
       description: "Celebrating the achievements and dedication of our young athletes in a grand ceremony.",
       achievements: ["30+ Medals Distributed", "5 Special Achievement Awards", "Sportsmanship Awards"],
       images: [
-        "./public/DSC09314.JPG",
-        "./public/DSC09308.JPG",
-        "./public/DSC08148.JPG"
+        "DSC09314.JPG",
+        "DSC09308.JPG",
+        "DSC08148.JPG"
       ],
       videos: []
     }
