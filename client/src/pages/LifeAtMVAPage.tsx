@@ -614,7 +614,7 @@ export default function LifeAtMVAPage() {
                 </div>
 
                 {/* Emergency Preparedness */}
-                <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
+                {/* <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12">
                   <div className="lg:w-1/2 space-y-4">
                     <h4 className="text-lg md:text-xl font-bold text-primary mb-4">Emergency Preparedness</h4>
                     <p className="text-muted-foreground leading-relaxed mb-3">Safety is about being ready for the unexpected. MVA has:</p>
@@ -633,7 +633,7 @@ export default function LifeAtMVAPage() {
                       />
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="bg-primary/10 p-6 rounded-lg">
                   <h4 className="text-2xl font-bold text-primary mb-4">Why Parents Trust MVA for Student Health</h4>

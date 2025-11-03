@@ -19,39 +19,39 @@ const AdmissionsPage: React.FC = () => {
       class: "IX", 
       title: "IX Sample Paper - I", 
       answerKey: "IX Sample Paper-I Answer Key",
-      pdfFile: "./public/IX_Sample_Paper-I.pdf",
-      answerKeyPdf: "./public/IX_Sample_Paper-I_Answer_Key.pdf"
+      pdfFile: "IX_Sample_Paper-I.pdf",
+      answerKeyPdf: "IX_Sample_Paper-I_Answer_Key.pdf"
     },
     { 
       class: "X", 
       title: "X Sample Paper - I", 
       answerKey: "X Sample Paper-I Answer Key",
-      pdfFile: "./public/X_Sample_Paper-I.pdf",
-      answerKeyPdf: "./public/X_Sample_Paper-I_Answer_Key.pdf"
+      pdfFile: "X_Sample_Paper-I.pdf",
+      answerKeyPdf: "X_Sample_Paper-I_Answer_Key.pdf"
     },
     { 
       class: "XI", 
       subject: "Mathematics", 
       title: "XI Mathematics Sample Paper-I", 
       answerKey: "XI Mathematics Sample Paper-I Answer Key",
-      pdfFile: "./public/XI_Mathematics_Sample_Paper-I.pdf",
-      answerKeyPdf: "./public/XI_Mathematics_Sample_Paper-I_Answer_Key.pdf"
+      pdfFile: "XI_Mathematics_Sample_Paper-I.pdf",
+      answerKeyPdf: "XI_Mathematics_Sample_Paper-I_Answer_Key.pdf"
     },
     { 
       class: "XI", 
       subject: "Biology", 
       title: "XI Biology Sample Paper-I", 
       answerKey: "XI Biology Sample Paper-I Answer Key",
-      pdfFile: "./public/XI_Biology_Sample_Paper-I.pdf",
-      answerKeyPdf: "./public/XI_Biology_Sample_Paper-I_Answer_Key.pdf"
+      pdfFile: "XI_Biology_Sample_Paper-I.pdf",
+      answerKeyPdf: "XI_Biology_Sample_Paper-I_Answer_Key.pdf"
     },
     { 
       class: "XI", 
       subject: "Commerce", 
       title: "XI Commerce Sample Paper-I", 
       answerKey: "XI Commerce Sample Paper-I Answer Key",
-      pdfFile: "./public/XI_Commerce_Sample_Paper-I.pdf",
-      answerKeyPdf: "./public/XI_Commerce_Sample_Paper-I_Answer_Key.pdf"
+      pdfFile: "XI_Commerce_Sample_Paper-I.pdf",
+      answerKeyPdf: "XI_Commerce_Sample_Paper-I_Answer_Key.pdf"
     }
   ];
 
@@ -59,15 +59,15 @@ const AdmissionsPage: React.FC = () => {
   const syllabusFiles = [
     {
       title: "Syllabus for Class 9th and 11th Entrance Examination 2025–26",
-      pdfFile: "./public/Syllabus_Entrance_Examination_2025-261.pdf"
+      pdfFile: "Syllabus_Entrance_Examination_2025-261.pdf"
     },
     {
       title: "Syllabus for Class 5th to 8th Entrance Examination 2025–26",
-      pdfFile: "./public/Syllabus_Entrance_Examination_2025-26_(CLASS_5TH_TO_8TH).pdf"
+      pdfFile: "Syllabus_Entrance_Examination_2025-26_(CLASS_5TH_TO_8TH).pdf"
     },
     {
       title: "Syllabus for Class 3rd and 4th Entrance Examination 2025–26",
-      pdfFile: "./public/Syllabus_Entrance_Examination_2025-26_3rd_4th.pdf"
+      pdfFile: "Syllabus_Entrance_Examination_2025-26_3rd_4th.pdf"
     }
   ];
 

@@ -255,7 +255,7 @@ const currentOpenings: any[] = [];
 </section>
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28">
+      {/* <section className="py-20 lg:py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
             <CardContent className="p-8 lg:p-12 text-center">
@@ -277,7 +277,7 @@ const currentOpenings: any[] = [];
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
