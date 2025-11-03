@@ -270,7 +270,7 @@ export default function Navbar() {
           alt="MVA Logo" 
           className="h-12 w-12 object-contain transition-transform duration-300 hover:scale-110" 
         />
-        <div className="text-xl font-bold tracking-tight text-primary">Macro vision Academy</div>
+        <div className="text-xl font-bold tracking-tight text-primary">Macro Vision Academy</div>
       </Link>
 
       <div className="hidden lg:flex items-center space-x-1">
