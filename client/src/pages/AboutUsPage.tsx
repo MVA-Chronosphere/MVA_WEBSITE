@@ -356,17 +356,17 @@ const FlipCard: React.FC<FlipCardProps> = ({ person, className = "" }) => (
     <div className="flip-card-inner">
       {/* Front */}
       <div className="flip-card-front bg-card border-4 border-blue-900 rounded-lg overflow-hidden relative">
-        <img 
-          src={person.image} 
-          alt={person.name} 
-          className="absolute inset-0 w-full h-full object-cover object-center scale-90"
-        />
+        {/* Enforce 4:5 aspect ratio for image */}
+        <div className="w-full aspect-[4/5] relative">
+          <img 
+            src={person.image} 
+            alt={person.name} 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </div>
         <div className="absolute bottom-0 left-0 right-0 bg-white p-2 sm:p-3">
           <h3 className="text-sm sm:text-base font-bold text-gray-800 mb-1 font-['Maven_Pro']">{person.name}</h3>
           <p className="text-blue-900 font-medium mb-1 text-xs sm:text-sm font-['Maven_Pro']">{person.role}</p>
-          {/* <p className="text-blue-900 text-xs font-['Maven_Pro'] font-semibold">
-            {person.experience}
-          </p> */}
         </div>
       </div>
       {/* Back */}
@@ -387,7 +387,6 @@ const FlipCard: React.FC<FlipCardProps> = ({ person, className = "" }) => (
     </div>
   </div>
 );
-
 interface LeadershipGridProps {
   people: Person[];
   columns?: string;
