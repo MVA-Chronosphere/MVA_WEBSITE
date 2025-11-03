@@ -571,7 +571,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
         </Tabs>
 
         {/* Newsletter Section */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-primary/10 to-[#0055A4]/10 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold text-card-foreground mb-4">
               Stay Updated with MVA Insights
@@ -591,7 +591,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Blog Modal */}

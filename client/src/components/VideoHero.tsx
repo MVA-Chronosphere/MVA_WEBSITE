@@ -14,7 +14,7 @@ export default function VideoHero() {
         preload="auto"
         controls={false}
       >
-        <source src="/CAMPUS short video 2.mp4" type="video/mp4" />
+        <source src="SnapInsta.to_AQPD_CuX1v8L3JeqordNRc1ZP_m91Bx5eRMf5kCra_xf_v7SZ0OBgZWN2-vDB-KhHfGCJXK2zozV4bqCJ5pUVz2CwAHk8Pv1XVySgUQ.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
@@ -24,7 +24,7 @@ export default function VideoHero() {
         className={
           "absolute inset-0 z-10 " +
           // Use a multi-stop gradient with semi-transparent colors so the video is visible underneath
-          "bg-gradient-to-b from-yellow-400/50 via-emerald-500/45 to-sky-600/50 " +
+          "bg-gradient-to-b from-grey-400/50 via-emerald-500/45 to-sky-600/50 " +
           // Blend mode helps the colors sit nicely on top of the video
           "mix-blend-multiply"
         }
@@ -36,20 +36,20 @@ export default function VideoHero() {
       />
 
       <div className="relative z-20 h-full flex flex-col items-center justify-center text-white px-4">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-center max-w-5xl leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-center max-w-5xl leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700 drop-shadow-2xl">
           Welcome to Macro Vision Academy
         </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-center max-w-3xl text-white/95 leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
+        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-center max-w-3xl leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 font-medium drop-shadow-2xl bg-black/20 backdrop-blur-sm px-4 py-2 rounded-lg">
           Empowering minds, nurturing excellence through academics, sports, arts, and holistic development
         </p>
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
           <Link to="/admissions/procedure">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 md:px-10 shadow-xl hover:shadow-2xl transition-all hover:scale-105" data-testid="button-apply-now">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 md:px-10 shadow-xl hover:shadow-2xl transition-all hover:scale-105" data-testid="button-apply-now" >
               Apply Now
             </Button>
           </Link>
           <Link to="/about/our-story">
-            <Button 
+            <Button style={{mixBlendMode :"difference"}}
               size="lg" 
               variant="outline" 
               className="bg-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white/20 px-8 md:px-10 shadow-xl hover:shadow-2xl transition-all hover:scale-105"

@@ -162,7 +162,7 @@ const AdmissionsPage: React.FC = () => {
             <div className="relative animate-fade-in-right">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <img 
-                  src="MVA_School.jpg" 
+                  src="campus.jpg" 
                   alt="School campus" 
                   className="w-full h-96 object-cover"
                 />

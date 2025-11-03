@@ -1,4 +1,4 @@
-﻿import { useEffect } from "react";
+﻿import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Timeline from "@/components/Timeline";
 import VideoEmbed from "@/components/VideoEmbed";
@@ -159,21 +159,21 @@ const aboutData: AboutData = {
         name: "Mr. Anand Prakash Chouksey",
         role: "Founder & Chairman",
         // experience: "30+ Years Experience",
-        image: "/Leadership img/Anand sir.png",
+        image: "13.jpg",
         description: "Our leadership is headed by Mr. Anand Prakash Chouksey, a man of vision whose life's work reflects unwavering commitment to education, healthcare, and community development. Recently honored with the 25th International Mother Teresa Award. From age 15, he chose teaching over engineering, established Sonu Coaching Classes, and founded New Vision School. He founded Macro Vision Academy in 2002–03, which grew into a top CBSE school. In 2017, he established the All is Well Multispeciality Hospital. Through education and healthcare, he has dedicated his life to empowering people and shaping a brighter future."
       },
       {
         name: "Mrs. Manjusha Chouksey",
         role: "Founder & Academic Director",
         // experience: "20+ Years Experience",
-        image: "/Leadership img/manjusha mam.png",
+        image: "14.jpg",
         description: "Mrs. Manjusha Chouksey, President of Anand Educational Technical and Vocational Society, is a woman of vision, wisdom, and inspiration. A Gold Medalist in Botany (M.Sc.), she began as a Biology teacher and became Founder of Macro Vision Academy. For over two decades, she has been the guiding force behind MVA's success. Known as Manju Ma'am, she leads the competitive exam wing and is admired for innovative teaching methods and mentorship. Her workshops including Mid-Brain Activation have touched thousands of students. Honored with Times Women Achievers Award in 2023, she continues to inspire generations to strive for excellence."
       },
       {
         name: "Mr. Kabir Chouksey",
         role: "Director",
         // experience: "8+ Years Experience",
-        image: "/Leadership img/Mr. Kabir Chouksey.png",
+        image: "15.jpg",
         description: "Mr. Kabir Chouksey, Director of Macro Vision Academy and All is Well Multispeciality Hospital, represents next-generation leadership. Serving as Treasurer for over eight years, his role has been instrumental in transforming both institutions. He's the visionary behind Chronosphere Innovation Lab with Coding Labs, AI & ML Labs, Advanced Robotics. A graduate of Australian National University on full scholarship, he founded Sir Taj Farms Training Centre in 2018. During the pandemic, he demonstrated fearlessness ensuring quality healthcare. At a young age, he embodies innovation, decisiveness, and passion, preparing students to lead, innovate, and serve society."
       }
     ],
@@ -182,7 +182,7 @@ const aboutData: AboutData = {
         name: "Mrs. Devanshi Chouksey",
         role: "Director",
         // experience: "4+ Years Experience",
-        image: "/Leadership img/Mrs. Devanshi Chouksey.png",
+        image: "17.jpg",
         qualification: "M.Sc, M.Sc (Ireland), PGD & PGC",
         description: "With 4+ years of experience in educational administration, Mrs. Chouksey brings innovative approaches to academic excellence and student development."
       },
@@ -190,7 +190,7 @@ const aboutData: AboutData = {
         name: "Ms. Antra Chouksey",
         role: "Education Development Manager",
         // experience: "3 Years Experience",
-        image: "/Leadership img/Ms. Antra Chouksey.png",
+        image: "16.jpg",
         qualification: "M.A EdTech (UK), B.Sc (USA)",
         description: "Ms. Chouksey spearheads educational development initiatives with 3+ years of experience in curriculum design and educational technology integration."
       },
@@ -198,7 +198,7 @@ const aboutData: AboutData = {
         name: "Mr. Jasvir Singh Parmar",
         role: "Principal",
         // experience: "32 Years Experience",
-        image: "/Leadership img/Mr. Jasvir Singh Parmar.png",
+        image: "03.jpg",
         qualification: "M.A (Lit) & B.Ed",
         description: "Mr. Parmar brings 32+ years of educational leadership, dedicated to fostering academic excellence and character development in students."
       },
@@ -206,7 +206,7 @@ const aboutData: AboutData = {
         name: "Mrs. Monika Agrawal",
         role: "Vice-Principal",
         // experience: "25 Years Experience",
-        image: "/Leadership img/Mrs. Monika Agrawal.png",
+        image: "05.jpg",
         qualification: "M.Sc. (Chemistry) & B.Ed",
         description: "Mrs. Agrawal brings 25+ years of experience in academic administration and educational leadership, specializing in science education and student mentorship."
       }
@@ -218,7 +218,7 @@ const aboutData: AboutData = {
       name: "Mr. Vijay Sukhwani",
       role: "Chief Technical Officer Group",
       // experience: "20+ Years Experience",
-      image: "/Leadership img/Vijay Sukhwani.png",
+      image: "01.jpg",
       qualification: "M.Sc (Mathematics) & B.Ed",
       description: "With 20+ years of experience in technical education and mathematics, Mr. Sukhwani leads our technical initiatives and ensures innovative teaching methodologies across the institution."
     },
@@ -226,7 +226,7 @@ const aboutData: AboutData = {
       name: "Dr. Santosh Siloriya",
       role: "Head of Biology Department",
       // experience: "22+ Years Experience",
-      image: "/Leadership img/Dr. Santosh Siloriya.png",
+      image: "12.jpg",
       qualification: "BAMS",
       description: "Dr. Siloriya brings 22+ years of expertise in biological sciences and medical education, leading our biology department with innovative teaching methods and research-oriented approach."
     },
@@ -234,7 +234,7 @@ const aboutData: AboutData = {
       name: "Mrs. Neha Suri",
       role: "Head of Commerce Department",
       // experience: "20+ Years Experience",
-      image: "/Leadership img/Neha Suri.png",
+      image: "09.jpg",
       qualification: "M.Com, MBA & B.Ed",
       description: "With 20+ years in commerce education, Mrs. Suri combines academic excellence with practical business insights to prepare students for modern commercial challenges."
     },
@@ -242,7 +242,7 @@ const aboutData: AboutData = {
       name: "Dr. Arun Sharma",
       role: "Chief Residential Warden",
       // experience: "23+ Years Experience",
-      image: "/Leadership img/Dr. Arun Sharma.png",
+      image: "04.jpg",
       qualification: "M.P.Ed & Ph.D",
       description: "Dr. Sharma oversees residential facilities with 23+ years of experience, ensuring a safe, nurturing environment that promotes holistic student development."
     }
@@ -253,7 +253,7 @@ const aboutData: AboutData = {
       name: "Mrs. Vibha Jetly",
       role: "Deputy Principal Petals",
       // experience: "23+ Years Experience",
-      image: "/Leadership img/Vibha Jetly.png",
+      image: "02.jpg",
       qualification: "M.A Sociology & B.Ed",
       description: "With 23+ years of experience in educational leadership, Mrs. Jetly brings expertise in sociology and educational development to guide our middle wing students."
     },
@@ -261,7 +261,7 @@ const aboutData: AboutData = {
       name: "Mrs. Sonia Chhabra",
       role: "Academic Coordinator",
       // experience: "10+ Years Experience",
-      image: "/Leadership img/Sonia Chhabra.png",
+      image: "11.jpg",
       qualification: "M.Sc (Mathematics) & B.Ed",
       description: "Mrs. Chhabra coordinates academic programs with 10+ years of expertise in mathematics education, ensuring excellence in STEM learning for middle wing students."
     },
@@ -269,7 +269,7 @@ const aboutData: AboutData = {
       name: "Mr. Jay Khatri",
       role: "Academic Coordinator",
       // experience: "17+ Years Experience",
-      image: "/Leadership img/Jaiki Khatri.png",
+      image: "06.jpg",
       qualification: "MCA",
       description: "Mr. Khatri brings 17+ years of technology and computer applications expertise, leading digital education initiatives and academic coordination for middle wing."
     },
@@ -277,7 +277,7 @@ const aboutData: AboutData = {
       name: "Mr. Gaurav Chhabra",
       role: "Head of Training and Development",
       // experience: "24+ Years Experience",
-      image: "/Leadership img/Gaurav Chhabra.png",
+      image: "07.jpg",
       qualification: "M.A, MBA & B.Ed",
       description: "Mr. Chhabra leads training and development with 24+ years of experience, combining business acumen with educational expertise to enhance teaching methodologies."
     }
@@ -288,7 +288,7 @@ const aboutData: AboutData = {
       name: "Mrs. Sheetal Popli",
       role: "Deputy Principal Mantra",
       // experience: "24+ Years Experience",
-      image: "/Leadership img/Sheetal Popli.png",
+      image: "10.jpg",
       qualification: "M.A & B.Ed",
       description: "With 24+ years of experience in educational leadership, Mrs. Popli brings expertise in arts and education to guide our junior wing students with care and dedication."
     },
@@ -296,7 +296,7 @@ const aboutData: AboutData = {
       name: "Mrs. Fatima Syed",
       role: "Academic Coordinator",
       // experience: "16+ Years Experience",
-      image: "/Leadership img/Fatima Syed.png",
+      image: "08.jpg",
       qualification: "B.Com (Comp) & D.El.Ed",
       description: "Mrs. Syed coordinates academic programs with 16+ years of expertise in commerce and elementary education, ensuring quality learning experiences for junior wing students."
     }
@@ -351,42 +351,99 @@ interface FlipCardProps {
   className?: string;
 }
 
-const FlipCard: React.FC<FlipCardProps> = ({ person, className = "" }) => (
-  <div className={`flip-card h-64 sm:h-72 ${className}`}>
-    <div className="flip-card-inner">
-      {/* Front */}
-      <div className="flip-card-front bg-card border-4 border-blue-900 rounded-lg overflow-hidden relative">
-        {/* Enforce 4:5 aspect ratio for image */}
-        <div className="w-full aspect-[4/5] relative">
-          <img 
-            src={person.image} 
-            alt={person.name} 
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
+const FlipCard: React.FC<FlipCardProps> = ({ person, className = "" }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div 
+      className={`flip-card h-80 sm:h-96 ${className}`}
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+        {/* Front - Full Background Image */}
+        <div className="flip-card-front bg-white rounded-2xl overflow-hidden relative shadow-lg hover:shadow-2xl transition-all duration-500 group">
+          {/* Full Background Image */}
+          <div className="absolute inset-0 w-full h-full">
+            <img 
+              src={person.image} 
+              alt={person.name} 
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = '/placeholder-person.jpg';
+              }}
+            />
+            {/* Dark Overlay for Better Text Readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20"></div>
+          </div>
+          
+          {/* Content Overlay */}
+          <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 text-white">
+            <div className="">
+              <h3 className="text-m sm:text-2xl font-bold mb-2 font-['Maven_Pro'] leading-tight group-hover:text-blue-200 transition-colors duration-300">
+                {person.name}
+              </h3>
+              <p className="text-blue-200 font-semibold mb-2 text-base sm:text-lg font-['Maven_Pro'] leading-tight">
+                {person.role}
+              </p>
+              {/* {person.qualification && (
+                <p className="text-gray-200 text-sm sm:text-base font-['Maven_Pro'] leading-tight mb-3">
+                  {person.qualification}
+                </p>
+              )} */}
+              {/* Flip Hint */}
+              <div className="flex items-center justify-center text-blue-200 text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300 mt-2">
+                {/* <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                </svg>
+                Click or hover to learn more */}
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-white p-2 sm:p-3">
-          <h3 className="text-sm sm:text-base font-bold text-gray-800 mb-1 font-['Maven_Pro']">{person.name}</h3>
-          <p className="text-blue-900 font-medium mb-1 text-xs sm:text-sm font-['Maven_Pro']">{person.role}</p>
-        </div>
-      </div>
-      {/* Back */}
-      <div className="flip-card-back bg-card border border-card-border rounded-lg p-2 sm:p-3 overflow-hidden">
-        <div className="h-full overflow-y-auto">
-          <h3 className="text-xs sm:text-sm font-bold text-card-foreground mb-2 font-['Maven_Pro']">{person.name}</h3>
-          <p className="text-primary font-medium mb-2 text-xs font-['Maven_Pro']">{person.role}</p>
-          {person.qualification && (
-            <p className="text-muted-foreground text-xs leading-tight font-['Maven_Pro'] mb-2">
-              <strong>Qualification:</strong> {person.qualification}
+        
+        {/* Back */}
+        <div className="flip-card-back bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-2xl p-4 sm:p-6 shadow-2xl relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent"></div>
+          </div>
+          
+          <div className="relative h-full flex flex-col">
+            <h3 className="text-lg sm:text-xl font-bold mb-2 font-['Maven_Pro'] leading-tight">
+              {person.name}
+            </h3>
+            <p className="text-blue-200 font-semibold mb-3 text-sm sm:text-base font-['Maven_Pro'] leading-tight">
+              {person.role}
             </p>
-          )}
-          <p className="text-muted-foreground text-xs leading-tight font-['Maven_Pro']">
-            {person.description}
-          </p>
+            
+            <div className="flex-1 overflow-y-auto">
+              {person.qualification && (
+                <p className="text-blue-100 text-xs sm:text-sm font-['Maven_Pro'] leading-tight mb-3">
+                  <strong className="text-white">Qualification:</strong> {person.qualification}
+                </p>
+              )}
+              <p className="text-blue-100 text-xs sm:text-sm leading-relaxed font-['Maven_Pro']">
+                {person.description}
+              </p>
+            </div>
+            
+            {/* Close Hint */}
+            {/* <div className="flex items-center justify-center text-blue-200 text-xs font-medium mt-3 pt-3 border-t border-blue-700">
+              <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+              </svg>
+              Click or hover to return
+            </div> */}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
+
 interface LeadershipGridProps {
   people: Person[];
   columns?: string;
@@ -408,7 +465,7 @@ interface InfoCardProps {
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({ title, content, icon, className = "" }) => (
-  <div className={`relative bg-white border border-blue-900 shadow-md hover:shadow-lg transition-shadow duration-300 p-6 sm:p-8 ${className}`}>
+  <div className={`relative bg-white border border-blue-900 shadow-md hover:shadow-lg transition-all duration-300 p-6 sm:p-8 hover:scale-105 ${className}`}>
     {/* Top-Left L-Border */}
     <div className="absolute top-0 left-0 w-24 h-1 bg-blue-900"></div>
     <div className="absolute top-0 left-0 w-1 h-24 bg-blue-900"></div>
@@ -417,7 +474,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, content, icon, className = "
     <div className="absolute bottom-0 right-0 w-1 h-24 bg-blue-900"></div>
     
     <div className="flex items-center mb-4 sm:mb-6">
-      <div className="w-12 h-12 bg-blue-100 flex items-center justify-center mr-4">
+      <div className="w-12 h-12 bg-blue-100 flex items-center justify-center mr-4 rounded-lg">
         {icon}
       </div>
       <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-900 font-['Maven_Pro']">
@@ -449,9 +506,9 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, content, icon, className = "
 const VenturesList: React.FC<{ ventures: string[] }> = ({ ventures }) => (
   <div className="space-y-3 sm:space-y-4">
     {ventures.map((venture, index) => (
-      <div key={index} className="flex items-start space-x-3">
-        <div className="flex-shrink-0 text-blue-900 text-lg font-bold mt-1">➤</div>
-        <p className="text-sm sm:text-base text-gray-700 font-['Maven_Pro']">{venture}</p>
+      <div key={index} className="flex items-start space-x-3 group">
+        <div className="flex-shrink-0 text-blue-900 text-lg font-bold mt-1 group-hover:scale-110 transition-transform duration-200">➤</div>
+        <p className="text-sm sm:text-base text-gray-700 font-['Maven_Pro'] group-hover:text-blue-900 transition-colors duration-200">{venture}</p>
       </div>
     ))}
   </div>
@@ -460,9 +517,9 @@ const VenturesList: React.FC<{ ventures: string[] }> = ({ ventures }) => (
 const PillarsList: React.FC<{ pillars: string[] }> = ({ pillars }) => (
   <div className="space-y-2 sm:space-y-3">
     {pillars.map((pillar, index) => (
-      <div key={index} className="flex items-start space-x-3">
-        <div className="flex-shrink-0 text-blue-900 text-lg font-bold mt-1">➤</div>
-        <p className="text-sm sm:text-base text-gray-700 font-['Maven_Pro']">{pillar}</p>
+      <div key={index} className="flex items-start space-x-3 group">
+        <div className="flex-shrink-0 text-blue-900 text-lg font-bold mt-1 group-hover:scale-110 transition-transform duration-200">➤</div>
+        <p className="text-sm sm:text-base text-gray-700 font-['Maven_Pro'] group-hover:text-blue-900 transition-colors duration-200">{pillar}</p>
       </div>
     ))}
   </div>
@@ -546,10 +603,10 @@ export default function AboutUsPage() {
               
               <div className="space-y-4 lg:space-y-6">
                 {aboutData.missionVision.values.map((value, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="flex-shrink-0 text-blue-900 text-lg font-bold mt-1">➤</div>
+                  <div key={index} className="flex items-start space-x-3 group hover:translate-x-2 transition-transform duration-200">
+                    <div className="flex-shrink-0 text-blue-900 text-lg font-bold mt-1 group-hover:scale-110 transition-transform duration-200">➤</div>
                     <div className="space-y-1">
-                      <h3 className="text-base sm:text-lg lg:text-xl font-bold text-blue-900 font-['Maven_Pro']">
+                      <h3 className="text-base sm:text-lg lg:text-xl font-bold text-blue-900 font-['Maven_Pro'] group-hover:text-blue-800 transition-colors duration-200">
                         {value.title}
                       </h3>
                       <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-['Maven_Pro']">
@@ -693,15 +750,19 @@ export default function AboutUsPage() {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3">
             {aboutData.knowledgePartners.map((partner, index) => (
-              <div key={index} className="bg-white border-2 border-blue-900 rounded-lg p-1 sm:p-2 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center min-h-[100px] sm:min-h-[110px] group">
+              <div key={index} className="bg-white border-2 border-blue-900 rounded-lg p-1 sm:p-2 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center min-h-[100px] sm:min-h-[110px] group hover:scale-105 hover:border-blue-700">
                 <div className="w-20 h-20 sm:w-22 sm:h-22 flex items-center justify-center mb-1">
                   <img 
                     src={partner.image} 
                     alt={`${partner.name} Logo`} 
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/placeholder-logo.png';
+                    }}
                   />
                 </div>
-                <h3 className="text-[9px] sm:text-[10px] font-bold text-blue-900 text-center mb-1 font-['Maven_Pro'] leading-tight">
+                <h3 className="text-[9px] sm:text-[10px] font-bold text-blue-900 text-center mb-1 font-['Maven_Pro'] leading-tight group-hover:text-blue-700 transition-colors duration-300">
                   {partner.name}
                 </h3>
               </div>
@@ -733,6 +794,7 @@ export default function AboutUsPage() {
         .flip-card {
           background-color: transparent;
           perspective: 1000px;
+          cursor: pointer;
         }
         
         .flip-card-inner {
@@ -740,11 +802,11 @@ export default function AboutUsPage() {
           width: 100%;
           height: 100%;
           text-align: center;
-          transition: transform 0.4s ease-in-out;
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
           transform-style: preserve-3d;
         }
         
-        .flip-card:hover .flip-card-inner {
+        .flip-card-inner.flipped {
           transform: rotateY(180deg);
         }
         
@@ -756,24 +818,16 @@ export default function AboutUsPage() {
           backface-visibility: hidden;
           display: flex;
           flex-direction: column;
+          border-radius: 1rem;
         }
         
         .flip-card-back {
           transform: rotateY(180deg);
-          border: 4px solid #1e3a8a !important;
         }
 
         @media (max-width: 768px) {
           .flip-card {
             height: 22rem !important;
-          }
-          
-          .flip-card-inner {
-            transition: transform 0.3s ease-out;
-          }
-          
-          .flip-card.flipped .flip-card-inner {
-            transform: rotateY(180deg);
           }
         }
       `}</style>

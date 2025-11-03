@@ -262,11 +262,11 @@ export default function LifeAtMVAPage() {
                   </div>
                 </div>
                 <div className="lg:w-1/2">
-                  <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
+                  <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-">
                     <img 
-                      src="/MVA boarding/VISIONPASSION.jpg" 
+                      src="passion.jpg" 
                       alt="Vision Passion Hostel - Boys' Wing Senior" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full "
                     />
                   </div>
                 </div>
