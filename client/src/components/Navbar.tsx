@@ -102,84 +102,29 @@ const menuItems: MenuItem[] = [
     label: "Admissions",
     path: "/admissions",
     dropdown: [
-      { label: "Procedure", path: "/admissions/procedure" },
-      { label: "Online Registration", path: "/admissions/online-registration" },
-      { label: "Fee Structure", path: "/admissions/fee-structure" },
-      { label: "Sample Papers", path: "/admissions/sample-papers" },
-      { label: "FAQ", path: "/admissions/faq" },
+      { label: "Procedure", path: "/admissions#procedure" },
+      { label: "Online Registration", path: "/admissions#registration" },
+      { label: "Fee Structure", path: "/admissions#fee-structure" },
+      { label: "Sample Papers", path: "/admissions#sample-papers" },
+      { label: "FAQ", path: "/admissions#faq" },
     ],
   },
-  // {
-  //   label: "Alumni",
-  //   path: "/alumni/connect",
-  //    dropdown: [
-  //   { label: "Update your contact", path: "/alumni/connect#update-contact" },
-  //   { label: "Alumni Connect (Portal)", path: "/alumni/connect#alumni-connect" },
-  //   { label: "Events", path: "/alumni/connect#events" },
-  //   { label: "Campus Visit and Reunion", path: "/alumni/connect#campus-visit" },
-  //   { label: "Alumni Showcase", path: "/alumni/connect#showcase"},
-  //   ],
-  // },
- {
-  label: "Achievements",
-  path: "/achievements",
-  dropdown: [
-    { label: "Academics", path: "/achievements#academics" },
-    { label: "Sports", path: "/achievements#sports" },
-    { label: "Competitive Exams", path: "/achievements#competitive" },
-  ],
-},
-  // {
-  //   label: "Achievements",
-  //   path: "/achievements",
-  //   subDropdowns: [
-  //     {
-  //       label: "Academics",
-  //       items: [
-  //         { label: "IIT/JEE", path: "/achievements/academics/iit-jee" },
-  //         { label: "NEET", path: "/achievements/academics/neet" },
-  //         { label: "CA", path: "/achievements/academics/ca" },
-  //         { label: "CBSE Class 10", path: "/achievements/academics/cbse-10" },
-  //         { label: "CBSE Class 12", path: "/achievements/academics/cbse-12" },
-  //         { label: "Foreign Education", path: "/achievements/academics/foreign-education" },
-  //         { label: "CLAT", path: "/achievements/academics/clat" },
-  //         { label: "IPMAT", path: "/achievements/academics/ipmat" },
-  //       ],
-  //     },
-  //     {
-  //       label: "Sports",
-  //       items: [
-  //         { label: "Sports Achievements", path: "/achievements/sports" },
-  //       ],
-  //     },
-  //     {
-  //       label: "Others",
-  //       items: [
-  //         { label: "Other Achievements", path: "/achievements/others" },
-  //       ],
-  //     },
-  //   ],
-  // },
+  {
+    label: "Achievements",
+    path: "/achievements",
+    dropdown: [
+      { label: "Academics", path: "/achievements#academics" },
+      { label: "Sports", path: "/achievements#sports" },
+      { label: "Competitive Exams", path: "/achievements#competitive" },
+    ],
+  },
   {
     label: "Careers",
     path: "/careers",
-    // dropdown: [
-    //   { label: "Join our team", path: "/careers/join-our-team" },
-    //   { label: "Teaching Position", path: "/careers/teaching-position" },
-    //   { label: "Administrative Positions", path: "/careers/administrative-positions" },
-    //   { label: "Current Openings", path: "/careers/current-openings" },
-    //   { label: "Employee Benefits", path: "/careers/employee-benefits" },
-    // ],
   },
   {
     label: "Blogs & Insights",
     path: "/blogs",
-    // dropdown: [
-    //   { label: "Parenting Tips", path: "/blogs/parenting-tips" },
-    //   { label: "Student Stories", path: "/blogs/student-stories" },
-    //   { label: "Article by Teacher", path: "/blogs/article-by-teacher" },
-    //   { label: "Tech in Education", path: "/blogs/tech-in-education" },
-    // ],
   },
   {
     label: "Contact Us",
@@ -317,278 +262,274 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white text-primary shadow-lg border-b border-gray-200">
-      <div className="mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2 hover-elevate px-3 py-2 rounded-md transition-all">
-            <img 
-              src="/mva-logo 2.png" 
-              alt="MVA Logo" 
-              className="h-12 w-12 object-contain"
-            />
-            <div className="text-xl font-bold tracking-tight text-primary">Macro vision Academy</div>
-          </Link>
+  <div className="mx-auto px-4">
+    <div className="flex items-center justify-between h-18"> {/* Reduced from h-20 to h-18 */}
+      <Link to="/" className="flex items-center space-x-3 hover-elevate px-3 py-2 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-md"> {/* Reduced padding */}
+        <img 
+          src="/mva-logo 2.png" 
+          alt="MVA Logo" 
+          className="h-12 w-12 object-contain transition-transform duration-300 hover:scale-110" 
+        />
+        <div className="text-xl font-bold tracking-tight text-primary">Macro vision Academy</div>
+      </Link>
 
-          <div className="hidden lg:flex items-center space-x-0.5">
-            {menuItems.map((item) => (
-              <div
-                key={item.label}
-                className="relative group"
-                onMouseEnter={() => {
-                  if (item.dropdown || item.subDropdowns) {
-                    setActiveDropdown(item.label);
-                    setHoveredSubDropdown(null);
-                  }
-                }}
-                onMouseLeave={() => {
-                  // delay clearing dropdown to avoid accidental flicker when moving between submenus
-                  const label = item.label;
-                  setTimeout(() => {
-                    // only clear if the active dropdown is still the same one (mouse didn't re-enter)
-                    setActiveDropdown((current) => (current === label ? null : current));
-                    setHoveredSubDropdown((current) => (current === label ? null : current));
-                  }, 150);
-                }}
+      <div className="hidden lg:flex items-center space-x-1">
+        {menuItems.map((item) => (
+          <div
+            key={item.label}
+            className="relative group"
+            onMouseEnter={() => {
+              if (item.dropdown || item.subDropdowns) {
+                setActiveDropdown(item.label);
+                setHoveredSubDropdown(null);
+              }
+            }}
+            onMouseLeave={() => {
+              const label = item.label;
+              setTimeout(() => {
+                setActiveDropdown((current) => (current === label ? null : current));
+                setHoveredSubDropdown((current) => (current === label ? null : current));
+              }, 200);
+            }}
+          >
+            {item.path && !item.dropdown && !item.subDropdowns ? (
+              <Link to={item.path}>
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="text-primary hover:bg-primary/10 text-sm font-semibold px-3 h-10 transition-all duration-300 rounded-xl hover:shadow-md hover:scale-105 relative overflow-hidden group" 
+                  data-testid={`link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                </Button>
+              </Link>
+            ) : item.path && (item.dropdown || item.subDropdowns) ? (
+              <div className="flex items-center">
+                <button
+                  onClick={() => handleNavPath(item.path || '/')}
+                  className={`inline-flex items-center justify-center text-primary hover:bg-primary/10 text-sm font-semibold px-3 h-10 transition-all duration-300 rounded-r-none rounded-l-xl hover:shadow-md hover:scale-105 relative overflow-hidden group ${ /* Reduced padding and height */
+                    activeDropdown === item.label ? 'bg-primary/5' : ''
+                  }`}
+                  data-testid={`link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className={`text-primary hover:bg-primary/10 text-sm font-semibold px-2 h-10 transition-all duration-300 rounded-l-none rounded-r-xl hover:shadow-md hover:scale-105 relative overflow-hidden group ${ /* Reduced height */
+                    activeDropdown === item.label ? 'bg-primary/5' : ''
+                  }`}
+                >
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 text-primary relative z-10 ${
+                    activeDropdown === item.label ? 'rotate-180' : ''
+                  }`} />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Button>
+              </div>
+            ) : (
+              <Button
+                variant="ghost"
+                size="lg"
+                className={`text-primary hover:bg-primary/10 text-sm font-semibold px-3 h-10 transition-all duration-300 rounded-xl hover:shadow-md hover:scale-105 relative overflow-hidden group ${ /* Reduced padding and height */
+                  activeDropdown === item.label ? 'bg-primary/5' : ''
+                }`}
+                data-testid={`button-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
               >
-                {item.path && !item.dropdown && !item.subDropdowns ? (
-                  <Link to={item.path}>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-primary hover:bg-primary/10 text-xs font-semibold px-3 h-8 transition-all"
-                      data-testid={`link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      {item.label}
-                    </Button>
-                  </Link>
-                ) : item.path && (item.dropdown || item.subDropdowns) ? (
-                  <div className="flex items-center">
-                    <button
-                      onClick={() => handleNavPath(item.path || '/')}
-                      className={`inline-flex items-center justify-center text-primary hover:bg-primary/10 text-xs font-semibold px-3 h-8 transition-all rounded-r-none ${
-                        activeDropdown === item.label ? 'bg-primary/5' : ''
-                      }`}
-                      data-testid={`link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
-                    >
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="p-0 h-8"
+                <span className="relative z-10">{item.label}</span>
+                {(item.dropdown || item.subDropdowns) && (
+                  <ChevronDown className={`ml-2 h-4 w-4 transition-transform duration-300 text-primary relative z-10 ${
+                    activeDropdown === item.label ? 'rotate-180' : ''
+                  }`} />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+              </Button>
+            )}
+
+            {item.dropdown && activeDropdown === item.label && (
+              <div className="absolute left-0 mt-1 w-64">
+                <div className="bg-popover border border-popover-border rounded-xl shadow-2xl py-2 animate-in fade-in-0 zoom-in-95 duration-200 origin-top"> {/* Reduced padding */}
+                  {item.dropdown.map((subItem) => (
+                    <div key={subItem.path}>
+                      <button
+                        onClick={() => handleNavPath(subItem.path)}
+                        className="w-full text-left px-4 py-2 text-sm text-popover-foreground hover:bg-primary/5 transition-all duration-300 rounded-lg font-medium transform hover:translate-x-2 hover:shadow-md" 
+                        data-testid={`link-${subItem.label.toLowerCase().replace(/\s+/g, '-')}`}
                       >
-                        {item.label}
-                      </Button>
-                    </button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className={`text-primary hover:bg-primary/10 text-xs font-semibold px-1 h-8 transition-all rounded-l-none ${
-                        activeDropdown === item.label ? 'bg-primary/5' : ''
-                      }`}
+                        {subItem.label}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {item.subDropdowns && activeDropdown === item.label && (
+              <div className="absolute left-0 mt-1 w-96">
+                <div className="bg-popover border border-popover-border rounded-xl shadow-2xl py-3 max-h-[80vh] overflow-y-auto animate-in fade-in-0 zoom-in-95 duration-200 origin-top"> {/* Reduced padding */}
+                  {item.subDropdowns.map((subDropdown, idx) => (
+                    <div 
+                      key={subDropdown.label} 
+                      className={`${idx > 0 ? 'border-t border-popover-border pt-3 mt-3' : ''} relative`} 
+                      onMouseEnter={() => setHoveredSubDropdown(subDropdown.label)}
                     >
-                      <ChevronDown className={`h-3 w-3 transition-transform text-primary ${
-                        activeDropdown === item.label ? 'rotate-180' : ''
-                      }`} />
-                    </Button>
-                  </div>
-                ) : (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    className={`text-primary hover:bg-primary/10 text-xs font-semibold px-3 h-8 transition-all ${
-                      activeDropdown === item.label ? 'bg-primary/5' : ''
-                    }`}
-                    data-testid={`button-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                      <div 
+                        className="px-4 py-2 text-sm font-bold text-primary tracking-wider flex items-center justify-between cursor-pointer hover:bg-primary/5 rounded-lg transition-all duration-300 relative z-10 group" 
+                      >
+                        {subDropdown.label}
+                        <ChevronDown className={`h-4 w-4 transition-transform duration-300 text-primary ${
+                          hoveredSubDropdown === subDropdown.label ? 'rotate-180' : ''
+                        }`} />
+                      </div>
+                      <div 
+                        className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                          hoveredSubDropdown === subDropdown.label ? 'max-h-[500px] opacity-100 pb-2' : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <div className="space-y-1 pt-2">
+                          {subDropdown.items.map((subItem) => (
+                            <div key={subItem.path}>
+                              <button
+                                onClick={() => handleNavPath(subItem.path)}
+                                className="w-full text-left px-5 py-2 text-sm text-popover-foreground hover:bg-primary/5 transition-all duration-300 rounded-lg font-medium transform hover:translate-x-2 hover:shadow-sm"
+                                data-testid={`link-${subItem.label.toLowerCase().replace(/\s+/g, '-')}`}
+                              >
+                                {subItem.label}
+                              </button>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <Button
+        variant="ghost"
+        size="icon"
+        className="lg:hidden text-primary h-10 w-11 transition-all duration-300 hover:scale-110 hover:bg-primary/10 rounded-xl" 
+        onClick={toggleMobileMenu}
+        data-testid="button-mobile-menu-toggle"
+      >
+        {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />} {/* Reduced icon size */}
+      </Button>
+    </div>
+
+    {isMobileMenuOpen && (
+      <div className="lg:hidden bg-white border-t border-gray-200 pb-5 max-h-[calc(100vh-4.5rem)] overflow-y-auto animate-in slide-in-from-top duration-300"> {/* Reduced padding and max-height */}
+        {menuItems.map((item) => (
+          <div key={item.label} className="py-1">
+            {item.path && !item.dropdown && !item.subDropdowns ? (
+              <Link to={item.path}>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full text-left px-5 py-3 text-base font-medium text-primary hover:bg-primary/5 transition-all duration-300 rounded-xl hover:translate-x-2 hover:shadow-md" 
+                  data-testid={`mobile-link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  {item.label}
+                </button>
+              </Link>
+            ) : item.path && (item.dropdown || item.subDropdowns) ? (
+              <div className="flex items-center">
+                <div className="flex-1">
+                  <button
+                    onClick={() => handleNavPath(item.path || '/')}
+                    className="w-full text-left px-5 py-3 text-base font-medium text-primary hover:bg-primary/5 transition-all duration-300 rounded-xl hover:translate-x-2 hover:shadow-md" 
+                    data-testid={`mobile-link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
                   >
                     {item.label}
-                    {(item.dropdown || item.subDropdowns) && (
-                      <ChevronDown className={`ml-1 h-3 w-3 transition-transform text-primary ${
-                        activeDropdown === item.label ? 'rotate-180' : ''
-                      }`} />
-                    )}
-                  </Button>
-                )}
-
-                {item.dropdown && activeDropdown === item.label && (
-                  <div className="absolute left-0 mt-0 pt-1 w-60">
-                    <div className="bg-popover border border-popover-border rounded-md shadow-xl py-2 animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                      {item.dropdown.map((subItem) => (
-                        <div key={subItem.path}>
-                          <button
-                            onClick={() => handleNavPath(subItem.path)}
-                            className="w-full text-left px-4 py-2.5 text-sm text-popover-foreground hover-elevate transition-all rounded-sm font-medium"
-                            data-testid={`link-${subItem.label.toLowerCase().replace(/\s+/g, '-')}`}
-                          >
-                            {subItem.label}
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {item.subDropdowns && activeDropdown === item.label && (
-                  <div className="absolute left-0 mt-0 pt-1 w-80">
-                    <div className="bg-popover border border-popover-border rounded-md shadow-xl py-2 max-h-[80vh] overflow-y-auto animate-in fade-in-0 slide-in-from-top-2 duration-200">
-                      {item.subDropdowns.map((subDropdown, idx) => (
-                        <div 
-                          key={subDropdown.label} 
-                          className={`${idx > 0 ? 'border-t border-popover-border pt-3 mt-3' : ''} relative`}
-                          onMouseEnter={() => setHoveredSubDropdown(subDropdown.label)}
-                        >
-                          <div 
-                            className="px-4 py-2 text-xs font-bold text-primary  tracking-wider flex items-center justify-between cursor-pointer hover:bg-primary-foreground/5 rounded transition-colors relative z-10"
-                          >
-                            {subDropdown.label}
-                            <ChevronDown className={`h-3 w-3 transition-transform text-primary ${
-                              hoveredSubDropdown === subDropdown.label ? 'rotate-180' : ''
-                            }`} />
-                          </div>
-                          <div 
-                            className={`transition-all duration-200 ease-in-out ${
-                              hoveredSubDropdown === subDropdown.label ? 'max-h-[500px] opacity-100 pb-2' : 'max-h-0 opacity-0 overflow-hidden'
-                            }`}
-                          >
-                            <div className="space-y-0.5 pt-1">
-                              {subDropdown.items.map((subItem) => (
-                                <div key={subItem.path}>
-                                  <button
-                                    onClick={() => handleNavPath(subItem.path)}
-                                    className="w-full text-left px-5 py-2 text-sm text-popover-foreground hover-elevate transition-all rounded-sm font-medium"
-                                    data-testid={`link-${subItem.label.toLowerCase().replace(/\s+/g, '-')}`}
-                                  >
-                                    {subItem.label}
-                                  </button>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                  </button>
+                </div>
+                <button
+                  onClick={() => toggleDropdown(item.label)}
+                  className="px-5 py-3 text-base font-medium text-primary hover:bg-primary/5 transition-all duration-300 rounded-xl"
+                  data-testid={`mobile-dropdown-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  <ChevronDown
+                    className={`h-4 w-4 transition-transform duration-300 text-primary ${ /* Reduced icon size */
+                      activeDropdown === item.label ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
               </div>
-            ))}
-          </div>
+            ) : (
+              <button
+                onClick={() => toggleDropdown(item.label)}
+                className="w-full text-left px-5 py-3 text-base font-medium text-primary hover:bg-primary/5 transition-all duration-300 rounded-xl flex items-center justify-between hover:translate-x-2 hover:shadow-md"
+                data-testid={`mobile-button-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+              >
+                {item.label}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-300 text-primary ${ /* Reduced icon size */
+                    activeDropdown === item.label ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+            )}
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="lg:hidden text-primary h-9"
-            onClick={toggleMobileMenu}
-            data-testid="button-mobile-menu-toggle"
-          >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-        </div>
-
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-200 pb-4 max-h-[calc(100vh-4rem)] overflow-y-auto animate-in slide-in-from-top duration-300">
-            {menuItems.map((item) => (
-              <div key={item.label} className="py-0.5">
-                {item.path && !item.dropdown && !item.subDropdowns ? (
-                  <Link to={item.path}>
+            {activeDropdown === item.label && item.dropdown && (
+              <div className="bg-primary/5 py-2 animate-in slide-in-from-top-2 duration-300 rounded-xl mx-2">
+                {item.dropdown.map((subItem) => (
+                  <div key={subItem.path}>
                     <button
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="w-full text-left px-4 py-3 text-sm font-medium text-primary hover-elevate transition-all"
-                      data-testid={`mobile-link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                      onClick={() => handleNavPath(subItem.path)}
+                      className="w-full text-left px-8 py-2 text-sm text-primary/80 hover:bg-primary/10 transition-all duration-300 rounded-lg font-medium hover:translate-x-2 hover:shadow-sm" 
+                      data-testid={`mobile-link-${subItem.label.toLowerCase().replace(/\s+/g, '-')}`}
                     >
-                      {item.label}
+                      {subItem.label}
                     </button>
-                  </Link>
-                ) : item.path && (item.dropdown || item.subDropdowns) ? (
-                  <div className="flex items-center">
-                    <div className="flex-1">
-                        <button
-                          onClick={() => handleNavPath(item.path || '/')}
-                          className="w-full text-left px-4 py-3 text-sm font-medium text-primary hover-elevate transition-all"
-                          data-testid={`mobile-link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
-                        >
-                          {item.label}
-                        </button>
-                      </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {activeDropdown === item.label && item.subDropdowns && (
+              <div className="bg-primary/5 py-2 animate-in slide-in-from-top-2 duration-300 rounded-xl mx-2">
+                {item.subDropdowns.map((subDropdown) => (
+                  <div key={subDropdown.label}>
                     <button
-                      onClick={() => toggleDropdown(item.label)}
-                      className="px-4 py-3 text-sm font-medium text-primary hover-elevate transition-all"
-                      data-testid={`mobile-dropdown-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
+                      onClick={() => toggleSubDropdown(subDropdown.label)}
+                      className="w-full text-left px-6 py-2 text-sm font-bold text-primary/80 uppercase tracking-wider flex items-center justify-between hover:bg-primary/10 transition-all duration-300 rounded-lg"
+                      data-testid={`mobile-button-${subDropdown.label.toLowerCase().replace(/\s+/g, '-')}`}
                     >
+                      {subDropdown.label}
                       <ChevronDown
-                        className={`h-4 w-4 transition-transform duration-200 text-primary ${
-                          activeDropdown === item.label ? "rotate-180" : ""
+                        className={`h-3 w-3 transition-transform duration-300 text-primary ${ /* Reduced icon size */
+                          activeSubDropdown === subDropdown.label ? "rotate-180" : ""
                         }`}
                       />
                     </button>
-                  </div>
-                ) : (
-                  <button
-                    onClick={() => toggleDropdown(item.label)}
-                    className="w-full text-left px-4 py-3 text-sm font-medium text-primary hover-elevate transition-all flex items-center justify-between"
-                    data-testid={`mobile-button-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
-                  >
-                    {item.label}
-                    <ChevronDown
-                      className={`h-4 w-4 transition-transform duration-200 text-primary ${
-                        activeDropdown === item.label ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                )}
-
-                {activeDropdown === item.label && item.dropdown && (
-                  <div className="bg-primary/5 py-1 animate-in slide-in-from-top-2 duration-200">
-                    {item.dropdown.map((subItem) => (
+                    {activeSubDropdown === subDropdown.label && (
+                      <div className="bg-primary/10 animate-in slide-in-from-top-2 duration-300 rounded-lg mx-2">
+                        {subDropdown.items.map((subItem) => (
                           <div key={subItem.path}>
-                          <button
-                            onClick={() => handleNavPath(subItem.path)}
-                            className="w-full text-left px-8 py-2.5 text-sm text-primary/80 hover-elevate transition-all font-medium"
-                            data-testid={`mobile-link-${subItem.label.toLowerCase().replace(/\s+/g, '-')}`}
-                          >
-                            {subItem.label}
-                          </button>
-                        </div>
-                    ))}
-                  </div>
-                )}
-
-                {activeDropdown === item.label && item.subDropdowns && (
-                  <div className="bg-primary/5 py-1 animate-in slide-in-from-top-2 duration-200">
-                    {item.subDropdowns.map((subDropdown) => (
-                      <div key={subDropdown.label}>
-                        <button
-                          onClick={() => toggleSubDropdown(subDropdown.label)}
-                          className="w-full text-left px-6 py-2.5 text-xs font-bold text-primary/80 uppercase tracking-wider flex items-center justify-between"
-                          data-testid={`mobile-button-${subDropdown.label.toLowerCase().replace(/\s+/g, '-')}`}
-                        >
-                          {subDropdown.label}
-                          <ChevronDown
-                            className={`h-3 w-3 transition-transform duration-200 text-primary ${
-                              activeSubDropdown === subDropdown.label ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
-                        {activeSubDropdown === subDropdown.label && (
-                          <div className="bg-primary/10 animate-in slide-in-from-top-2 duration-200">
-                            {subDropdown.items.map((subItem) => (
-                                <div key={subItem.path}>
-                                <button
-                                  onClick={() => handleNavPath(subItem.path)}
-                                  className="w-full text-left px-10 py-2 text-sm text-primary/80 hover-elevate transition-all font-medium"
-                                  data-testid={`mobile-link-${subItem.label.toLowerCase().replace(/\s+/g, '-')}`}
-                                >
-                                  {subItem.label}
-                                </button>
-                              </div>
-                            ))}
+                            <button
+                              onClick={() => handleNavPath(subItem.path)}
+                              className="w-full text-left px-10 py-2 text-sm text-primary/80 hover:bg-primary/20 transition-all duration-300 rounded-lg font-medium hover:translate-x-2 hover:shadow-sm" 
+                              data-testid={`mobile-link-${subItem.label.toLowerCase().replace(/\s+/g, '-')}`}
+                            >
+                              {subItem.label}
+                            </button>
                           </div>
-                        )}
+                        ))}
                       </div>
-                    ))}
+                    )}
                   </div>
-                )}
+                ))}
               </div>
-            ))}
+            )}
           </div>
-        )}
+        ))}
       </div>
-    </nav>
+    )}
+  </div>
+</nav>
   );
 }

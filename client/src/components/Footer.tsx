@@ -50,11 +50,11 @@ export default function Footer() {
                   Achievements
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/alumni/connect" className="text-white/80 hover:text-white transition-colors text-sm" data-testid="footer-link-alumni">
                   Alumni Portal
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/blogs/parenting-tips" className="text-white/80 hover:text-white transition-colors text-sm" data-testid="footer-link-blogs">
                   Blogs & Insights
