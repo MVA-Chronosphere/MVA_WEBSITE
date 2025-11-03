@@ -372,8 +372,8 @@ const AdmissionsPage: React.FC = () => {
                     { class: "Class 11th & 12th (Science)", reg: "₹11,000", hostel: "₹1,50,000", school: "₹2,00,000", remarks: "Non-refundable" },
                     { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", hostel: "₹1,50,000", school: "₹1,66,000", remarks: "Non-refundable" },
                   ].map((item, i) => (
-                    <tr key={i} className={`hover:bg-green-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                      <td className="py-3 px-4 font-medium text-green-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
+                    <tr key={i} className={`hover:bg-blue-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
+                      <td className="py-3 px-4 font-medium text-blue-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
                       <td className="py-3 px-4 whitespace-nowrap min-w-[140px]">{item.reg}</td>
                       <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.hostel}</td>
                       <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td>
@@ -395,7 +395,7 @@ const AdmissionsPage: React.FC = () => {
               Call our help desk now at <strong>9302511111</strong>, <strong>7725044544</strong> or <strong>9300110033</strong> - we'll walk you through it.
             </p>
             <button 
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition-all duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition-all duration-300"
               onClick={() => window.location.href = "#registration"}
             >
               Click Here to Fill Online Registration Form
@@ -424,59 +424,65 @@ const AdmissionsPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {samplePapers.map((paper, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
-              >
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                  <FileText className="w-5 h-5 text-blue-600" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-blue-900 mb-1">{paper.title}</h3>
-                  <a
-                    href={paper.pdfFile}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
-                  >
-                    <Download className="w-4 h-4" />
-                    Download PDF
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
+       <div className="grid md:grid-cols-2 gap-6">
+  {samplePapers.map((paper, i) => (
+    <div
+      key={i}
+      className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
+    >
+      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+        <FileText className="w-5 h-5 text-blue-600" />
+      </div>
+      <div className="flex-1">
+        <h3 className="font-semibold text-blue-900 mb-1">{paper.title}</h3>
+        <a
+          href={paper.pdfFile}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
+        >
+          <Download className="w-4 h-4" />
+          Download PDF
+        </a>
+      </div>
+    </div>
+  ))}
+</div>
 
-          {/* ANSWER KEYS ROW */}
-          <div className="mt-12 text-center">
-            <h3 className="text-xl font-semibold text-blue-900 mb-6">Answer Keys</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {samplePapers.map((paper, i) => (
-                <div
-                  key={`key-${i}`}
-                  className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
-                >
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <FileText className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-blue-900 mb-1">{paper.answerKey}</h3>
-                    <a
-                      href={paper.answerKeyPdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download Answer Key
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+{/* ANSWER KEYS ROW */}
+<div className="mt-12">
+  <h3 className="text-xl font-semibold text-blue-900 mb-6 text-center">
+    Answer Keys
+  </h3>
+
+  <div className="grid md:grid-cols-2 gap-6">
+    {samplePapers.map((paper, i) => (
+      <div
+        key={`key-${i}`}
+        className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
+      >
+        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+          <FileText className="w-5 h-5 text-blue-600" />
+        </div>
+        <div className="flex-1">
+          <h3 className="font-semibold text-blue-900 mb-1">
+            {paper.answerKey}
+          </h3>
+          <a
+            href={paper.answerKeyPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
+          >
+            <Download className="w-4 h-4" />
+            Download Answer Key
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
         </div>
       </section>
 

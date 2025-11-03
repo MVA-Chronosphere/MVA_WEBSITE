@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -104,12 +104,12 @@ export default function Footer() {
                 <Facebook className="h-5 w-5 md:h-6 md:w-6" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@mvaburhanpur1"
                 target="_blank"
                 className="hover-elevate active-elevate-2 p-2.5 md:p-3 rounded-lg bg-white/10 transition-all hover:bg-white/20"
                 data-testid="social-twitter"
               >
-                <Twitter className="h-5 w-5 md:h-6 md:w-6" />
+                <Youtube className="h-5 w-5 md:h-6 md:w-6" />
               </a>
               <a
                 href="https://www.instagram.com/macro.vision.academy?igsh=cHMwb3pzNGZ2YW8z"
