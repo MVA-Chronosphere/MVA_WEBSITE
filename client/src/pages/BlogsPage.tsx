@@ -267,7 +267,6 @@ At MVA Burhanpur, we're committed to helping every child develop into an effecti
 Remember, every great speaker started small – your child's first step today can spark a lifetime of confidence tomorrow.`
       }
     ],
-    
     achievements: [
       {
         Icon: Trophy,
