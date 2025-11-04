@@ -605,7 +605,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="/MVA boarding/Wellness & Preventive Care.png" 
+                        src="DSC03578.JPG" 
                         alt="Wellness & Preventive Care" 
                         className="w-full h-full object-cover"
                       />
@@ -1501,7 +1501,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Tours/tours 2.png" 
+                      src="IMG_7780.jpg" 
                       alt="Educational Tours Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1509,7 +1509,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Tours/Tours 1.jpg" 
+                      src="IMG_0308.JPG" 
                       alt="Educational Tours Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1517,7 +1517,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Tours/tours 3.png" 
+                      src="IMG_0274.JPG" 
                       alt="Educational Tours Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1842,7 +1842,7 @@ export default function LifeAtMVAPage() {
                 id="josh-club"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/josh club.jpeg')"
+                  backgroundImage: "url('DSC06312.JPG')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1882,7 +1882,7 @@ export default function LifeAtMVAPage() {
                 id="white-house"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/whitehouse.jpeg')"
+                  backgroundImage: "url('DSC09938.JPG')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,

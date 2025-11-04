@@ -1,82 +1,110 @@
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 export default function VideoHero() {
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      {/* Video Background */}
+      {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
-        controls={false}
       >
         <source src="SnapInsta.to_AQPD_CuX1v8L3JeqordNRc1ZP_m91Bx5eRMf5kCra_xf_v7SZ0OBgZWN2-vDB-KhHfGCJXK2zozV4bqCJ5pUVz2CwAHk8Pv1XVySgUQ.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
-      
-      {/* Color overlay (yellow -> green -> blue) for stylistic effect while keeping text readable */}
-      <div
-        aria-hidden
-        className={
-          "absolute inset-0 z-10 " +
-          // Use a multi-stop gradient with semi-transparent colors so the video is visible underneath
-          "bg-gradient-to-b from-grey-400/50 via-emerald-500/45 to-sky-600/50 " +
-          // Blend mode helps the colors sit nicely on top of the video
-          "mix-blend-multiply"
-        }
-        style={{
-          // Subtle slow pan animation using background-position; respects reduced motion
-          backgroundSize: "200% 200%",
-          animation: "mv-gradient-pan 12s ease-in-out infinite",
-        }}
-      />
 
-      <div className="relative z-20 h-full flex flex-col items-center justify-center text-white px-4">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 text-center max-w-5xl leading-tight animate-in fade-in slide-in-from-bottom-4 duration-700 drop-shadow-2xl">
-          Welcome to Macro Vision Academy
-        </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 md:mb-8 text-center max-w-3xl leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150 font-medium drop-shadow-2xl bg-black/20 backdrop-blur-sm px-4 py-2 rounded-lg">
-          Empowering minds, nurturing excellence through academics, sports, arts, and holistic development
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
-          <Link to="/admissions/procedure">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 md:px-10 shadow-xl hover:shadow-2xl transition-all hover:scale-105" data-testid="button-apply-now" >
-              Apply Now
-            </Button>
+      {/* Dark Overlay for Better Text Contrast */}
+      <div className="absolute inset-0 bg-black/10 z-10"></div>
+
+      {/* Text Content */}
+      <div className="absolute bottom-16 left-12 z-20 max-w-4xl">
+        <div className="text-content">
+          <h1 className="text-4xl lg:text-6xl xl:text-7xl font-black leading-tight mb-6">
+            <span className="text-white drop-shadow-2xl">
+              Welcome to
+            </span>
+            <br />
+            <span className="block mt-4">
+              <span className="bg-gradient-to-r from-blue-200 via-blue-100 to-blue-50 bg-clip-text text-transparent drop-shadow-2xl">
+                Macro Vision Academy
+              </span>
+            </span>
+          </h1>
+          
+          {/* Very Soft Background for Subheading */}
+          <div className="relative mb-8 max-w-2xl">
+            <div className="relative bg-black/5 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10 mb-6">
+              <p className="text-lg lg:text-xl xl:text-2xl text-white font-medium leading-relaxed">
+                Empowering minds, nurturing excellence through academics, sports, arts, and holistic development
+              </p>
+            </div>
+            
+            {/* Admissions Info - Now properly aligned */}
+            <div className="bg-black/5 backdrop-blur-md rounded-2xl p-6 border border-white/15">
+              <div className="text-left">
+                <p className="text-white text-lg lg:text-xl font-semibold mb-3">
+                  Admissions Open for 2026 — Join Us on{" "}
+                  <span className="text-[#fec900] font-bold">4th</span> &{" "}
+                  <span className="text-[#fec900] font-bold">18th January</span>
+                </p>
+                <p className="text-white/90 text-base lg:text-lg">
+                  Contact:{" "}
+                  <span className="text-[#fec900] font-bold">+91 93025 11111</span>
+                  {" , "}
+                  <span className="text-[#fec900] font-bold">+91 93001 10033</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Buttons - Now properly positioned */}
+        <div className="flex flex-wrap gap-4 items-center">
+          <Link 
+            to="/admissions" 
+            className="bg-[#0051a8] hover:bg-[#004080] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:-translate-y-1"
+          >
+            Apply Now
           </Link>
-          <Link to="/about/our-story">
-            <Button style={{mixBlendMode :"difference"}}
-              size="lg" 
-              variant="outline" 
-              className="bg-white/10 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white/20 px-8 md:px-10 shadow-xl hover:shadow-2xl transition-all hover:scale-105"
-              data-testid="button-explore-mva"
-            >
-              Explore MVA
-            </Button>
+          <Link 
+            to="/about/our-story" 
+            className="bg-white/10 backdrop-blur-sm border-2 border-white/40 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold hover:bg-white/20 hover:border-white hover:scale-105 transition-all duration-300 hover:-translate-y-1"
+          >
+            Explore MVA
           </Link>
         </div>
       </div>
+
+      {/* Custom styles for consistent visibility */}
+      <style>{`
+        .text-shadow-2xl {
+          text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+        
+        @keyframes gentle-float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-4px); }
+        }
+        
+        a:hover {
+          animation: gentle-float 2s ease-in-out infinite;
+        }
+
+        /* Highlight animation for important info */
+        @keyframes highlight-pulse {
+          0%, 100% { 
+            text-shadow: 0 0 10px rgba(254, 201, 0, 0.5);
+          }
+          50% { 
+            text-shadow: 0 0 20px rgba(254, 201, 0, 0.8), 0 0 30px rgba(254, 201, 0, 0.4);
+          }
+        }
+
+        .text-\\[\\#fec900\\] {
+          animation: highlight-pulse 2s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
-
-// Add keyframes for the gradient pan. Tailwind doesn't include these by default, so
-// we inject them with a CSS string. This is safe here because the project already
-// uses global CSS and PostCSS; if your setup extracts CSS differently you can
-// instead move these into `index.css`.
-const style = document.createElement("style");
-style.innerHTML = `
-@keyframes mv-gradient-pan {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-@media (prefers-reduced-motion: reduce) {
-  @keyframes mv-gradient-pan { from { background-position: 50% 50%; } to { background-position: 50% 50%; } }
-}
-`;
-document.head.appendChild(style);

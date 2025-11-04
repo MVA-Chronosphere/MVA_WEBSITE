@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { BookOpen, Brain, Target, Star, Trophy, Pencil, Lightbulb, Laptop, Bot, Cpu, Users, Mic, X } from "lucide-react";
+import { X } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Blog {
-  Icon: any;
+  image: string;
   title: string;
   desc: string;
   category: string;
@@ -15,9 +15,9 @@ export default function BlogsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const cardClass =
-    "bg-card border border-card-border rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer";
-  const iconBox =
-    "aspect-video flex items-center justify-center bg-gradient-to-br from-primary/10 to-[#0055A4]/10";
+    "bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer";
+  const imageBox =
+    "aspect-video w-full overflow-hidden bg-gray-100";
 
   const handleReadMore = (blog: Blog, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -31,9 +31,57 @@ export default function BlogsPage() {
   };
 
   const blogs = {
+    achievements: [
+      {
+        image: "MVA 02.jpg",
+        title: "JEE Main & JEE Advanced 2025 Results: MVA Burhanpur Among India's Top 10 IIT-JEE Schools",
+        desc: "Historic achievement with AIR 3, 526 JEE Advanced qualifiers, and 1,959 JEE Main successes placing MVA among elite institutions.",
+        category: "Academic Excellence",
+        content: `The much-awaited JEE Main and JEE Advanced 2025 results are out, and they've once again redrawn the map of academic excellence across India. Every year, thousands of brilliant young minds dream of securing a seat in the Indian Institutes of Technology (IITs) – and this year, Macro Vision Academy (MVA), Burhanpur, has turned that dream into a dazzling reality.
+
+From the heart of Madhya Pradesh, MVA Burhanpur has proudly emerged among the Top 10 Schools in India for JEE Preparation 2025 – a phenomenal feat that celebrates its culture of discipline, innovation, and unstoppable ambition.
+
+## JEE 2025 Results: A Record-Breaking Achievement
+This year, MVA students didn't just perform – they soared. The academy's results in both JEE Main 2025 and JEE Advanced 2025 have been nothing short of historic.
+
+### Highlights of MVA's 2025 Achievements:
+- **All India Rank 3** in JEE Advanced 2025
+- **526 students** qualified JEE Advanced 2025
+- **1,959 students** cleared JEE Main 2025
+
+These milestones firmly place MVA Burhanpur among India's most elite IIT-JEE institutions – proof that with consistent mentorship, disciplined effort, and strong moral values, world-class results can emerge from anywhere, not just the metros.
+
+## Top School in India for IIT-JEE Preparation 2025
+In a year of intense competition, MVA Burhanpur has proudly joined the league of India's most renowned JEE powerhouses – a moment that marks a new dawn for Central India. MVA's inclusion in this elite proves that top tier JEE success stories are no longer limited to traditional coaching hubs. The winds of change are blowing from Burhanpur.
+
+## What Makes MVA Burhanpur the Best School for JEE-IIT Preparation?
+### 1. Integrated Curriculum – School + JEE Coaching
+At MVA, students don't have to choose between boards and competitive exams. The academy's CBSE-aligned academic program is seamlessly integrated with structured IIT-JEE preparation, helping learners stay stress-free while achieving balance and brilliance.
+
+### 2. Expert Faculty & Personal Mentoring
+MVA's powerhouse of educators – including IIT alumni and subject experts – bring a rare blend of academic mastery and heartfelt mentorship. Small batches, one-on-one guidance, and frequent doubt-clearing sessions ensure that every student's journey is personal and powerful.
+
+### 3. Cutting-Edge Infrastructure
+From AI-based learning tools to smart classrooms and advanced labs, MVA ensures a tech-savvy, immersive, and engaging learning environment that mirrors the future of education.
+
+### 4. Holistic Growth Beyond Academics
+MVA believes that toppers are made not just by equations, but by empathy. Guided by its philosophy – "Nurturing Minds, Strengthening Morals, Shaping Humanity" – the school empowers students to grow as thinkers, innovators, and compassionate leaders.
+
+### 5. Consistent Results Year After Year
+Be it regional toppers or national rankholders, MVA's track record speaks louder than words. Year after year, it continues to raise the bar for IIT-JEE success across Central India.
+
+## The MVA Vision
+To be a centre of excellence that transforms young minds into confident, compassionate, and innovative leaders who shape a better world as exemplary global citizens.
+
+## Conclusion
+In the ever-evolving world of engineering education, MVA Burhanpur stands tall as a beacon of excellence, discipline, and innovation. Its exceptional JEE 2025 performance, featuring an AIR 3, hundreds of qualifiers, and a spot among India's Top 10 JEE Schools, highlights its continued focus on commitment to quality education and student success.
+
+For parents and students aiming for the IIT dream, Macro Vision Academy offers not just coaching, but a complete environment of inspiration, mentorship, and growth.`
+      },
+    ],
     innovation: [
       {
-        Icon: Cpu,
+        image: "MVA 05.jpg",
         title: "Chronosphere: Nurturing Innovation and Corporate Readiness at MVA Burhanpur",
         desc: "How our technical unit transforms students into innovators, problem-solvers, and future leaders through hands-on learning.",
         category: "Innovation & Skills",
@@ -114,7 +162,7 @@ Chronosphere at MVA Burhanpur is more than just a technical unit – it's a move
 By focusing on skill development, innovation, and corporate readiness, we are shaping the next generation of professionals who are confident, creative, and future-ready. Chronosphere – where imagination meets innovation, and learning turns into limitless possibilities.`
       },
       {
-        Icon: Bot,
+        image: "MVA 06.jpg",
         title: "Future-Ready Classrooms: How MVA Burhanpur is Redefining Education with AI",
         desc: "Transforming traditional learning into intelligent ecosystems with personalized, adaptive education experiences.",
         category: "EdTech Innovation",
@@ -178,7 +226,7 @@ At MVA Burhanpur, the goal is to create future-ready students who can think crit
 AI in education is not just about automating processes; it's about amplifying human potential. The harmony between human intelligence and artificial intelligence is shaping a future where learning never stops, creativity knows no bounds, and innovation becomes second nature.`
       },
       {
-        Icon: Users,
+        image: "MVA 03.jpg",
         title: "Confidence Starts with a Word: Teach Your Child the Power of Speaking Up",
         desc: "Building lifelong communication skills and leadership through public speaking and confident expression.",
         category: "Skill Development",
@@ -267,94 +315,9 @@ At MVA Burhanpur, we're committed to helping every child develop into an effecti
 Remember, every great speaker started small – your child's first step today can spark a lifetime of confidence tomorrow.`
       }
     ],
-    achievements: [
-      {
-        Icon: Trophy,
-        title: "JEE Main & JEE Advanced 2025 Results: MVA Burhanpur Among India's Top 10 IIT-JEE Schools",
-        desc: "Historic achievement with AIR 3, 526 JEE Advanced qualifiers, and 1,959 JEE Main successes placing MVA among elite institutions.",
-        category: "Academic Excellence",
-        content: `The much-awaited JEE Main and JEE Advanced 2025 results are out, and they've once again redrawn the map of academic excellence across India. Every year, thousands of brilliant young minds dream of securing a seat in the Indian Institutes of Technology (IITs) – and this year, Macro Vision Academy (MVA), Burhanpur, has turned that dream into a dazzling reality.
-
-From the heart of Madhya Pradesh, MVA Burhanpur has proudly emerged among the Top 10 Schools in India for JEE Preparation 2025 – a phenomenal feat that celebrates its culture of discipline, innovation, and unstoppable ambition.
-
-## JEE 2025 Results: A Record-Breaking Achievement
-This year, MVA students didn't just perform – they soared. The academy's results in both JEE Main 2025 and JEE Advanced 2025 have been nothing short of historic.
-
-### Highlights of MVA's 2025 Achievements:
-- **All India Rank 3** in JEE Advanced 2025
-- **526 students** qualified JEE Advanced 2025
-- **1,959 students** cleared JEE Main 2025
-
-These milestones firmly place MVA Burhanpur among India's most elite IIT-JEE institutions – proof that with consistent mentorship, disciplined effort, and strong moral values, world-class results can emerge from anywhere, not just the metros.
-
-## Top School in India for IIT-JEE Preparation 2025
-In a year of intense competition, MVA Burhanpur has proudly joined the league of India's most renowned JEE powerhouses – a moment that marks a new dawn for Central India. MVA's inclusion in this elite proves that top tier JEE success stories are no longer limited to traditional coaching hubs. The winds of change are blowing from Burhanpur.
-
-## What Makes MVA Burhanpur the Best School for JEE-IIT Preparation?
-### 1. Integrated Curriculum – School + JEE Coaching
-At MVA, students don't have to choose between boards and competitive exams. The academy's CBSE-aligned academic program is seamlessly integrated with structured IIT-JEE preparation, helping learners stay stress-free while achieving balance and brilliance.
-
-### 2. Expert Faculty & Personal Mentoring
-MVA's powerhouse of educators – including IIT alumni and subject experts – bring a rare blend of academic mastery and heartfelt mentorship. Small batches, one-on-one guidance, and frequent doubt-clearing sessions ensure that every student's journey is personal and powerful.
-
-### 3. Cutting-Edge Infrastructure
-From AI-based learning tools to smart classrooms and advanced labs, MVA ensures a tech-savvy, immersive, and engaging learning environment that mirrors the future of education.
-
-### 4. Holistic Growth Beyond Academics
-MVA believes that toppers are made not just by equations, but by empathy. Guided by its philosophy – "Nurturing Minds, Strengthening Morals, Shaping Humanity" – the school empowers students to grow as thinkers, innovators, and compassionate leaders.
-
-### 5. Consistent Results Year After Year
-Be it regional toppers or national rankholders, MVA's track record speaks louder than words. Year after year, it continues to raise the bar for IIT-JEE success across Central India.
-
-## The MVA Vision
-To be a centre of excellence that transforms young minds into confident, compassionate, and innovative leaders who shape a better world as exemplary global citizens.
-
-## Conclusion
-In the ever-evolving world of engineering education, MVA Burhanpur stands tall as a beacon of excellence, discipline, and innovation. Its exceptional JEE 2025 performance, featuring an AIR 3, hundreds of qualifiers, and a spot among India's Top 10 JEE Schools, highlights its continued focus on commitment to quality education and student success.
-
-For parents and students aiming for the IIT dream, Macro Vision Academy offers not just coaching, but a complete environment of inspiration, mentorship, and growth.`
-      },
-      {
-        Icon: Star,
-        title: "From MVA to IIT: A Journey of Perseverance",
-        desc: "Inspiring stories of how dedication and MVA's integrated curriculum helped students achieve their IIT dreams.",
-        category: "Student Success",
-        content: `[Full blog content about student success stories...]`
-      },
-      {
-        Icon: Target,
-        title: "National Sports Champion Shares Tips on Balancing Academics and Sports",
-        desc: "Insights from our athletes on excelling in both sports and academics through disciplined time management.",
-        category: "Sports & Academics",
-        content: `[Full blog content about sports achievements...]`
-      }
-    ],
-    technology: [
-      {
-        Icon: Laptop,
-        title: "Digital Learning: The Future is Here at MVA Burhanpur",
-        desc: "How we seamlessly integrate cutting-edge technology to create immersive and engaging learning experiences.",
-        category: "Digital Education",
-        content: `[Full blog content about digital learning...]`
-      },
-      {
-        Icon: Brain,
-        title: "AI in Education: Opportunities & Challenges at MVA",
-        desc: "Exploring how artificial intelligence is reshaping modern education while maintaining human connection.",
-        category: "AI Integration",
-        content: `[Full blog content about AI in education...]`
-      },
-      {
-        Icon: Cpu,
-        title: "Robotics and Coding: Building Future Innovators at Chronosphere",
-        desc: "Hands-on learning in robotics, IoT, and programming that prepares students for tech-driven careers.",
-        category: "Technical Skills",
-        content: `[Full blog content about robotics and coding...]`
-      }
-    ],
     parenting: [
       {
-        Icon: BookOpen,
+        image: "screentime.jpeg",
         title: "How Screen Time Affects Your Child's Brain Development",
         desc: "Practical guidance on balancing digital exposure with real-world experiences for healthy cognitive growth.",
         category: "Child Development",
@@ -424,25 +387,12 @@ At MVA Burhanpur, we believe in guiding children and parents toward mindful digi
 
 Because real growth happens not just on screens, but in the world beyond them.`
       },
-      {
-        Icon: Mic,
-        title: "Building Confident Communicators: Public Speaking for Children",
-        desc: "Essential tips to help your child develop strong communication skills and self-expression.",
-        category: "Communication Skills",
-        content: `[Full blog content about public speaking...]`
-      },
-      {
-        Icon: Lightbulb,
-        title: "Supporting Your Child's Mental Health in Competitive Environments",
-        desc: "Strategies to address emotional needs while maintaining academic excellence and personal growth.",
-        category: "Mental Wellness",
-        content: `[Full blog content about mental health...]`
-      }
     ]
   };
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
+    <div className="min-h-screen w-full overflow-x-hidden bg-gray-50">
+      {/* Header Section */}
       <div className="bg-gradient-to-r from-primary to-[#0055A4] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Blogs & Insights</h1>
@@ -452,35 +402,40 @@ Because real growth happens not just on screens, but in the world beyond them.`
         </div>
       </div>
 
+      {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <Tabs defaultValue="innovation" className="w-full">
-          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-4 mb-12">
-            <TabsTrigger value="innovation">Innovation</TabsTrigger>
-            <TabsTrigger value="achievements">Achievements</TabsTrigger>
-            <TabsTrigger value="technology">Technology</TabsTrigger>
-            <TabsTrigger value="parenting">Parenting</TabsTrigger>
-          </TabsList>
-
-          {/* Innovation */}
+  <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 mb-12">
+    <TabsTrigger value="achievements" data-testid="tab-achievements">Achievements</TabsTrigger>
+    <TabsTrigger value="innovation" data-testid="tab-innovation">Innovation</TabsTrigger>
+    <TabsTrigger value="parenting" data-testid="tab-parenting">Parenting</TabsTrigger>
+  </TabsList>
+          {/* Innovation Tab */}
           <TabsContent value="innovation" className="space-y-6">
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className={`grid gap-8 ${blogs.innovation.length === 1 ? 'justify-center' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
               {blogs.innovation.map((blog, i) => (
                 <article 
                   key={i} 
                   className={cardClass}
+                  style={blogs.innovation.length === 1 ? { maxWidth: '400px', margin: '0 auto' } : {}}
                 >
-                  <div className={iconBox}>
-                    <blog.Icon className="w-16 h-16 text-primary" />
+                  <div className={imageBox}>
+                    <img 
+                      src={blog.image} 
+                      alt={blog.title}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    />
                   </div>
-                  <div className="p-6 md:p-8">
-                    <div className="text-sm text-primary font-medium mb-2">{blog.category}</div>
-                    <h3 className="text-xl font-bold text-card-foreground mb-3">{blog.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{blog.desc}</p>
+                  <div className="p-6">
+                    <div className="text-sm text-primary font-semibold mb-2">{blog.category}</div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">{blog.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">{blog.desc}</p>
                     <button 
-                      className="text-primary font-medium text-sm hover:underline"
+                      className="text-primary font-semibold text-sm hover:text-primary/80 transition-colors duration-200 flex items-center gap-1"
                       onClick={(e) => handleReadMore(blog, e)}
                     >
-                      Read More →
+                      Read More
+                      <span className="text-lg">→</span>
                     </button>
                   </div>
                 </article>
@@ -488,26 +443,32 @@ Because real growth happens not just on screens, but in the world beyond them.`
             </div>
           </TabsContent>
 
-          {/* Achievements */}
+          {/* Achievements Tab */}
           <TabsContent value="achievements" className="space-y-6">
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className={`grid gap-8 ${blogs.achievements.length === 1 ? 'justify-center' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
               {blogs.achievements.map((blog, i) => (
                 <article 
                   key={i} 
                   className={cardClass}
+                  style={blogs.achievements.length === 1 ? { maxWidth: '400px', margin: '0 auto' } : {}}
                 >
-                  <div className={iconBox}>
-                    <blog.Icon className="w-16 h-16 text-primary" />
+                  <div className={imageBox}>
+                    <img 
+                      src={blog.image} 
+                      alt={blog.title}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    />
                   </div>
-                  <div className="p-6 md:p-8">
-                    <div className="text-sm text-primary font-medium mb-2">{blog.category}</div>
-                    <h3 className="text-xl font-bold text-card-foreground mb-3">{blog.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{blog.desc}</p>
+                  <div className="p-6">
+                    <div className="text-sm text-primary font-semibold mb-2">{blog.category}</div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">{blog.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">{blog.desc}</p>
                     <button 
-                      className="text-primary font-medium text-sm hover:underline"
+                      className="text-primary font-semibold text-sm hover:text-primary/80 transition-colors duration-200 flex items-center gap-1"
                       onClick={(e) => handleReadMore(blog, e)}
                     >
-                      Read More →
+                      Read More
+                      <span className="text-lg">→</span>
                     </button>
                   </div>
                 </article>
@@ -515,53 +476,32 @@ Because real growth happens not just on screens, but in the world beyond them.`
             </div>
           </TabsContent>
 
-          {/* Technology */}
-          <TabsContent value="technology" className="space-y-6">
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogs.technology.map((blog, i) => (
-                <article 
-                  key={i} 
-                  className={cardClass}
-                >
-                  <div className={iconBox}>
-                    <blog.Icon className="w-16 h-16 text-primary" />
-                  </div>
-                  <div className="p-6 md:p-8">
-                    <div className="text-sm text-primary font-medium mb-2">{blog.category}</div>
-                    <h3 className="text-xl font-bold text-card-foreground mb-3">{blog.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{blog.desc}</p>
-                    <button 
-                      className="text-primary font-medium text-sm hover:underline"
-                      onClick={(e) => handleReadMore(blog, e)}
-                    >
-                      Read More →
-                    </button>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </TabsContent>
-
-          {/* Parenting */}
+          {/* Parenting Tab */}
           <TabsContent value="parenting" className="space-y-6">
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className={`grid gap-8 ${blogs.parenting.length === 1 ? 'justify-center' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
               {blogs.parenting.map((blog, i) => (
                 <article 
                   key={i} 
                   className={cardClass}
+                  style={blogs.parenting.length === 1 ? { maxWidth: '400px', margin: '0 auto' } : {}}
                 >
-                  <div className={iconBox}>
-                    <blog.Icon className="w-16 h-16 text-primary" />
+                  <div className={imageBox}>
+                    <img 
+                      src={blog.image} 
+                      alt={blog.title}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    />
                   </div>
-                  <div className="p-6 md:p-8">
-                    <div className="text-sm text-primary font-medium mb-2">{blog.category}</div>
-                    <h3 className="text-xl font-bold text-card-foreground mb-3">{blog.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{blog.desc}</p>
+                  <div className="p-6">
+                    <div className="text-sm text-primary font-semibold mb-2">{blog.category}</div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">{blog.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">{blog.desc}</p>
                     <button 
-                      className="text-primary font-medium text-sm hover:underline"
+                      className="text-primary font-semibold text-sm hover:text-primary/80 transition-colors duration-200 flex items-center gap-1"
                       onClick={(e) => handleReadMore(blog, e)}
                     >
-                      Read More →
+                      Read More
+                      <span className="text-lg">→</span>
                     </button>
                   </div>
                 </article>
@@ -569,29 +509,6 @@ Because real growth happens not just on screens, but in the world beyond them.`
             </div>
           </TabsContent>
         </Tabs>
-
-        {/* Newsletter Section */}
-        {/* <div className="text-center mt-16">
-          <div className="bg-gradient-to-r from-primary/10 to-[#0055A4]/10 rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-card-foreground mb-4">
-              Stay Updated with MVA Insights
-            </h2>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest educational insights, parenting tips, 
-              and updates from Macro Vision Academy Burhanpur.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-              />
-              <button className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div> */}
       </div>
 
       {/* Blog Modal */}
@@ -601,8 +518,8 @@ Because real growth happens not just on screens, but in the world beyond them.`
             {/* Modal Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
               <div>
-                <span className="text-sm text-primary font-medium">{selectedBlog.category}</span>
-                <h2 className="text-2xl font-bold text-card-foreground mt-1">{selectedBlog.title}</h2>
+                <span className="text-sm text-primary font-semibold">{selectedBlog.category}</span>
+                <h2 className="text-2xl font-bold text-gray-900 mt-1">{selectedBlog.title}</h2>
               </div>
               <button
                 onClick={closeModal}
@@ -618,19 +535,20 @@ Because real growth happens not just on screens, but in the world beyond them.`
                 {selectedBlog.content.split('\n').map((paragraph, index) => {
                   if (paragraph.startsWith('## ')) {
                     return (
-                      <h2 key={index} className="text-xl font-bold text-card-foreground mt-6 mb-4">
+                      <h2 key={index} className="text-xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b border-gray-200">
                         {paragraph.replace('## ', '')}
                       </h2>
                     );
                   } else if (paragraph.startsWith('### ')) {
                     return (
-                      <h3 key={index} className="text-lg font-bold text-card-foreground mt-4 mb-3">
+                      <h3 key={index} className="text-lg font-bold text-gray-800 mt-6 mb-3">
                         {paragraph.replace('### ', '')}
                       </h3>
                     );
                   } else if (paragraph.startsWith('- ')) {
                     return (
-                      <li key={index} className="text-muted-foreground mb-1 ml-4">
+                      <li key={index} className="text-gray-700 mb-2 ml-4">
+                        <span className="text-primary mr-2">•</span>
                         {paragraph.replace('- ', '')}
                       </li>
                     );
@@ -638,7 +556,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
                     return <br key={index} />;
                   } else {
                     return (
-                      <p key={index} className="text-muted-foreground mb-4 leading-relaxed">
+                      <p key={index} className="text-gray-700 mb-4 leading-relaxed">
                         {paragraph}
                       </p>
                     );
@@ -655,7 +573,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
                 </div>
                 <button
                   onClick={closeModal}
-                  className="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-300"
+                  className="bg-primary text-primary-foreground px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
                 >
                   Close
                 </button>

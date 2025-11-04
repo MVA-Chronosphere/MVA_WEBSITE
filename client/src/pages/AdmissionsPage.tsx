@@ -8,6 +8,61 @@ interface FAQ {
   a: string;
 }
 
+// ImageWithFallback Component
+const ImageWithFallback: React.FC<{
+  src: string;
+  alt: string;
+  className?: string;
+  fallbackSrc?: string;
+}> = ({ src, alt, className = "", fallbackSrc = "/images/placeholder.jpg" }) => {
+  const [imgSrc, setImgSrc] = useState(src);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  return (
+    <div className="relative">
+      {loading && (
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse flex items-center justify-center rounded-2xl">
+          <div className="flex items-center gap-2 text-gray-500">
+            <div className="w-4 h-4 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
+            <span>Loading image...</span>
+          </div>
+        </div>
+      )}
+      
+      {error && (
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center rounded-2xl border-2 border-dashed border-blue-200">
+          <div className="text-center text-blue-600">
+            <FileText className="w-12 h-12 mx-auto mb-2 opacity-60" />
+            <p className="font-medium">Image not available</p>
+          </div>
+        </div>
+      )}
+      
+      <img
+        src={imgSrc}
+        alt={alt}
+        className={`${className} ${loading || error ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 rounded-2xl`}
+        onLoad={() => {
+          setLoading(false);
+          setError(false);
+        }}
+        onError={() => {
+          if (imgSrc !== fallbackSrc) {
+            setImgSrc(fallbackSrc);
+            setError(false);
+          } else {
+            setError(true);
+            setLoading(false);
+          }
+        }}
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  );
+};
+
 const AdmissionsPage: React.FC = () => {
   const navigate = useNavigate();
 
@@ -161,10 +216,11 @@ const AdmissionsPage: React.FC = () => {
             
             <div className="relative animate-fade-in-right">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <img 
-                  src="campus.jpg" 
-                  alt="School campus" 
+                <ImageWithFallback 
+                  src="campus.jpg"
+                  alt="Macro Vision Academy Campus"
                   className="w-full h-96 object-cover"
+                  fallbackSrc="/images/admissions/campus-fallback.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-70"></div>
               </div>
@@ -278,11 +334,12 @@ const AdmissionsPage: React.FC = () => {
                 </button>
               </div>
               <div className="flex justify-center">
-                <div className="bg-gray-100 border-2 border-dashed rounded-xl w-full h-80 flex items-center justify-center">
-                  <img 
-                    src="regesiterillustration.png" 
-                    alt="Register illustration" 
-                    className="w-full h-96 object-cover"
+                <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl w-full h-80 flex items-center justify-center overflow-hidden">
+                  <ImageWithFallback 
+                    src="regesiterillustration.png"
+                    alt="Online Registration Illustration"
+                    className="w-full h-80 object-contain"
+                    fallbackSrc="/images/admissions/register-fallback.png"
                   />
                 </div>
               </div>
@@ -424,65 +481,64 @@ const AdmissionsPage: React.FC = () => {
             </p>
           </div>
 
-       <div className="grid md:grid-cols-2 gap-6">
-  {samplePapers.map((paper, i) => (
-    <div
-      key={i}
-      className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
-    >
-      <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-        <FileText className="w-5 h-5 text-blue-600" />
-      </div>
-      <div className="flex-1">
-        <h3 className="font-semibold text-blue-900 mb-1">{paper.title}</h3>
-        <a
-          href={paper.pdfFile}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
-        >
-          <Download className="w-4 h-4" />
-          Download PDF
-        </a>
-      </div>
-    </div>
-  ))}
-</div>
+          <div className="grid md:grid-cols-2 gap-6">
+            {samplePapers.map((paper, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
+              >
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                  <FileText className="w-5 h-5 text-blue-600" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-blue-900 mb-1">{paper.title}</h3>
+                  <a
+                    href={paper.pdfFile}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download PDF
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
 
-{/* ANSWER KEYS ROW */}
-<div className="mt-12">
-  <h3 className="text-xl font-semibold text-blue-900 mb-6 text-center">
-    Answer Keys
-  </h3>
+          {/* ANSWER KEYS ROW */}
+          <div className="mt-12">
+            <h3 className="text-xl font-semibold text-blue-900 mb-6 text-center">
+              Answer Keys
+            </h3>
 
-  <div className="grid md:grid-cols-2 gap-6">
-    {samplePapers.map((paper, i) => (
-      <div
-        key={`key-${i}`}
-        className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
-      >
-        <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-          <FileText className="w-5 h-5 text-blue-600" />
-        </div>
-        <div className="flex-1">
-          <h3 className="font-semibold text-blue-900 mb-1">
-            {paper.answerKey}
-          </h3>
-          <a
-            href={paper.answerKeyPdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
-          >
-            <Download className="w-4 h-4" />
-            Download Answer Key
-          </a>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-
+            <div className="grid md:grid-cols-2 gap-6">
+              {samplePapers.map((paper, i) => (
+                <div
+                  key={`key-${i}`}
+                  className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
+                >
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                    <FileText className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-blue-900 mb-1">
+                      {paper.answerKey}
+                    </h3>
+                    <a
+                      href={paper.answerKeyPdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
+                    >
+                      <Download className="w-4 h-4" />
+                      Download Answer Key
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

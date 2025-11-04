@@ -400,11 +400,11 @@ const StudentAdmissionForm: React.FC = () => {
               <span className="mr-4">📞 Contact No: +91 9302511111, 9300110033</span>
             </div>
             <div>
-              <span>✉️ Pros@mvaburhanpur.com</span>
+              <span>✉️ pros@mvaburhanpur.com</span>
             </div>
           </div>
           <div className="flex-shrink-0">
-            <div className="w-32 h-10 bg-blue-800 rounded-md flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-30 h-10 rounded-md flex items-center justify-center text-white font-bold text-sm">
               MACRO VISION ACADEMY
             </div>
           </div>
