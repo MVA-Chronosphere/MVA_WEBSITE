@@ -623,14 +623,37 @@ export default function AboutUsPage() {
 
       {/* Founder's Vision */}
       <section className="py-12 sm:py-16 bg-background" id="founders-vision">
-        <div className="max-w-7xl mx-auto px-4">
-          <SectionHeader title="Founder's Vision" />
-          <VideoEmbed 
-            title="Message from Our Founders - Anand Sir and Manjusha Ma'am"
-            description="Hear directly from our visionary founders about their dream of creating an institution that transforms lives through education."
-          />
+  <div className="max-w-7xl mx-auto px-4">
+    <SectionHeader title="Founder's Vision" />
+    
+    {/* Video Player */}
+    <div className="max-w-4xl mx-auto">
+      <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border">
+        <div className="aspect-video w-full">
+          <video
+            className="w-full h-full object-cover"
+            controls
+            poster="/founder-poster.jpg" // Optional: add a poster image
+            preload="metadata"
+          >
+            <source src="/foundermessage.webm" type="video/webm" />
+            <source src="/foundermessage.mp4" type="video/mp4" /> {/* Optional: add MP4 fallback */}
+            Your browser does not support the video tag.
+          </video>
         </div>
-      </section>
+        <div className="p-6 sm:p-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
+            Message from Our Founders - Anand Sir and Manjusha Ma'am
+          </h3>
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+            Hear directly from our visionary founders about their dream of creating an institution that transforms lives through education.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Our Society */}
       <section className="py-12 sm:py-16 bg-muted/30" id="our-society">
