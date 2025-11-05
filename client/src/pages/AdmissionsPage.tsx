@@ -217,7 +217,7 @@ const AdmissionsPage: React.FC = () => {
             <div className="relative animate-fade-in-right">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <ImageWithFallback 
-                  src="campus.jpg"
+                  src="campus.webp"
                   alt="Macro Vision Academy Campus"
                   className="w-full h-96 object-cover"
                   fallbackSrc="/images/admissions/campus-fallback.jpg"
@@ -336,7 +336,7 @@ const AdmissionsPage: React.FC = () => {
               <div className="flex justify-center">
                 <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-xl w-full h-80 flex items-center justify-center overflow-hidden">
                   <ImageWithFallback 
-                    src="regesiterillustration.png"
+                    src="regesiterillustration.webp"
                     alt="Online Registration Illustration"
                     className="w-full h-80 object-contain"
                     fallbackSrc="/images/admissions/register-fallback.png"

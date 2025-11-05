@@ -159,21 +159,21 @@ const aboutData: AboutData = {
         name: "Mr. Anand Prakash Chouksey",
         role: "Founder & Chairman",
         // experience: "30+ Years Experience",
-        image: "13.jpg",
+        image: "13.webp",
         description: "Our leadership is headed by Mr. Anand Prakash Chouksey, a man of vision whose life's work reflects unwavering commitment to education, healthcare, and community development. Recently honored with the 25th International Mother Teresa Award. From age 15, he chose teaching over engineering, established Sonu Coaching Classes, and founded New Vision School. He founded Macro Vision Academy in 2002–03, which grew into a top CBSE school. In 2017, he established the All is Well Multispeciality Hospital. Through education and healthcare, he has dedicated his life to empowering people and shaping a brighter future."
       },
       {
         name: "Mrs. Manjusha Chouksey",
         role: "Founder & Academic Director",
         // experience: "20+ Years Experience",
-        image: "14.jpg",
+        image: "14.webp",
         description: "Mrs. Manjusha Chouksey, President of Anand Educational Technical and Vocational Society, is a woman of vision, wisdom, and inspiration. A Gold Medalist in Botany (M.Sc.), she began as a Biology teacher and became Founder of Macro Vision Academy. For over two decades, she has been the guiding force behind MVA's success. Known as Manju Ma'am, she leads the competitive exam wing and is admired for innovative teaching methods and mentorship. Her workshops including Mid-Brain Activation have touched thousands of students. Honored with Times Women Achievers Award in 2023, she continues to inspire generations to strive for excellence."
       },
       {
         name: "Mr. Kabir Chouksey",
         role: "Director",
         // experience: "8+ Years Experience",
-        image: "15.jpg",
+        image: "15.webp",
         description: "Mr. Kabir Chouksey, Director of Macro Vision Academy and All is Well Multispeciality Hospital, represents next-generation leadership. Serving as Treasurer for over eight years, his role has been instrumental in transforming both institutions. He's the visionary behind Chronosphere Innovation Lab with Coding Labs, AI & ML Labs, Advanced Robotics. A graduate of Australian National University on full scholarship, he founded Sir Taj Farms Training Centre in 2018. During the pandemic, he demonstrated fearlessness ensuring quality healthcare. At a young age, he embodies innovation, decisiveness, and passion, preparing students to lead, innovate, and serve society."
       }
     ],
@@ -182,7 +182,7 @@ const aboutData: AboutData = {
         name: "Mrs. Devanshi Chouksey",
         role: "Director",
         // experience: "4+ Years Experience",
-        image: "17.jpg",
+        image: "17.webp",
         qualification: "M.Sc, M.Sc (Ireland), PGD & PGC",
         description: "With 4+ years of experience in educational administration, Mrs. Chouksey brings innovative approaches to academic excellence and student development."
       },
@@ -190,7 +190,7 @@ const aboutData: AboutData = {
         name: "Ms. Antra Chouksey",
         role: "Education Development Manager",
         // experience: "3 Years Experience",
-        image: "16.jpg",
+        image: "16.webp",
         qualification: "M.A EdTech (UK), B.Sc (USA)",
         description: "Ms. Chouksey spearheads educational development initiatives with 3+ years of experience in curriculum design and educational technology integration."
       },
@@ -198,7 +198,7 @@ const aboutData: AboutData = {
         name: "Mr. Jasvir Singh Parmar",
         role: "Principal",
         // experience: "32 Years Experience",
-        image: "03.jpg",
+        image: "03.webp",
         qualification: "M.A (Lit) & B.Ed",
         description: "Mr. Parmar brings 32+ years of educational leadership, dedicated to fostering academic excellence and character development in students."
       },
@@ -206,7 +206,7 @@ const aboutData: AboutData = {
         name: "Mrs. Monika Agrawal",
         role: "Vice-Principal",
         // experience: "25 Years Experience",
-        image: "05.jpg",
+        image: "05.webp",
         qualification: "M.Sc. (Chemistry) & B.Ed",
         description: "Mrs. Agrawal brings 25+ years of experience in academic administration and educational leadership, specializing in science education and student mentorship."
       }
@@ -218,7 +218,7 @@ const aboutData: AboutData = {
       name: "Mr. Vijay Sukhwani",
       role: "Chief Technical Officer Group",
       // experience: "20+ Years Experience",
-      image: "01.jpg",
+      image: "01.webp",
       qualification: "M.Sc (Mathematics) & B.Ed",
       description: "With 20+ years of experience in technical education and mathematics, Mr. Sukhwani leads our technical initiatives and ensures innovative teaching methodologies across the institution."
     },
@@ -226,7 +226,7 @@ const aboutData: AboutData = {
       name: "Dr. Santosh Siloriya",
       role: "Head of Biology Department",
       // experience: "22+ Years Experience",
-      image: "12.jpg",
+      image: "12.webp",
       qualification: "BAMS",
       description: "Dr. Siloriya brings 22+ years of expertise in biological sciences and medical education, leading our biology department with innovative teaching methods and research-oriented approach."
     },
@@ -234,7 +234,7 @@ const aboutData: AboutData = {
       name: "Mrs. Neha Suri",
       role: "Head of Commerce Department",
       // experience: "20+ Years Experience",
-      image: "09.jpg",
+      image: "09.webp",
       qualification: "M.Com, MBA & B.Ed",
       description: "With 20+ years in commerce education, Mrs. Suri combines academic excellence with practical business insights to prepare students for modern commercial challenges."
     },
@@ -242,7 +242,7 @@ const aboutData: AboutData = {
       name: "Dr. Arun Sharma",
       role: "Chief Residential Warden",
       // experience: "23+ Years Experience",
-      image: "04.jpg",
+      image: "04.webp",
       qualification: "M.P.Ed & Ph.D",
       description: "Dr. Sharma oversees residential facilities with 23+ years of experience, ensuring a safe, nurturing environment that promotes holistic student development."
     }
@@ -253,7 +253,7 @@ const aboutData: AboutData = {
       name: "Mrs. Vibha Jetly",
       role: "Deputy Principal Petals",
       // experience: "23+ Years Experience",
-      image: "02.jpg",
+      image: "02.webp",
       qualification: "M.A Sociology & B.Ed",
       description: "With 23+ years of experience in educational leadership, Mrs. Jetly brings expertise in sociology and educational development to guide our middle wing students."
     },
@@ -261,7 +261,7 @@ const aboutData: AboutData = {
       name: "Mrs. Sonia Chhabra",
       role: "Academic Coordinator",
       // experience: "10+ Years Experience",
-      image: "11.jpg",
+      image: "11.webp",
       qualification: "M.Sc (Mathematics) & B.Ed",
       description: "Mrs. Chhabra coordinates academic programs with 10+ years of expertise in mathematics education, ensuring excellence in STEM learning for middle wing students."
     },
@@ -269,7 +269,7 @@ const aboutData: AboutData = {
       name: "Mr. Jay Khatri",
       role: "Academic Coordinator",
       // experience: "17+ Years Experience",
-      image: "06.jpg",
+      image: "06.webp",
       qualification: "MCA",
       description: "Mr. Khatri brings 17+ years of technology and computer applications expertise, leading digital education initiatives and academic coordination for middle wing."
     },
@@ -277,7 +277,7 @@ const aboutData: AboutData = {
       name: "Mr. Gaurav Chhabra",
       role: "Head of Training and Development",
       // experience: "24+ Years Experience",
-      image: "07.jpg",
+      image: "07.webp",
       qualification: "M.A, MBA & B.Ed",
       description: "Mr. Chhabra leads training and development with 24+ years of experience, combining business acumen with educational expertise to enhance teaching methodologies."
     }
@@ -288,7 +288,7 @@ const aboutData: AboutData = {
       name: "Mrs. Sheetal Popli",
       role: "Deputy Principal Mantra",
       // experience: "24+ Years Experience",
-      image: "10.jpg",
+      image: "10.webp",
       qualification: "M.A & B.Ed",
       description: "With 24+ years of experience in educational leadership, Mrs. Popli brings expertise in arts and education to guide our junior wing students with care and dedication."
     },
@@ -296,7 +296,7 @@ const aboutData: AboutData = {
       name: "Mrs. Fatima Syed",
       role: "Academic Coordinator",
       // experience: "16+ Years Experience",
-      image: "08.jpg",
+      image: "08.webp",
       qualification: "B.Com (Comp) & D.El.Ed",
       description: "Mrs. Syed coordinates academic programs with 16+ years of expertise in commerce and elementary education, ensuring quality learning experiences for junior wing students."
     }
@@ -305,15 +305,15 @@ const aboutData: AboutData = {
   knowledgePartners: [
     {
       name: "Central Board of Secondary Education",
-      image: "/cbse-logo.png"
+      image: "/cbse-logo.webp"
     },
     {
       name: "Apple Distinguished School",
-      image: "/apple school.png"
+      image: "/apple school.webp"
     },
     {
       name: "Boarding School Association of India",
-      image: "/Boarding School Association of India.png"
+      image: "/Boarding School Association of India.webp"
     },
     {
       name: "FSSAI Accreditation",
@@ -626,7 +626,7 @@ export default function AboutUsPage() {
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader title="Founder's Vision" />
           <VideoEmbed 
-            title="Message from Our Founders - Anand Sir and Manjusha Mam"
+            title="Message from Our Founders - Anand Sir and Manjusha Ma'am"
             description="Hear directly from our visionary founders about their dream of creating an institution that transforms lives through education."
           />
         </div>

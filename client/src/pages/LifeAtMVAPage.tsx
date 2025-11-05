@@ -165,7 +165,7 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/2">
                   <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                     <img 
-                      src="/MVA boarding/divine wing.jpeg" 
+                      src="/MVA boarding/divine wing.webp" 
                       alt="Vision Divine Hostel - Girls' Wing Senior" 
                       className="w-full h-full object-cover"
                     />
@@ -176,7 +176,7 @@ export default function LifeAtMVAPage() {
               {/* Vision Petals Hostel */}
               <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mb-12">
                 <div className="lg:w-1/2 space-y-4">
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">🌺 Vision Petals Hostel (Girls' Wing – Senior)</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">Vision Petals Hostel (Girls' Wing – Senior)</h3>
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed">
                       ➤ Built in 2014, spanning 80,000 sq. ft.
@@ -198,7 +198,7 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/2">
                   <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                     <img 
-                      src="/MVA boarding/visionpetals.png" 
+                      src="/MVA boarding/visionpetals.webp" 
                       alt="Vision Petals Hostel - Girls' Wing Senior" 
                       className="w-full h-full object-cover"
                     />
@@ -209,7 +209,7 @@ export default function LifeAtMVAPage() {
               {/* Vision Paradise Hostel */}
               <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 mb-12">
                 <div className="lg:w-1/2 space-y-4">
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">🏞 Vision Paradise Hostel (Boys' Wing – Senior)</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">Vision Paradise Hostel (Boys' Wing – Senior)</h3>
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed">
                       ➤ Constructed 2015–2017, covering 1,50,000 sq. ft.
@@ -231,7 +231,7 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/2">
                   <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                     <img 
-                      src="/MVA boarding/visionparadise.png" 
+                      src="/MVA boarding/visionparadise.webp" 
                       alt="Vision Paradise Hostel - Boys' Wing Senior" 
                       className="w-full h-full object-cover"
                     />
@@ -242,7 +242,7 @@ export default function LifeAtMVAPage() {
               {/* Vision Passion Hostel */}
               <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 mb-12">
                 <div className="lg:w-1/2 space-y-4">
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">🔥 Vision Passion Hostel (Boys' Wing – Senior)</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">Vision Passion Hostel (Boys' Wing – Senior)</h3>
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed">
                       ➤ First hostel at MVA, established in 2007
@@ -264,7 +264,7 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/2">
                   <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-">
                     <img 
-                      src="passion.jpg" 
+                      src="passion.webp" 
                       alt="Vision Passion Hostel - Boys' Wing Senior" 
                       className="w-full h-full "
                     />
@@ -275,7 +275,7 @@ export default function LifeAtMVAPage() {
               {/* Vision Udaan Hostel */}
               <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 mb-12">
                 <div className="lg:w-1/2 space-y-4">
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">✈️ Vision Udaan Hostel (Boys' Wing – Middle, Classes 5–8)</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">Vision Udaan Hostel (Boys' Wing – Middle, Classes 5–8)</h3>
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed">
                       ➤ Dedicated to boys of classes 5–8, with AC rooms
@@ -297,7 +297,7 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/2">
                   <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                     <img 
-                      src="/MVA boarding/udan.jpeg" 
+                      src="/MVA boarding/udan.webp" 
                       alt="Vision Udaan Hostel - Boys' Wing Middle" 
                       className="w-full h-full object-cover"
                     />
@@ -350,7 +350,7 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/2">
                   <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                     <img 
-                      src="/MVA boarding/hostel room 2.jpg" 
+                      src="Petals Hostel_11zon.webp" 
                       alt="Hostel Life at MVA" 
                       className="w-full h-full object-cover"
                     />
@@ -371,21 +371,21 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/3 space-y-6">
                   <div className="border-4 border-blue-900 rounded-lg h-48 overflow-hidden">
                     <img 
-                      src="/MVA boarding/swad hostel food 1.jpg" 
+                      src="/MVA boarding/swad hostel food 1.webp" 
                       alt="FSSAI Kitchen" 
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="border-4 border-blue-900 rounded-lg h-48 overflow-hidden">
                     <img 
-                      src="/MVA boarding/food 2.jpg" 
+                      src="/MVA boarding/food 2.webp" 
                       alt="Swad Sansad Dining Hall" 
                       className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="border-4 border-blue-900 rounded-lg h-48 overflow-hidden">
                     <img 
-                      src="/MVA boarding/food 3.jpg" 
+                      src="/MVA boarding/food 3.webp" 
                       alt="Nutritious Meals" 
                       className="w-full h-full object-cover"
                     />
@@ -453,7 +453,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="/MVA boarding/cctv .jpg" 
+                        src="/MVA boarding/cctv .webp" 
                         alt="Physical Security at MVA" 
                         className="w-full h-full object-cover"
                       />
@@ -475,7 +475,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="/MVA boarding/Emergency Preparedness 1.jpeg" 
+                        src="/MVA boarding/Emergency Preparedness 1.webp" 
                         alt="Emergency Preparedness" 
                         className="w-full h-full object-cover"
                       />
@@ -497,7 +497,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="/MVA boarding/Health & Hygiene Practices.jpg" 
+                        src="/MVA boarding/Health & Hygiene Practices.webp" 
                         alt="Health & Hygiene Practices" 
                         className="w-full h-full object-cover"
                       />
@@ -519,7 +519,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="/MVA boarding/Digital Safety & Cybersecurity.jpg" 
+                        src="/MVA boarding/Digital Safety & Cybersecurity.webp" 
                         alt="Digital Safety & Cybersecurity" 
                         className="w-full h-full object-cover"
                       />
@@ -561,7 +561,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="/MVA boarding/24-7 On-Campus Medical Support.jpg" 
+                        src="/MVA boarding/24-7 On-Campus Medical Support.webp" 
                         alt="24/7 On-Campus Medical Support" 
                         className="w-full h-full object-cover"
                       />
@@ -583,7 +583,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="/MVA boarding/Regular Health Monitoring.jpg" 
+                        src="/MVA boarding/Regular Health Monitoring.webp" 
                         alt="Regular Health Monitoring" 
                         className="w-full h-full object-cover"
                       />
@@ -605,7 +605,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="DSC03578.JPG" 
+                        src="DSC03578.webp" 
                         alt="Wellness & Preventive Care" 
                         className="w-full h-full object-cover"
                       />
@@ -772,7 +772,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/darbar/darbar.jpeg" 
+                      src="/MVA Culture/darbar/darbar.webp" 
                       alt="Darbaar Sessions Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -780,7 +780,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/darbar/darbar 3.JPG" 
+                      src="/MVA Culture/darbar/darbar 3.webp" 
                       alt="Darbaar Sessions Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -788,7 +788,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/darbar/darbar 2.jpg" 
+                      src="/MVA Culture/darbar/darbar 2.webp" 
                       alt="Darbaar Sessions Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -810,7 +810,7 @@ export default function LifeAtMVAPage() {
                     </p>
                     
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-primary">🪔 What Makes These Sessions Unique?</h4>
+                      <h4 className="text-xl font-bold text-primary">What Makes These Sessions Unique?</h4>
                       <div className="space-y-2">
                         <p className="text-muted-foreground leading-relaxed">➤ Open Dialogue: Students freely ask questions about finance, careers, religion, global culture, science & technology, mental health, and life management.</p>
                         <p className="text-muted-foreground leading-relaxed">➤ Life Lessons: Anand Sir imparts timeless values of humility, discipline, compassion, and leadership.</p>
@@ -822,7 +822,7 @@ export default function LifeAtMVAPage() {
                   
                   <div className="space-y-6">
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-primary">🌿 Impact on Students</h4>
+                      <h4 className="text-xl font-bold text-primary">Impact on Students</h4>
                       <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
                         For many young learners, navigating life's big questions can be confusing. Anand Sir's mentorship bridges that gap, helping students connect knowledge with purpose. These sessions:
                       </p>
@@ -837,7 +837,7 @@ export default function LifeAtMVAPage() {
                     </div>
 
                     <div className="bg-primary/10 p-4 rounded-lg">
-                      <h4 className="text-xl font-bold text-primary mb-2">✨ A Balance of Academic Excellence & Life Wisdom</h4>
+                      <h4 className="text-xl font-bold text-primary mb-2">A Balance of Academic Excellence & Life Wisdom</h4>
                       <p className="text-muted-foreground leading-relaxed">
                         At Macro Vision Academy, education goes beyond classrooms. Through Darbar & Fortnight Sessions, students receive the rare opportunity to learn directly from an experienced mentor who combines academic brilliance with life wisdom. This unique tradition ensures that every child at MVA doesn't just excel in exams—but also grows into a compassionate, confident, and future-ready leader.
                       </p>
@@ -860,7 +860,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Sports and Athletics/Sports and Athletics 3.jpg" 
+                      src="/MVA Culture/Sports and Athletics/Sports and Athletics 3.webp" 
                       alt="Sports & Athletics Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -868,7 +868,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Sports and Athletics/Sports and Athletics 2.JPG" 
+                      src="/MVA Culture/Sports and Athletics/Sports and Athletics 2.webp" 
                       alt="Sports & Athletics Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -876,7 +876,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Sports and Athletics/Sports and Athletics 1.jpeg" 
+                      src="/MVA Culture/Sports and Athletics/Sports and Athletics 1.webp" 
                       alt="Sports & Athletics Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -960,7 +960,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Zenith Circle/Zenith Circle 2.png" 
+                      src="/MVA Culture/Zenith Circle/Zenith Circle 2.webp" 
                       alt="Zenith Circle Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -968,7 +968,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Zenith Circle/Zenith Circle 1.jpeg" 
+                      src="/MVA Culture/Zenith Circle/Zenith Circle 1.webp" 
                       alt="Zenith Circle Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -976,7 +976,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Zenith Circle/Zenith Circle 3.png" 
+                      src="/MVA Culture/Zenith Circle/Zenith Circle 3.webp" 
                       alt="Zenith Circle Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1059,7 +1059,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Maharath/maharath 3.JPG" 
+                      src="/MVA Culture/Maharath/maharath 3.webp" 
                       alt="Maharath Life Skills Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1067,7 +1067,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Maharath/maharath 1.jpeg" 
+                      src="/MVA Culture/Maharath/maharath 1.webp" 
                       alt="Maharath Life Skills Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1075,7 +1075,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Maharath/maharath 2.JPG" 
+                      src="/MVA Culture/Maharath/maharath 2.webp" 
                       alt="Maharath Life Skills Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1146,7 +1146,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Art & Craft/art 1.jpeg" 
+                      src="/MVA Culture/Art & Craft/art 1.webp" 
                       alt="Art & Craft Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1154,7 +1154,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Art & Craft/art 3.JPG" 
+                      src="/MVA Culture/Art & Craft/art 3.webp" 
                       alt="Art & Craft Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1162,7 +1162,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Art & Craft/art 2.jpeg" 
+                      src="/MVA Culture/Art & Craft/art 2.webp" 
                       alt="Art & Craft Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1185,10 +1185,10 @@ export default function LifeAtMVAPage() {
                       <h4 className="text-xl font-bold text-primary">A World of Creative Exploration</h4>
                       <p className="text-muted-foreground leading-relaxed mb-2">The Art Sphere offers students a wide variety of creative opportunities, including:</p>
                       <div className="space-y-2">
-                        <p className="text-muted-foreground leading-relaxed">➤ 🎨 Painting and Sketching – refine artistic techniques and explore different mediums.</p>
-                        <p className="text-muted-foreground leading-relaxed">➤ ✍️ Calligraphy and Designing – learn the art of beautiful writing and innovative designs.</p>
-                        <p className="text-muted-foreground leading-relaxed">➤ 📐 Origami and Craftwork – develop precision, patience, and imagination through intricate paper art and craft projects.</p>
-                        <p className="text-muted-foreground leading-relaxed">➤ 🖌️ Creative Projects – experiment with mixed media and unique styles to bring original ideas to life.</p>
+                        <p className="text-muted-foreground leading-relaxed">➤ Painting and Sketching – refine artistic techniques and explore different mediums.</p>
+                        <p className="text-muted-foreground leading-relaxed">➤ Calligraphy and Designing – learn the art of beautiful writing and innovative designs.</p>
+                        <p className="text-muted-foreground leading-relaxed">➤ Origami and Craftwork – develop precision, patience, and imagination through intricate paper art and craft projects.</p>
+                        <p className="text-muted-foreground leading-relaxed">➤ Creative Projects – experiment with mixed media and unique styles to bring original ideas to life.</p>
                       </div>
                     </div>
                   </div>
@@ -1232,7 +1232,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Performing Arts/Performing Arts 3.png" 
+                      src="/MVA Culture/Performing Arts/Performing Arts 3.webp" 
                       alt="Performing Arts Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1240,7 +1240,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Performing Arts/Performing Arts 1.png" 
+                      src="/MVA Culture/Performing Arts/Performing Arts 1.webp" 
                       alt="Performing Arts Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1248,7 +1248,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Performing Arts/Performing Arts2.png" 
+                      src="/MVA Culture/Performing Arts/Performing Arts2.webp" 
                       alt="Performing Arts Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1265,7 +1265,7 @@ export default function LifeAtMVAPage() {
                     </p>
 
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-primary">Music Department 🎵</h4>
+                      <h4 className="text-xl font-bold text-primary">Music Department</h4>
                       <p className="text-muted-foreground leading-relaxed">
                         The Music Department at MVA nurtures both vocal and instrumental talents, introducing students to Indian classical, folk, and western styles. Guided by industry-trained teachers, students gain confidence to perform live on stage while mastering rhythm and melody.
                       </p>
@@ -1279,7 +1279,7 @@ export default function LifeAtMVAPage() {
                   
                   <div className="space-y-6">
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-primary">Dance Department 💃</h4>
+                      <h4 className="text-xl font-bold text-primary">Dance Department</h4>
                       <p className="text-muted-foreground leading-relaxed">
                         Dance at MVA blends traditional Indian forms with contemporary styles, encouraging students to express themselves creatively while appreciating India's cultural heritage. Our unique model also allows senior students to mentor and teach their peers, cultivating leadership alongside artistry.
                       </p>
@@ -1289,7 +1289,7 @@ export default function LifeAtMVAPage() {
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-primary">Drama & Theatre 🎭</h4>
+                      <h4 className="text-xl font-bold text-primary">Drama & Theatre</h4>
                       <p className="text-muted-foreground leading-relaxed">
                         With guidance from seasoned theatre professionals, the Drama & Theatre program at MVA sharpens a child's ability to think critically, express emotions, and communicate effectively. Students participate in workshops, skits, and full-scale productions that teach empathy, teamwork, and presentation skills.
                       </p>
@@ -1328,7 +1328,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Financial Literacy/Financial Literacy.JPG" 
+                      src="/MVA Culture/Financial Literacy/Financial Literacy.webp" 
                       alt="Financial Literacy Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1336,7 +1336,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Financial Literacy/Financial Literacy 2.JPG" 
+                      src="/MVA Culture/Financial Literacy/Financial Literacy 2.webp" 
                       alt="Financial Literacy Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1344,7 +1344,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Financial Literacy/Financial Literacy 3.JPG" 
+                      src="/MVA Culture/Financial Literacy/Financial Literacy 3.webp" 
                       alt="Financial Literacy Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1385,9 +1385,9 @@ export default function LifeAtMVAPage() {
                       </div>
                     </div>
 
-                    <div className="bg-gray-200 border-4 border-blue-900 h-48 lg:h-56 flex items-center justify-center rounded-lg">
+                    {/* <div className="bg-gray-200 border-4 border-blue-900 h-48 lg:h-56 flex items-center justify-center rounded-lg">
                       <span className="text-gray-500 text-sm md:text-base text-center">Financial Literacy Workshop Image</span>
-                    </div>
+                    </div> */}
 
                     <div className="bg-primary/10 p-4 rounded-lg">
                       <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
@@ -1412,7 +1412,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/V-MAT/V-MAT 1.jpg" 
+                      src="/MVA Culture/V-MAT/V-MAT 1.webp" 
                       alt="V-MAT Activities Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1420,7 +1420,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/V-MAT/V-MAT 2.jpg" 
+                      src="/MVA Culture/V-MAT/V-MAT 2.webp" 
                       alt="V-MAT Activities Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1428,7 +1428,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/V-MAT/V-MAT 3.jpg" 
+                      src="/MVA Culture/V-MAT/V-MAT 3.webp" 
                       alt="V-MAT Activities Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1501,7 +1501,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="IMG_7780.jpg" 
+                      src="IMG_7780.webp" 
                       alt="Educational Tours Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1509,7 +1509,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="IMG_0308.JPG" 
+                      src="IMG_0308.webp" 
                       alt="Educational Tours Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1517,7 +1517,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="IMG_0274.JPG" 
+                      src="IMG_0274.webp" 
                       alt="Educational Tours Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1534,7 +1534,7 @@ export default function LifeAtMVAPage() {
                     </p>
 
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-primary">🚌 Local Trips</h4>
+                      <h4 className="text-xl font-bold text-primary">Local Trips</h4>
                       <p className="text-muted-foreground leading-relaxed">
                         Students regularly participate in local excursions around Burhanpur and nearby regions to connect classroom knowledge with real-world experiences. These trips include Historical sites and monuments, Nature trails and trips to major industrial centres across the region and Community service and social learning activities.
                       </p>
@@ -1544,7 +1544,7 @@ export default function LifeAtMVAPage() {
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-primary">✈️ National Tours</h4>
+                      <h4 className="text-xl font-bold text-primary">National Tours</h4>
                       <p className="text-muted-foreground leading-relaxed mb-2">MVA organizes national educational tours to expose students to the diversity and heritage of India. Destinations include:</p>
                       <div className="space-y-2">
                         <p className="text-muted-foreground leading-relaxed">➤ Capitals and major cities for historical, cultural, and civic learning</p>
@@ -1560,7 +1560,7 @@ export default function LifeAtMVAPage() {
                   
                   <div className="space-y-6">
                     <div className="space-y-4">
-                      <h4 className="text-xl font-bold text-primary">🌐 International Tours</h4>
+                      <h4 className="text-xl font-bold text-primary">International Tours</h4>
                       <p className="text-muted-foreground leading-relaxed mb-2">To nurture a global perspective, Macro Vision Academy offers select international tours for senior students. These experiences include:</p>
                       <div className="space-y-2">
                         <p className="text-muted-foreground leading-relaxed">➤ Educational visits to museums, universities, and tech centers abroad</p>
@@ -1573,7 +1573,7 @@ export default function LifeAtMVAPage() {
                     </div>
 
                     <div className="bg-primary/10 p-4 rounded-lg">
-                      <h4 className="text-xl font-bold text-primary mb-2">✨ Why MVA Tours Matter</h4>
+                      <h4 className="text-xl font-bold text-primary mb-2">Why MVA Tours Matter</h4>
                       <p className="text-muted-foreground leading-relaxed">
                         At Macro Vision Academy, tours are designed to complement academic learning, build life skills, and foster personal growth. Students return with enhanced confidence, social skills, and a broader understanding of the world, making every trip a memorable and transformative experience.
                       </p>
@@ -1596,7 +1596,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/School Events/events 1.jpg" 
+                      src="/MVA Culture/School Events/events 1.webp" 
                       alt="School Events Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1604,7 +1604,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/School Events/events 3.png" 
+                      src="/MVA Culture/School Events/events 3.webp" 
                       alt="School Events Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1612,7 +1612,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/School Events/events 2.jpg" 
+                      src="/MVA Culture/School Events/events 2.webp" 
                       alt="School Events Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1682,7 +1682,7 @@ export default function LifeAtMVAPage() {
                 id="vision-udaan"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/udan.jpeg')"
+                  backgroundImage: "url('/infrastructure/udan.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1702,7 +1702,7 @@ export default function LifeAtMVAPage() {
                 id="vision-paradise"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/visionparadise.png')"
+                  backgroundImage: "url('/infrastructure/visionparadise.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1722,7 +1722,7 @@ export default function LifeAtMVAPage() {
                 id="vision-petals"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/visionpetals.jpg')"
+                  backgroundImage: "url('/infrastructure/visionpetals.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1742,7 +1742,7 @@ export default function LifeAtMVAPage() {
                 id="vision-mantra"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/mantra wing.jpeg')"
+                  backgroundImage: "url('/infrastructure/mantra wing.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1762,7 +1762,7 @@ export default function LifeAtMVAPage() {
                 id="vision-divine"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/divine wing.jpeg')"
+                  backgroundImage: "url('/infrastructure/divine wing.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1782,7 +1782,7 @@ export default function LifeAtMVAPage() {
                 id="vision-vista"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/vista dummy.jpeg')"
+                  backgroundImage: "url('/infrastructure/vista dummy.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1802,7 +1802,7 @@ export default function LifeAtMVAPage() {
                 id="swad-sansad"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/swad hostel food 1.jpg')"
+                  backgroundImage: "url('/infrastructure/swad hostel food 1.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1822,7 +1822,7 @@ export default function LifeAtMVAPage() {
                 id="anhad-anand-auditorium"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/Anhad Anand Auditorium.jpeg')"
+                  backgroundImage: "url('/infrastructure/Anhad Anand Auditorium.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1842,7 +1842,7 @@ export default function LifeAtMVAPage() {
                 id="josh-club"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('DSC06312.JPG')"
+                  backgroundImage: "url('DSC06312.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1862,7 +1862,7 @@ export default function LifeAtMVAPage() {
                 id="chronosphere"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/chronosphere.JPG')"
+                  backgroundImage: "url('/infrastructure/chronosphere.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
@@ -1882,7 +1882,7 @@ export default function LifeAtMVAPage() {
                 id="white-house"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('DSC09938.JPG')"
+                  backgroundImage: "url('DSC09938.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,

@@ -10,19 +10,19 @@ const BannerSlider: React.FC<BannerSliderProps> = ({ className = '' }) => {
 
   const images = [
     {
-      src: "/12th and 10th result website post.jpg",
+      src: "/12th and 10th result website post.webp",
       alt: "12th and 10th Result Website Post"
     },
     {
-      src: "/JEE advanced result 2025.jpg",
+      src: "/JEE advanced result 2025.webp",
       alt: "JEE Advanced Result 2025"
     },
     {
-      src: "/JEE mains 2 result 2025.jpg",
+      src: "/JEE mains 2 result 2025.webp",
       alt: "JEE Mains 2 Result 2025"
     },
     {
-      src: "/JEE mains website post.jpg",
+      src: "/JEE mains website post.webp",
       alt: "JEE Mains Website Post"
     }
   ];

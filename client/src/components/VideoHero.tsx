@@ -15,61 +15,52 @@ export default function VideoHero() {
       </video>
 
       {/* Dark Overlay for Better Text Contrast */}
-      <div className="absolute inset-0 bg-black/10 z-10"></div>
+      <div className="absolute inset-0 bg-black/20 z-10"></div>
 
       {/* Text Content */}
-      <div className="absolute bottom-16 left-12 z-20 max-w-4xl">
+      <div className="absolute bottom-8 left-4 right-4 lg:left-12 lg:right-auto z-20 max-w-3xl">
         <div className="text-content">
-          <h1 className="text-4xl lg:text-6xl xl:text-7xl font-black leading-tight mb-6">
-            <span className="text-white drop-shadow-2xl">
-              Welcome to
-            </span>
-            <br />
-            <span className="block mt-4">
-              <span className="bg-gradient-to-r from-blue-200 via-blue-100 to-blue-50 bg-clip-text text-transparent drop-shadow-2xl">
-                Macro Vision Academy
-              </span>
-            </span>
-          </h1>
+          {/* Main Heading */}
+         <h1 className="text-2xl lg:text-5xl xl:text-6xl font-black leading-none mb-6 text-center lg:text-left whitespace-nowrap">
+  <span className="bg-gradient-to-r from-blue-200 via-blue-100 to-blue-50 bg-clip-text text-transparent drop-shadow-2xl">
+    Macro Vision Academy
+  </span>
+</h1>
           
-          {/* Very Soft Background for Subheading */}
-          <div className="relative mb-8 max-w-2xl">
-            <div className="relative bg-black/5 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/10 mb-6">
-              <p className="text-lg lg:text-xl xl:text-2xl text-white font-medium leading-relaxed">
-                Empowering minds, nurturing excellence through academics, sports, arts, and holistic development
-              </p>
-            </div>
+          {/* Content without card background */}
+          <div className="mb-6 max-w-2xl mx-auto lg:mx-0">
+            {/* Main Description */}
+            <p className="text-lg lg:text-m text-white font-medium leading-relaxed mb-4 text-center lg:text-left drop-shadow-2xl">
+              Empowering minds through academics, sports, arts & holistic development
+            </p>
             
-            {/* Admissions Info - Now properly aligned */}
-            <div className="bg-black/5 backdrop-blur-md rounded-2xl p-6 border border-white/15">
-              <div className="text-left">
-                <p className="text-white text-lg lg:text-xl font-semibold mb-3">
-                  Admissions Open for 2026 — Join Us on{" "}
-                  <span className="text-[#fec900] font-bold">4th</span> &{" "}
-                  <span className="text-[#fec900] font-bold">18th January</span>
-                </p>
-                <p className="text-white/90 text-base lg:text-lg">
-                  Contact:{" "}
-                  <span className="text-[#fec900] font-bold">+91 93025 11111</span>
-                  {" , "}
-                  <span className="text-[#fec900] font-bold">+91 93001 10033</span>
-                </p>
-              </div>
+            {/* Admissions Info */}
+            <div className="space-y-3 text-center lg:text-left">
+              <p className="text-white text-base lg:text-lg font-semibold drop-shadow-lg">
+                Admissions 2026:{" "}
+                <span className="text-[#fec900] font-bold">4th & 18th Jan</span>
+              </p>
+              <p className="text-white text-sm lg:text-base drop-shadow-lg">
+                Contact:{" "}
+                <span className="text-[#fec900] font-bold">93025 11111</span>
+                {" | "}
+                <span className="text-[#fec900] font-bold">93001 10033</span>
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Buttons - Now properly positioned */}
-        <div className="flex flex-wrap gap-4 items-center">
+        {/* Buttons - Centered on mobile, left on desktop */}
+        <div className="flex flex-col sm:flex-row gap-3 items-center justify-center lg:justify-start">
           <Link 
             to="/admissions" 
-            className="bg-[#0051a8] hover:bg-[#004080] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover:-translate-y-1"
+            className="bg-[#0051a8] hover:bg-[#004080] text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-base lg:text-lg w-full sm:w-auto text-center"
           >
             Apply Now
           </Link>
           <Link 
             to="/about/our-story" 
-            className="bg-white/10 backdrop-blur-sm border-2 border-white/40 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold hover:bg-white/20 hover:border-white hover:scale-105 transition-all duration-300 hover:-translate-y-1"
+            className="bg-white/20 border border-white/60 text-white px-6 lg:px-8 py-3 lg:py-4 rounded-full font-bold hover:bg-white/30 hover:border-white hover:scale-105 transition-all duration-300 text-base lg:text-lg w-full sm:w-auto text-center drop-shadow-lg"
           >
             Explore MVA
           </Link>
@@ -82,22 +73,17 @@ export default function VideoHero() {
           text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.6);
         }
         
-        @keyframes gentle-float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-4px); }
-        }
-        
-        a:hover {
-          animation: gentle-float 2s ease-in-out infinite;
+        .drop-shadow-lg {
+          filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
         }
 
         /* Highlight animation for important info */
         @keyframes highlight-pulse {
           0%, 100% { 
-            text-shadow: 0 0 10px rgba(254, 201, 0, 0.5);
+            filter: drop-shadow(0 0 8px rgba(254, 201, 0, 0.4));
           }
           50% { 
-            text-shadow: 0 0 20px rgba(254, 201, 0, 0.8), 0 0 30px rgba(254, 201, 0, 0.4);
+            filter: drop-shadow(0 0 15px rgba(254, 201, 0, 0.6));
           }
         }
 

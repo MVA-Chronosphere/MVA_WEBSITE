@@ -128,13 +128,13 @@ const currentOpenings: any[] = [];
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/90 to-primary py-20 lg:py-28">
+      <section className="bg-gradient-to-r from-primary to-[#0055A4] text-white py-16">
         <div className="absolute inset-0 bg-grid-white/10 bg-[size:60px_60px]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-6xl font-bold tracking-tight text-primary-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Careers at MVA
           </h1>
-          <p className="text-xl lg:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Join our team of passionate educators and professionals shaping the leaders of tomorrow.
           </p>
         </div>

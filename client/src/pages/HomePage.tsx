@@ -34,7 +34,7 @@ export default function HomePage() {
               <div className="absolute bottom-0 right-0 w-32 h-1 bg-blue-900"></div>
               <div className="absolute bottom-0 right-0 w-1 h-32 bg-blue-900"></div>
               <ImagePopup
-                src="/mva tree2.png"
+                src="/mva tree2.webp"
                 alt="Macro Vision Academy Tree - Why Choose MVA"
                 className="w-full h-auto object-contain rounded-lg"
               />
@@ -48,35 +48,35 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-2 md:px-4">
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
             <WhyChooseCard
-              image="/why%20mva%20images/students%20achivemnt.jpg"
+              image="/why%20mva%20images/students%20achivemnt.webp"
               title={"Student Achievements"}
               description={"Celebrating excellence with outstanding results in IIT-JEE, NEET, NTSE, and board exams."}
               cta="Explore Achievements →"
               cardIndex={0}
             />
             <WhyChooseCard
-              image="/why%20mva%20images/class%20facilities.jpg"
+              image="/why%20mva%20images/class%20facilities.webp"
               title={"World-Class Facilities"}
               description={"From Apple-powered classrooms to immersive VR lessons—global-standard learning environment."}
               cta="Discover Facilities →"
               cardIndex={1}
             />
             <WhyChooseCard
-              image="/why%20mva%20images/expert%20teachers.jpg"
+              image="/why%20mva%20images/expert%20teachers.webp"
               title={"Expert Teachers"}
               description={"A passionate team blending CBSE academics, competitive exam excellence and modern pedagogy."}
               cta="Meet Our Teachers →"
               cardIndex={2}
             />
             <WhyChooseCard
-              image="/why%20mva%20images/hostel%20life.jpg"
+              image="/why%20mva%20images/hostel%20life.webp"
               title={"Vibrant Hostel Life"}
               description={"Spacious, hi-tech residential wings designed for comfort and holistic growth."}
               cta="Explore Hostels →"
               cardIndex={3}
             />
             <WhyChooseCard
-              image="/why%20mva%20images/inspiring%20infrastructure.jpg"
+              image="/why%20mva%20images/inspiring%20infrastructure.webp"
               title={"Inspiring Infrastructure"}
               description={"50-acre campus with futuristic architecture, advanced labs, sports arenas and more."}
               cta="View Infrastructure →"

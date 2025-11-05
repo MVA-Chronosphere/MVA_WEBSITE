@@ -65,12 +65,12 @@ const competitiveAchievements: Record<string, AchievementData[]> = {
       description: "Including AIR 3 in prestigious IIT-JEE examination",
       icon: <Trophy className="w-6 h-6" />
     },
-    { 
-      title: "JEE Main Selections", 
-      count: "1,959 Students", 
-      description: "Consistent excellence in engineering entrance exams",
-      icon: <Target className="w-6 h-6" />
-    },
+    // { 
+    //   title: "JEE Main Selections", 
+    //   count: "1,959 Students", 
+    //   description: "Consistent excellence in engineering entrance exams",
+    //   icon: <Target className="w-6 h-6" />
+    // },
   ],
   "NEET": [
     { 
@@ -79,12 +79,12 @@ const competitiveAchievements: Record<string, AchievementData[]> = {
       description: "Remarkable ranks including top positions in medical entrance",
       icon: <Medal className="w-6 h-6" />
     },
-    { 
-      title: "Medical College Admissions", 
-      count: "124+ Students", 
-      description: "Admitted to nation's most prestigious medical colleges",
-      icon: <Award className="w-6 h-6" />
-    },
+    // { 
+    //   title: "Medical College Admissions", 
+    //   count: "124+ Students", 
+    //   description: "Admitted to nation's most prestigious medical colleges",
+    //   icon: <Award className="w-6 h-6" />
+    // },
   ],
   "CA Foundation": [
     { 
@@ -102,6 +102,20 @@ const sportsAchievements = [
     achievements: ["1 Bronze Medal - Qualified for Nationals"]
   },
   {
+    category: "Yogasana",
+    achievements: [
+      "1 Bronze Medal (Individual & Artistic) - Qualified for Nationals",
+      "1 Silver Medal (Team)"
+    ]
+  },
+  {
+    category: "Relays",
+    achievements: [
+      "1 Gold Medal (Under-17, 4×400m) - Qualified for Nationals",
+      "1 Silver Medal (Under-19, 4×400m)"
+    ]
+  },
+  {
     category: "Athletics",
     achievements: [
       "4 Gold Medals - Qualified for Nationals",
@@ -117,20 +131,7 @@ const sportsAchievements = [
       "1 Bronze Medal (Under-17 Boys)"
     ]
   },
-  {
-    category: "Yogasana",
-    achievements: [
-      "1 Bronze Medal (Individual & Artistic) - Qualified for Nationals",
-      "1 Silver Medal (Team)"
-    ]
-  },
-  {
-    category: "Relays",
-    achievements: [
-      "1 Gold Medal (Under-17, 4×400m) - Qualified for Nationals",
-      "1 Silver Medal (Under-19, 4×400m)"
-    ]
-  }
+  
 ];
 
 export default function TabbedAchievements() {
@@ -259,7 +260,7 @@ export default function TabbedAchievements() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
             {academicAchievements[activeSubCategory]?.map((achievement, index) => (
               <Card
                 key={index}
@@ -312,31 +313,60 @@ export default function TabbedAchievements() {
             </CardContent>
           </Card>
 
-          <div className="text-center mb-6">
-            <h4 className="text-xl font-bold text-foreground mb-2">CBSE Sports Performance - 2025</h4>
-            <p className="text-muted-foreground">Outstanding achievements across multiple sports disciplines</p>
-          </div>
+         <div className="text-center mb-8">
+  <h4 className="text-xl font-bold text-foreground mb-2">CBSE Sports Performance - 2025</h4>
+  <p className="text-muted-foreground">Outstanding achievements across multiple sports disciplines</p>
+</div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sportsAchievements.map((sport, index) => (
-              <Card key={index} className="border-border hover:shadow-lg transition-all">
-                <CardContent className="p-6">
-                  <h4 className="text-lg font-bold text-foreground mb-4 flex items-center">
-                    <Medal className="w-5 h-5 mr-2 text-primary" />
-                    {sport.category}
-                  </h4>
-                  <ul className="space-y-2">
-                    {sport.achievements.map((achievement, idx) => (
-                      <li key={idx} className="text-sm text-muted-foreground flex items-start">
-                        <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                        <span>{achievement}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+{/* First Row - 3 Cards */}
+<div className="flex justify-center mb-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl">
+    {sportsAchievements.slice(0, 3).map((sport, index) => (
+      <Card key={index} className="border-border hover:shadow-lg transition-all min-h-[200px] w-full">
+        <CardContent className="p-6 h-full flex flex-col">
+          <h4 className="text-lg font-bold text-foreground mb-4 flex items-center">
+            <Medal className="w-5 h-5 mr-2 text-primary" />
+            {sport.category}
+          </h4>
+          <ul className="space-y-2 flex-grow">
+            {sport.achievements.map((achievement, idx) => (
+              <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span className="leading-relaxed">{achievement}</span>
+              </li>
             ))}
-          </div>
+          </ul>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</div>
+
+{/* Second Row - 2 Cards Centered */}
+{sportsAchievements.length > 3 && (
+  <div className="flex justify-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+      {sportsAchievements.slice(3).map((sport, index) => (
+        <Card key={index + 3} className="border-border hover:shadow-lg transition-all min-h-[200px] w-full max-w-sm">
+          <CardContent className="p-6 h-full flex flex-col">
+            <h4 className="text-lg font-bold text-foreground mb-4 flex items-center">
+              <Medal className="w-5 h-5 mr-2 text-primary" />
+              {sport.category}
+            </h4>
+            <ul className="space-y-2 flex-grow">
+              {sport.achievements.map((achievement, idx) => (
+                <li key={idx} className="text-sm text-muted-foreground flex items-start">
+                  <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="leading-relaxed">{achievement}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+)}
         </TabsContent>
 
         {/* Competitive Exams Tab */}
@@ -364,7 +394,7 @@ export default function TabbedAchievements() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
             {competitiveAchievements[activeSubCategory]?.map((achievement, index) => (
               <Card
                 key={index}

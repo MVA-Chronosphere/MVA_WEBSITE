@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X } from "lucide-react";
+import { X, Calendar, User, Clock } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface Blog {
@@ -38,17 +38,14 @@ export default function BlogsPage() {
         desc: "Historic achievement with AIR 3, 526 JEE Advanced qualifiers, and 1,959 JEE Main successes placing MVA among elite institutions.",
         category: "Academic Excellence",
         content: `The much-awaited JEE Main and JEE Advanced 2025 results are out, and they've once again redrawn the map of academic excellence across India. Every year, thousands of brilliant young minds dream of securing a seat in the Indian Institutes of Technology (IITs) – and this year, Macro Vision Academy (MVA), Burhanpur, has turned that dream into a dazzling reality.
-
 From the heart of Madhya Pradesh, MVA Burhanpur has proudly emerged among the Top 10 Schools in India for JEE Preparation 2025 – a phenomenal feat that celebrates its culture of discipline, innovation, and unstoppable ambition.
-
 ## JEE 2025 Results: A Record-Breaking Achievement
 This year, MVA students didn't just perform – they soared. The academy's results in both JEE Main 2025 and JEE Advanced 2025 have been nothing short of historic.
 
 ### Highlights of MVA's 2025 Achievements:
-- **All India Rank 3** in JEE Advanced 2025
-- **526 students** qualified JEE Advanced 2025
-- **1,959 students** cleared JEE Main 2025
-
+- All India Rank 3 in JEE Advanced 2025
+- 526 student qualified JEE Advanced 2025
+- 1,959 students cleared JEE Main 2025
 These milestones firmly place MVA Burhanpur among India's most elite IIT-JEE institutions – proof that with consistent mentorship, disciplined effort, and strong moral values, world-class results can emerge from anywhere, not just the metros.
 
 ## Top School in India for IIT-JEE Preparation 2025
@@ -405,11 +402,12 @@ Because real growth happens not just on screens, but in the world beyond them.`
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <Tabs defaultValue="innovation" className="w-full">
-  <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 mb-12">
-    <TabsTrigger value="achievements" data-testid="tab-achievements">Achievements</TabsTrigger>
-    <TabsTrigger value="innovation" data-testid="tab-innovation">Innovation</TabsTrigger>
-    <TabsTrigger value="parenting" data-testid="tab-parenting">Parenting</TabsTrigger>
-  </TabsList>
+          <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-3 mb-12">
+            <TabsTrigger value="achievements" data-testid="tab-achievements">Achievements</TabsTrigger>
+            <TabsTrigger value="innovation" data-testid="tab-innovation">Innovation</TabsTrigger>
+            <TabsTrigger value="parenting" data-testid="tab-parenting">Parenting</TabsTrigger>
+          </TabsList>
+
           {/* Innovation Tab */}
           <TabsContent value="innovation" className="space-y-6">
             <div className={`grid gap-8 ${blogs.innovation.length === 1 ? 'justify-center' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
@@ -514,60 +512,82 @@ Because real growth happens not just on screens, but in the world beyond them.`
       {/* Blog Modal */}
       {isModalOpen && selectedBlog && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-4xl max-h-[90vh] w-full overflow-hidden flex flex-col">
-            {/* Modal Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <div>
-                <span className="text-sm text-primary font-semibold">{selectedBlog.category}</span>
-                <h2 className="text-2xl font-bold text-gray-900 mt-1">{selectedBlog.title}</h2>
+          <div className="bg-white rounded-2xl max-w-6xl max-h-[95vh] w-full overflow-hidden flex flex-col">
+            {/* Modal Header with Image */}
+            <div className="relative">
+              <div className="h-64 md:h-80 w-full overflow-hidden">
+                <img 
+                  src={selectedBlog.image} 
+                  alt={selectedBlog.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               </div>
+              
+              <div className="absolute bottom-4 left-6 right-6">
+                <div className="flex items-center gap-4 mb-3">
+                  <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                    {selectedBlog.category}
+                  </span>
+                  <div className="flex items-center gap-2 text-white/90">
+                    <Calendar className="w-4 h-4" />
+                    <span className="text-sm">2 min read</span>
+                  </div>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 drop-shadow-lg">
+                  {selectedBlog.title}
+                </h2>
+              </div>
+
               <button
                 onClick={closeModal}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                className="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors duration-200"
               >
-                <X className="h-6 w-6 text-gray-600" />
+                <X className="h-6 w-6 text-white" />
               </button>
             </div>
 
             {/* Modal Content */}
-            <div className="flex-1 overflow-y-auto p-6">
-              <div className="prose prose-lg max-w-none">
-                {selectedBlog.content.split('\n').map((paragraph, index) => {
-                  if (paragraph.startsWith('## ')) {
-                    return (
-                      <h2 key={index} className="text-xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b border-gray-200">
-                        {paragraph.replace('## ', '')}
-                      </h2>
-                    );
-                  } else if (paragraph.startsWith('### ')) {
-                    return (
-                      <h3 key={index} className="text-lg font-bold text-gray-800 mt-6 mb-3">
-                        {paragraph.replace('### ', '')}
-                      </h3>
-                    );
-                  } else if (paragraph.startsWith('- ')) {
-                    return (
-                      <li key={index} className="text-gray-700 mb-2 ml-4">
-                        <span className="text-primary mr-2">•</span>
-                        {paragraph.replace('- ', '')}
-                      </li>
-                    );
-                  } else if (paragraph.trim() === '') {
-                    return <br key={index} />;
-                  } else {
-                    return (
-                      <p key={index} className="text-gray-700 mb-4 leading-relaxed">
-                        {paragraph}
-                      </p>
-                    );
-                  }
-                })}
+            <div className="flex-1 overflow-y-auto p-6 md:p-8">
+              <div className="max-w-4xl mx-auto">
+                <div className="prose prose-lg max-w-none">
+                  {selectedBlog.content.split('\n').map((paragraph, index) => {
+                    if (paragraph.startsWith('## ')) {
+                      return (
+                        <h2 key={index} className="text-xl md:text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b border-gray-200">
+                          {paragraph.replace('## ', '')}
+                        </h2>
+                      );
+                    } else if (paragraph.startsWith('### ')) {
+                      return (
+                        <h3 key={index} className="text-lg md:text-xl font-bold text-gray-800 mt-6 mb-3">
+                          {paragraph.replace('### ', '')}
+                        </h3>
+                      );
+                    } else if (paragraph.startsWith('- ')) {
+                      return (
+                        <li key={index} className="text-gray-700 mb-2 ml-4 flex items-start">
+                          <span className="text-primary mr-3 mt-2 flex-shrink-0">•</span>
+                          <span>{paragraph.replace('- ', '')}</span>
+                        </li>
+                      );
+                    } else if (paragraph.trim() === '') {
+                      return <br key={index} />;
+                    } else {
+                      return (
+                        <p key={index} className="text-gray-700 mb-4 leading-relaxed text-base md:text-lg">
+                          {paragraph}
+                        </p>
+                      );
+                    }
+                  })}
+                </div>
               </div>
             </div>
 
             {/* Modal Footer */}
             <div className="p-6 border-t border-gray-200 bg-gray-50">
-              <div className="flex justify-between items-center">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4 max-w-4xl mx-auto">
                 <div className="text-sm text-gray-600">
                   Macro Vision Academy Burhanpur
                 </div>
@@ -575,7 +595,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
                   onClick={closeModal}
                   className="bg-primary text-primary-foreground px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
                 >
-                  Close
+                  Close Article
                 </button>
               </div>
             </div>
