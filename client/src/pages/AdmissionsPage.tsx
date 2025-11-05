@@ -415,27 +415,28 @@ const AdmissionsPage: React.FC = () => {
               <table className="min-w-full bg-white">
                 <thead className="bg-gray-50 border-b">
                   <tr>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Class</th>
+                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Hostel Name</th>
                     <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[140px]">Registration Fees</th>
                     <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual Hostel Fees</th>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual School Fees</th>
+                    {/* <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual School Fees</th> */}
                     <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Remarks</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    { class: "Class 1st", reg: "₹11,000", hostel: "₹1,90,000", school: "₹90,000", remarks: "Non-refundable" },
-                    { class: "Class 2nd to 4th", reg: "₹11,000", hostel: "₹2,30,000", school: "₹99,000", remarks: "Non-refundable" },
-                    { class: "Class 5th to 8th", reg: "₹11,000", hostel: "₹2,30,000", school: "₹1,20,000", remarks: "Non-refundable" },
-                    { class: "Class 9th & 10th", reg: "₹11,000", hostel: "₹2,60,000", school: "₹1,60,000", remarks: "Non-refundable" },
-                    { class: "Class 11th & 12th (Science)", reg: "₹11,000", hostel: "₹2,08,000", school: "₹2,00,000", remarks: "Non-refundable" },
-                    { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", hostel: "₹2,60,000", school: "₹1,66,000", remarks: "Non-refundable" },
+                    { class: "Passion (For Boys)" , reg: "₹11,000", hostel: "₹1,90,000",  remarks: "Non-refundable" },
+                    { class: "Udaan (5th to 8th Boys)", reg: "₹11,000", hostel: "₹2,30,000", remarks: "Non-refundable" },
+                    { class: "Paradise (For Boys)", reg: "₹11,000", hostel: "₹2,30,000", remarks: "Non-refundable" },
+                    { class: "Petals (For Boys)", reg: "₹11,000", hostel: "₹2,60,000",  remarks: "Non-refundable" },
+
+                    { class: "Divine (Girls 4 Bedded)" , reg: "₹11,000", hostel: "₹2,60,000", remarks: "Non-refundable" },
+                    { class: "Divine (Girls 5 Bedded)" , reg: "₹11,000", hostel: "₹2,08,000",  remarks: "Non-refundable" },
                   ].map((item, i) => (
                     <tr key={i} className={`hover:bg-blue-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
                       <td className="py-3 px-4 font-medium text-blue-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
                       <td className="py-3 px-4 whitespace-nowrap min-w-[140px]">{item.reg}</td>
                       <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.hostel}</td>
-                      <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td>
+                      {/* <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td> */}
                       <td className="py-3 px-4 text-gray-600 whitespace-nowrap min-w-[120px]">{item.remarks}</td>
                     </tr>
                   ))}
