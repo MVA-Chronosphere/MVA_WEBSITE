@@ -255,10 +255,10 @@ Confidence grows in supportive environments. At MVA Burhanpur, we encourage pare
 
 Here are a few simple ways to help your child at home:
 
-- **Talk regularly**: Have open conversations about their day, stories they read, or topics they find interesting. This helps organize thoughts and develop expression naturally.
-- **Provide a safe space**: Remind your child that it's okay to make mistakes. Every speaker improves with time and practice.
-- **Respect their opinions**: When children feel heard, they become more confident sharing their views.
-- **Make learning fun**:
+- Talk regularly: Have open conversations about their day, stories they read, or topics they find interesting. This helps organize thoughts and develop expression naturally.
+- Provide a safe space: Remind your child that it's okay to make mistakes. Every speaker improves with time and practice.
+- Respect their opinions: When children feel heard, they become more confident sharing their views.
+- Make learning fun:
   - Storytelling nights: Let them narrate their favorite tales.
   - Family debates: Choose fun topics as per liking.
   - Role-playing games: Encourage them to act out characters and express emotions.
@@ -299,10 +299,10 @@ Encourage your child to:
 Frequent practice makes public speaking feel natural and rewarding.
 
 ## Tips for Parents
-- **Be a Role Model**: Speak confidently in daily interactions – children learn best by example.
-- **Record and Review**: Record their short speeches and discuss what went well. Celebrate progress.
-- **Set Achievable Goals**: Begin with introductions or small recitations, then move to longer presentations.
-- **Join Speaking Programs**: Enroll your child in public speaking workshops or MVA Burhanpur's speaking sessions to build confidence in a group setting.
+- Be a Role Model: Speak confidently in daily interactions – children learn best by example.
+- Record and Review: Record their short speeches and discuss what went well. Celebrate progress.
+- Set Achievable Goals: Begin with introductions or small recitations, then move to longer presentations.
+- Join Speaking Programs: Enroll your child in public speaking workshops or MVA Burhanpur's speaking sessions to build confidence in a group setting.
 
 ## Final Thoughts
 Helping your child master public speaking is one of the best investments in their personal growth. It takes patience, encouragement, and practice, but the results last a lifetime.
@@ -366,11 +366,11 @@ At MVA Burhanpur, we often remind families that playtime is learning time too �
 Family conversations strengthen relationships and language development. Ask your child about their day, what they watched, or what they learned online. This helps them think critically about what they consume and express their thoughts clearly.
 
 ## What Parents Can Do Every Day
-- **Set routines**: Plan daily activities with balanced screen use and screen-free time.
-- **Be a role model**: Children copy adults. Limiting your own screen time encourages them to do the same.
-- **Encourage creative play**: drawing, storytelling, or building helps children express themselves freely.
-- **Prioritize sleep**: Keep screens away an hour before bedtime for better rest and mood stability.
-- **Stay involved**: Know what your child is watching or playing. Discuss online content openly to teach digital awareness.
+- Set routines: Plan daily activities with balanced screen use and screen-free time.
+- Be a role model: Children copy adults. Limiting your own screen time encourages them to do the same.
+- Encourage creative play: drawing, storytelling, or building helps children express themselves freely.
+- Prioritize sleep: Keep screens away an hour before bedtime for better rest and mood stability.
+- Stay involved: Know what your child is watching or playing. Discuss online content openly to teach digital awareness.
 
 ## Healthy Screen Habits Lead to Healthy Minds
 When used responsibly, technology can be a wonderful learning companion. But it should never replace real experiences, outdoor adventures, or family moments.
@@ -457,7 +457,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
                       className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-3">
                     <div className="text-sm text-primary font-semibold mb-2">{blog.category}</div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">{blog.title}</h3>
                     <p className="text-gray-600 text-sm mb-4 line-clamp-3">{blog.desc}</p>
@@ -475,7 +475,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
           </TabsContent>
 
           {/* Parenting Tab */}
-          <TabsContent value="parenting" className="space-y-6">
+          <TabsContent value="parenting" className="space-y-3">
             <div className={`grid gap-8 ${blogs.parenting.length === 1 ? 'justify-center' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
               {blogs.parenting.map((blog, i) => (
                 <article 
@@ -529,7 +529,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
                   <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
                     {selectedBlog.category}
                   </span>
-                  <div className="flex items-center gap-2 text-white/90">
+                  <div className="flex items-center gap-1 text-white/90">
                     <Calendar className="w-4 h-4" />
                     <span className="text-sm">2 min read</span>
                   </div>
@@ -548,25 +548,25 @@ Because real growth happens not just on screens, but in the world beyond them.`
             </div>
 
             {/* Modal Content */}
-            <div className="flex-1 overflow-y-auto p-6 md:p-8">
+            <div className="flex-1 overflow-y-auto p-3 md:p-4">
               <div className="max-w-4xl mx-auto">
                 <div className="prose prose-lg max-w-none">
                   {selectedBlog.content.split('\n').map((paragraph, index) => {
                     if (paragraph.startsWith('## ')) {
                       return (
-                        <h2 key={index} className="text-xl md:text-2xl font-bold text-gray-900 mt-8 mb-4 pb-2 border-b border-gray-200">
+                        <h2 key={index} className="text-xl md:text-2xl font-bold text-gray-900 mt-2 mb-2 pb-1 border-b border-gray-200">
                           {paragraph.replace('## ', '')}
                         </h2>
                       );
                     } else if (paragraph.startsWith('### ')) {
                       return (
-                        <h3 key={index} className="text-lg md:text-xl font-bold text-gray-800 mt-6 mb-3">
+                        <h3 key={index} className="text-lg md:text-xl font-bold text-gray-800 mt-3 mb-2">
                           {paragraph.replace('### ', '')}
                         </h3>
                       );
                     } else if (paragraph.startsWith('- ')) {
                       return (
-                        <li key={index} className="text-gray-700 mb-2 ml-4 flex items-start">
+                        <li key={index} className="text-gray-700 mb-1 ml-2 flex items-start">
                           <span className="text-primary mr-3 mt-2 flex-shrink-0">•</span>
                           <span>{paragraph.replace('- ', '')}</span>
                         </li>
@@ -575,7 +575,7 @@ Because real growth happens not just on screens, but in the world beyond them.`
                       return <br key={index} />;
                     } else {
                       return (
-                        <p key={index} className="text-gray-700 mb-4 leading-relaxed text-base md:text-lg">
+                        <p key={index} className="text-gray-700 mb-2 leading-relaxed text-base md:text-lg">
                           {paragraph}
                         </p>
                       );

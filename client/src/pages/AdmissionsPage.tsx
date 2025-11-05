@@ -127,26 +127,28 @@ const AdmissionsPage: React.FC = () => {
   ];
 
   const faqs: FAQ[] = [
-    {
-      q: "Who can apply for admission?",
-      a: "Students applying for Class 1 to 12.",
-    },
-    {
-      q: "Is the Entrance Test compulsory?",
-      a: "Yes - it helps us understand your potential.",
-    },
-    {
-      q: "What if I don't register online?",
-      a: "On-spot registration is allowed, but pre-registration saves you time and hassle.",
-    },
-    {
-      q: "Are scholarships really offered?",
-      a: "Absolutely. Top scorers in the Entrance Test are rewarded with fee concessions.",
-    },
-    {
-      q: "How do I stay updated about next steps?",
-      a: "Simple! Save these numbers in your phone: 9302511111 / 9300110033 / 7725044544. We'll send you all important alerts and reminders.",
-    }
+   {
+  q: "Who is eligible to apply for admission?",
+  a: "Students seeking admission to Classes 1 to 9 and Class 11 are eligible to apply.",
+},
+{
+  q: "Is the entrance test mandatory?",
+  a: "Yes, it’s compulsory as it helps us assess each student’s potential.",
+},
+{
+  q: "Can I register without applying online?",
+  a: "Yes, on-the-spot registration is available, but pre-registering online saves time and avoids last-minute hassle.",
+},
+// {
+//   q: "Are scholarships really offered?",
+//   a: "Absolutely! Top performers in the entrance test are rewarded with attractive fee concessions.",
+// },
+{
+  q: "How can I stay informed about the next steps?",
+//   a: "It’s easy! Save these contact numbers: 9302511111 / 9300110033 / 7725044544 — we’ll keep you updated with all important alerts and reminders.",
+  a: "It’s easy! Just save these numbers: 9302511111 / 9300110033 / 7725044544. You’ll receive all key updates, alerts, and reminders directly.",
+}
+
   ];
 
   const toggleFaq = (index: number) => {

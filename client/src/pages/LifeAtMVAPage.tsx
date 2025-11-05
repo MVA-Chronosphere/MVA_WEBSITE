@@ -143,13 +143,13 @@ export default function LifeAtMVAPage() {
               {/* Vision Divine Hostel */}
               <div className="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 mb-12">
                 <div className="lg:w-1/2 space-y-4">
-                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">Vision Divine Hostel (Girls' Wing – Senior)</h3>
+                  <h3 className="text-lg md:text-xl font-bold text-primary mb-4">Vision Divine Hostel</h3>
                   <div className="space-y-3">
                     <p className="text-muted-foreground leading-relaxed">
                       ➤ Established in 2023, with 162 spacious rooms housing 720 girls
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
-                      ➤ Options for AC and non-AC rooms
+                      ➤ All rooms at Divine are fully air-conditioned.
                     </p>
                     <p className="text-muted-foreground leading-relaxed">
                       ➤ Bright, airy corridors with a homely ambience
@@ -1469,14 +1469,14 @@ export default function LifeAtMVAPage() {
                       </div>
                     </div>
 
-                    <div className="border-4 border-blue-900 h-48 lg:h-56 overflow-hidden rounded-lg">
+                    {/* <div className="border-4 border-blue-900 h-48 lg:h-56 overflow-hidden rounded-lg">
                       <img
                         src="/MVA Culture/V-MAT/V-MAT 4.jpg"
                         alt="V-MAT Training Session Image"
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
-                    </div>
+                    </div> */}
 
                     <div className="bg-primary/10 p-4 rounded-lg">
                       <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
