@@ -133,22 +133,16 @@ const AdmissionsPage: React.FC = () => {
 },
 {
   q: "Is the entrance test mandatory?",
-  a: "Yes, it’s compulsory as it helps us assess each student’s potential.",
+  a: "Yes, it's compulsory as it helps us assess each student's potential.",
 },
 {
   q: "Can I register without applying online?",
   a: "Yes, on-the-spot registration is available, but pre-registering online saves time and avoids last-minute hassle.",
 },
-// {
-//   q: "Are scholarships really offered?",
-//   a: "Absolutely! Top performers in the entrance test are rewarded with attractive fee concessions.",
-// },
 {
   q: "How can I stay informed about the next steps?",
-//   a: "It’s easy! Save these contact numbers: 9302511111 / 9300110033 / 7725044544 — we’ll keep you updated with all important alerts and reminders.",
-  a: "It’s easy! Just save these numbers: 9302511111 / 9300110033 / 7725044544. You’ll receive all key updates, alerts, and reminders directly.",
+  a: "It's easy! Just save these numbers: 9302511111 / 9300110033 / 7725044544. You'll receive all key updates, alerts, and reminders directly.",
 }
-
   ];
 
   const toggleFaq = (index: number) => {
@@ -365,19 +359,27 @@ const AdmissionsPage: React.FC = () => {
           </div>
 
           {/* SCHOOL FEES TABLE */}
-          <div className="mb-12 overflow-hidden rounded-2xl shadow-sm border border-gray-200">
-            <div className="bg-blue-900 text-white p-4">
-              <h3 className="text-xl font-semibold">Day Scholar - School Fee Structure</h3>
+          <div className="mb-12 overflow-hidden rounded-2xl shadow-lg border border-gray-200 bg-white">
+            <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-6">
+              <h3 className="text-2xl font-bold text-center font-['Maven_Pro']">Day Scholar - School Fee Structure</h3>
             </div>
             
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white">
-                <thead className="bg-gray-50 border-b">
+                <thead className="bg-gradient-to-r from-gray-50 to-blue-50 border-b-2 border-blue-200">
                   <tr>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Class</th>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[140px]">Registration Fees</th>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual School Fees</th>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Remarks</th>
+                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[200px]">
+                      Class
+                    </th>
+                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px]">
+                      Registration Fees
+                    </th>
+                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px]">
+                      Annual School Fees
+                    </th>
+                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[150px]">
+                      Remarks
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -389,73 +391,106 @@ const AdmissionsPage: React.FC = () => {
                     { class: "Class 11th & 12th (Science)", reg: "₹11,000", school: "₹2,00,000", remarks: "Non-refundable" },
                     { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", school: "₹1,66,000", remarks: "Non-refundable" },
                   ].map((item, i) => (
-                    <tr key={i} className={`hover:bg-blue-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                      <td className="py-3 px-4 font-medium text-blue-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
-                      <td className="py-3 px-4 whitespace-nowrap min-w-[140px]">{item.reg}</td>
-                      <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td>
-                      <td className="py-3 px-4 text-gray-600 whitespace-nowrap min-w-[120px]">{item.remarks}</td>
+                    <tr 
+                      key={i} 
+                      className={`transition-all duration-200 hover:bg-blue-50 hover:scale-[1.02] ${
+                        i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                      }`}
+                    >
+                      <td className="py-4 px-6 text-center font-semibold text-gray-800 text-base font-['Maven_Pro'] whitespace-nowrap">
+                        {item.class}
+                      </td>
+                      <td className="py-4 px-6 text-center font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap">
+                        {item.reg}
+                      </td>
+                      <td className="py-4 px-6 text-center font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap">
+                        {item.school}
+                      </td>
+                      <td className="py-4 px-6 text-center text-gray-600 text-base font-['Maven_Pro'] whitespace-nowrap">
+                        {item.remarks}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             
-            <div className="bg-gray-100 p-4 text-sm text-gray-600">
-              <p>Note: Registration fees are one-time and non-refundable. School fees are annual and may be payable in installments based on academy policies.</p>
+            <div className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 border-t border-gray-200">
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5">
+                  <span className="text-blue-900 text-sm font-bold">ℹ️</span>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed font-['Maven_Pro']">
+                  <strong>Note:</strong> Registration fees are one-time and non-refundable. School fees are annual and may be payable in installments based on academy policies.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* HOSTEL FEES TABLE */}
-          <div className="mb-12 overflow-hidden rounded-2xl shadow-sm border border-gray-200">
-            <div className="bg-blue-900 text-white p-4">
-              <h3 className="text-xl font-semibold">Hostel Fee Structure</h3>
+          <div className="mb-12 overflow-hidden rounded-2xl shadow-lg border border-gray-200 bg-white">
+            <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-6">
+              <h3 className="text-2xl font-bold text-center font-['Maven_Pro']">Hostel Fee Structure</h3>
             </div>
             
             <div className="overflow-x-auto">
               <table className="min-w-full bg-white">
-                <thead className="bg-gray-50 border-b">
+                <thead className="bg-gradient-to-r from-gray-50 to-blue-50 border-b-2 border-blue-200">
                   <tr>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Hostel Name</th>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[140px]">Registration Fees</th>
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual Hostel Fees</th>
-                    {/* <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[150px]">Annual School Fees</th> */}
-                    <th className="py-3 px-4 text-left font-medium text-gray-700 whitespace-nowrap min-w-[120px]">Remarks</th>
+                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[200px]">
+                      Hostel Name
+                    </th>
+                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px]">
+                      Annual Hostel Fees
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {[
-                    { class: "Passion (For Boys)" , reg: "₹11,000", hostel: "₹1,90,000",  remarks: "Non-refundable" },
-                    { class: "Udaan (5th to 8th Boys)", reg: "₹11,000", hostel: "₹2,30,000", remarks: "Non-refundable" },
-                    { class: "Paradise (For Boys)", reg: "₹11,000", hostel: "₹2,30,000", remarks: "Non-refundable" },
-                    { class: "Petals (For Boys)", reg: "₹11,000", hostel: "₹2,60,000",  remarks: "Non-refundable" },
-
-                    { class: "Divine (Girls 4 Bedded)" , reg: "₹11,000", hostel: "₹2,60,000", remarks: "Non-refundable" },
-                    { class: "Divine (Girls 5 Bedded)" , reg: "₹11,000", hostel: "₹2,08,000",  remarks: "Non-refundable" },
+                    { class: "Passion (For Boys)", hostel: "₹1,90,000" },
+                    { class: "Udaan (5th to 8th Boys)", hostel: "₹2,30,000" },
+                    { class: "Paradise (For Boys)", hostel: "₹2,30,000" },
+                    { class: "Petals (For Boys)", hostel: "₹2,60,000" },
+                    { class: "Divine (Girls 4 Bedded)", hostel: "₹2,60,000" },
+                    { class: "Divine (Girls 5 Bedded)", hostel: "₹2,08,000" },
                   ].map((item, i) => (
-                    <tr key={i} className={`hover:bg-blue-50 transition-colors ${i % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}>
-                      <td className="py-3 px-4 font-medium text-blue-900 whitespace-nowrap min-w-[120px]">{item.class}</td>
-                      <td className="py-3 px-4 whitespace-nowrap min-w-[140px]">{item.reg}</td>
-                      <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.hostel}</td>
-                      {/* <td className="py-3 px-4 whitespace-nowrap min-w-[150px]">{item.school}</td> */}
-                      <td className="py-3 px-4 text-gray-600 whitespace-nowrap min-w-[120px]">{item.remarks}</td>
+                    <tr 
+                      key={i} 
+                      className={`transition-all duration-200 hover:bg-blue-50 hover:scale-[1.02] ${
+                        i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                      }`}
+                    >
+                      <td className="py-4 px-6 text-center font-semibold text-gray-800 text-base font-['Maven_Pro'] whitespace-nowrap">
+                        {item.class}
+                      </td>
+                      <td className="py-4 px-6 text-center font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap">
+                        {item.hostel}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
             
-            <div className="bg-gray-100 p-4 text-sm text-gray-600">
-              <p>Note: Registration fees are one-time and non-refundable. Hostel fees include accommodation, meals, and other amenities. School fees are separate and annual.</p>
+            <div className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 border-t border-gray-200">
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5">
+                  <span className="text-blue-900 text-sm font-bold">ℹ️</span>
+                </div>
+                <p className="text-gray-700 text-sm leading-relaxed font-['Maven_Pro']">
+                  <strong>Note:</strong> Registration fees are one-time and non-refundable. Hostel fees include accommodation, meals, and other amenities. School fees are separate and annual.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* CONTACT FOR MORE INFO */}
           <div className="mt-10 text-center">
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4 text-lg">
               Call our help desk now at <strong>9302511111</strong>, <strong>7725044544</strong> or <strong>9300110033</strong> - we'll walk you through it.
             </p>
             <button 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition-all duration-300"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition-all duration-300 hover:scale-105"
               onClick={() => window.location.href = "#registration"}
             >
               Click Here to Fill Online Registration Form
@@ -479,7 +514,7 @@ const AdmissionsPage: React.FC = () => {
           </div>
 
           <div className="text-center mb-12">
-            <p className="text-gray-600 max-w-3xl mx-auto">
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
               Here you can find the sample papers for best help in your preparation.
             </p>
           </div>
@@ -550,7 +585,7 @@ const AdmissionsPage: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Entrance Examination Syllabus</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
               Download the official syllabus for entrance exams to know what topics to focus on.
             </p>
           </div>
@@ -587,7 +622,7 @@ const AdmissionsPage: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">FAQ - Quick Answers to Common Questions</h2>
-            <p className="text-gray-600">Find answers to common questions</p>
+            <p className="text-gray-600 text-lg">Find answers to common questions</p>
           </div>
           
           <div className="space-y-4">
@@ -600,7 +635,7 @@ const AdmissionsPage: React.FC = () => {
                   className="flex justify-between items-center w-full p-6 text-left font-medium text-blue-900 hover:bg-blue-50 transition-colors"
                   onClick={() => toggleFaq(i)}
                 >
-                  <span>{faq.q}</span>
+                  <span className="text-lg">{faq.q}</span>
                   <div
                     className={`transform transition-transform ${openFaq === i ? 'rotate-180' : ''}`}
                   >
@@ -609,7 +644,7 @@ const AdmissionsPage: React.FC = () => {
                 </button>
                 
                 {openFaq === i && (
-                  <div className="p-6 pt-0 text-gray-700 border-t border-gray-100">
+                  <div className="p-6 pt-0 text-gray-700 border-t border-gray-100 text-lg">
                     {faq.a}
                   </div>
                 )}
