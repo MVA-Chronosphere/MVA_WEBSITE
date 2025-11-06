@@ -231,7 +231,7 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/2">
                   <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                     <img 
-                      src="/MVA boarding/visionparadise.webp" 
+                      src="paradise wing photo.webp" 
                       alt="Vision Paradise Hostel - Boys' Wing Senior" 
                       className="w-full h-full object-cover"
                     />

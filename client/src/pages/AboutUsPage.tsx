@@ -356,15 +356,15 @@ const FlipCard: React.FC<FlipCardProps> = ({ person, className = "" }) => {
 
   return (
     <div 
-      className={`flip-card h-80 sm:h-96 ${className}`}
+      className={`flip-card w-full ${className}`}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
       onClick={() => setIsFlipped(!isFlipped)}
     >
-      <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+      <div className={`flip-card-inner w-full ${isFlipped ? 'flipped' : ''}`}>
         {/* Front - Full Background Image */}
-        <div className="flip-card-front bg-white rounded-2xl overflow-hidden relative shadow-lg hover:shadow-2xl transition-all duration-500 group">
-          {/* Full Background Image */}
+        <div className="flip-card-front bg-white rounded-2xl overflow-hidden relative shadow-lg hover:shadow-2xl transition-all duration-500 group w-full h-full">
+          {/* Full Background Image Container */}
           <div className="absolute inset-0 w-full h-full">
             <img 
               src={person.image} 
@@ -380,32 +380,20 @@ const FlipCard: React.FC<FlipCardProps> = ({ person, className = "" }) => {
           </div>
           
           {/* Content Overlay */}
-          <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 text-white">
+          <div className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 text-white z-10">
             <div className="">
-              <h3 className="text-m sm:text-2xl font-bold mb-2 font-['Maven_Pro'] leading-tight group-hover:text-blue-200 transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 font-['Maven_Pro'] leading-tight group-hover:text-blue-200 transition-colors duration-300">
                 {person.name}
               </h3>
               <p className="text-blue-200 font-semibold mb-2 text-base sm:text-lg font-['Maven_Pro'] leading-tight">
                 {person.role}
               </p>
-              {/* {person.qualification && (
-                <p className="text-gray-200 text-sm sm:text-base font-['Maven_Pro'] leading-tight mb-3">
-                  {person.qualification}
-                </p>
-              )} */}
-              {/* Flip Hint */}
-              <div className="flex items-center justify-center text-blue-200 text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300 mt-2">
-                {/* <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"/>
-                </svg>
-                Click or hover to learn more */}
-              </div>
             </div>
           </div>
         </div>
         
         {/* Back */}
-        <div className="flip-card-back bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-2xl p-4 sm:p-6 shadow-2xl relative overflow-hidden">
+        <div className="flip-card-back bg-gradient-to-br from-blue-900 to-blue-800 text-white rounded-2xl p-4 sm:p-6 shadow-2xl relative overflow-hidden w-full h-full">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0 bg-gradient-to-br from-white to-transparent"></div>
@@ -419,7 +407,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ person, className = "" }) => {
               {person.role}
             </p>
             
-            <div className="flex-1 overflow-y-auto">
+            <div className="flex-1 overflow-y-auto custom-scrollbar">
               {person.qualification && (
                 <p className="text-blue-100 text-xs sm:text-sm font-['Maven_Pro'] leading-tight mb-3">
                   <strong className="text-white">Qualification:</strong> {person.qualification}
@@ -429,14 +417,6 @@ const FlipCard: React.FC<FlipCardProps> = ({ person, className = "" }) => {
                 {person.description}
               </p>
             </div>
-            
-            {/* Close Hint */}
-            {/* <div className="flex items-center justify-center text-blue-200 text-xs font-medium mt-3 pt-3 border-t border-blue-700">
-              <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z"/>
-              </svg>
-              Click or hover to return
-            </div> */}
           </div>
         </div>
       </div>
@@ -450,9 +430,9 @@ interface LeadershipGridProps {
 }
 
 const LeadershipGrid: React.FC<LeadershipGridProps> = ({ people, columns = "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" }) => (
-  <div className={`grid ${columns} gap-6 sm:gap-8`}>
+  <div className={`grid ${columns} gap-4 sm:gap-6 md:gap-8`}>
     {people.map((person, index) => (
-      <FlipCard key={index} person={person} />
+      <FlipCard key={index} person={person} className="w-full" />
     ))}
   </div>
 );
@@ -623,37 +603,36 @@ export default function AboutUsPage() {
 
       {/* Founder's Vision */}
       <section className="py-12 sm:py-16 bg-background" id="founders-vision">
-  <div className="max-w-7xl mx-auto px-4">
-    <SectionHeader title="Founder's Vision" />
-    
-    {/* Video Player */}
-    <div className="max-w-4xl mx-auto">
-      <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border">
-        <div className="aspect-video w-full">
-          <video
-            className="w-full h-full object-cover"
-            controls
-            poster="/founder-poster.jpg" // Optional: add a poster image
-            preload="metadata"
-          >
-            <source src="/foundermessage.webm" type="video/webm" />
-            <source src="/foundermessage.mp4" type="video/mp4" /> {/* Optional: add MP4 fallback */}
-            Your browser does not support the video tag.
-          </video>
+        <div className="max-w-7xl mx-auto px-4">
+          <SectionHeader title="Founder's Vision" />
+          
+          {/* Video Player */}
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border">
+              <div className="aspect-video w-full">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  // poster="/founder-poster.jpg" // Optional: add a poster image
+                  preload="metadata"
+                >
+                  <source src="founderswords.webm" type="video/webm" />
+                  <source src="foundermessage.mp4" type="video/mp4" /> {/* Optional: add MP4 fallback */}
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
+                  Message from Our Founders - Anand Sir and Manjusha Ma'am
+                </h3>
+                <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+                  Hear directly from our visionary founders about their dream of creating an institution that transforms lives through education.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="p-6 sm:p-8">
-          <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3">
-            Message from Our Founders - Anand Sir and Manjusha Ma'am
-          </h3>
-          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
-            Hear directly from our visionary founders about their dream of creating an institution that transforms lives through education.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Our Society */}
       <section className="py-12 sm:py-16 bg-muted/30" id="our-society">
@@ -715,7 +694,9 @@ export default function AboutUsPage() {
           {/* Founders */}
           <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12 max-w-5xl mx-auto">
             {aboutData.leadership.founders.map((founder, index) => (
-              <FlipCard key={index} person={founder} />
+              <div key={index} className="w-full">
+                <FlipCard person={founder} />
+              </div>
             ))}
           </div>
 
@@ -818,6 +799,7 @@ export default function AboutUsPage() {
           background-color: transparent;
           perspective: 1000px;
           cursor: pointer;
+          height: 400px; /* Fixed height for mobile */
         }
         
         .flip-card-inner {
@@ -848,9 +830,43 @@ export default function AboutUsPage() {
           transform: rotateY(180deg);
         }
 
+        /* Custom scrollbar for back content */
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 4px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 2px;
+        }
+        
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 2px;
+        }
+
+        /* Mobile-specific fixes */
         @media (max-width: 768px) {
           .flip-card {
-            height: 22rem !important;
+            height: 350px !important; /* Slightly reduced height for mobile */
+          }
+          
+          .flip-card-front img {
+            object-fit: cover !important;
+            object-position: top center !important; /* Ensure faces are visible */
+          }
+        }
+
+        /* Keep desktop heights as they were */
+        @media (min-width: 769px) {
+          .flip-card {
+            height: 480px; /* Original desktop height */
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .flip-card {
+            height: 520px; /* Original desktop height */
           }
         }
       `}</style>

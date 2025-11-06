@@ -68,48 +68,94 @@ const AdmissionsPage: React.FC = () => {
 
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   
-  // Updated samplePapers array with PDF file names
-  const samplePapers = [
-    { 
-      class: "IX", 
-      title: "IX Sample Paper - I", 
-      answerKey: "IX Sample Paper-I Answer Key",
-      pdfFile: "IX_Sample_Paper-I.pdf",
-      answerKeyPdf: "IX_Sample_Paper-I_Answer_Key.pdf"
-    },
-    { 
-      class: "X", 
-      title: "X Sample Paper - I", 
-      answerKey: "X Sample Paper-I Answer Key",
-      pdfFile: "X_Sample_Paper-I.pdf",
-      answerKeyPdf: "X_Sample_Paper-I_Answer_Key.pdf"
-    },
-    { 
-      class: "XI", 
-      subject: "Mathematics", 
-      title: "XI Mathematics Sample Paper-I", 
-      answerKey: "XI Mathematics Sample Paper-I Answer Key",
-      pdfFile: "XI_Mathematics_Sample_Paper-I.pdf",
-      answerKeyPdf: "XI_Mathematics_Sample_Paper-I_Answer_Key.pdf"
-    },
-    { 
-      class: "XI", 
-      subject: "Biology", 
-      title: "XI Biology Sample Paper-I", 
-      answerKey: "XI Biology Sample Paper-I Answer Key",
-      pdfFile: "XI_Biology_Sample_Paper-I.pdf",
-      answerKeyPdf: "XI_Biology_Sample_Paper-I_Answer_Key.pdf"
-    },
-    { 
-      class: "XI", 
-      subject: "Commerce", 
-      title: "XI Commerce Sample Paper-I", 
-      answerKey: "XI Commerce Sample Paper-I Answer Key",
-      pdfFile: "XI_Commerce_Sample_Paper-I.pdf",
-      answerKeyPdf: "XI_Commerce_Sample_Paper-I_Answer_Key.pdf"
-    }
-  ];
-
+ const samplePapers = [
+  { 
+    class: "II", 
+    title: "Class II Sample Paper", 
+    pdfFile: "Class -II_Entrance Test-2026-27 Sample Paper.pdf",
+    // No answer key available
+  },
+  { 
+    class: "III", 
+    title: "Class III Sample Paper", 
+    pdfFile: "Class -III_Entrance Test-2026-27 Sample Paper.pdf",
+    // No answer key available
+  },
+  { 
+    class: "IV", 
+    title: "Class IV Sample Paper", 
+    pdfFile: "Class -IV_Entrance Test-2026-27 Sample Paper.pdf",
+    // No answer key available
+  },
+  { 
+    class: "V", 
+    title: "Class V Sample Paper", 
+    // answerKey: "Class V Answer Key",
+    pdfFile: "Class -V_Entrance Test-2026-27 Sample Paper.pdf",
+    // answerKeyPdf: "Class_V_Answer_Key.pdf"
+  },
+  { 
+    class: "VI", 
+    title: "Class VI Sample Paper", 
+    answerKey: "Class VI Answer Key",
+    pdfFile: "VI Sample Paper-I.pdf",
+    answerKeyPdf: "VI Sample Paper-I Answer Key.pdf"
+  },
+  { 
+    class: "VII", 
+    title: "Class VII Sample Paper", 
+    answerKey: "Class VII Answer Key",
+    pdfFile: "VII Sample Paper-I.pdf",
+    answerKeyPdf: "VII Sample Paper-I Answer Key.pdf"
+  },
+  { 
+    class: "VIII", 
+    title: "Class VIII Sample Paper", 
+    answerKey: "Class VIII Answer Key",
+    pdfFile: "VIII Sample Paper-I.pdf",
+    answerKeyPdf: "VIII Sample Paper-I Answer Key.pdf"
+  },
+  { 
+    class: "IX", 
+    title: "Class IX Sample Paper", 
+    answerKey: "Class IX Answer Key",
+    pdfFile: "IX_Sample_Paper-I.pdf",
+    answerKeyPdf: "IX_Sample_Paper-I_Answer_Key.pdf"
+  },
+  { 
+    class: "X", 
+    title: "Class X Sample Paper", 
+    answerKey: "Class X Answer Key",
+    pdfFile: "X_Sample_Paper-I.pdf",
+    answerKeyPdf: "X_Sample_Paper-I_Answer_Key.pdf"
+  },
+  { 
+    class: "XI", 
+    // subject: "Mathematics", 
+    title: "Class XI Mathematics", 
+    answerKey: "Class XI Mathematics Answer Key",
+    pdfFile: "XI_Mathematics_Sample_Paper-I.pdf",
+    answerKeyPdf: "XI_Mathematics_Sample_Paper-I_Answer_Key.pdf"
+  },
+  
+  { 
+    class: "XI", 
+    // subject: "Biology", 
+    title: "Class XI Biology", 
+    answerKey: "Class XI Biology Answer Key",
+    pdfFile: "XI_Biology_Sample_Paper-I.pdf",
+    answerKeyPdf: "XI_Biology_Sample_Paper-I_Answer_Key.pdf"
+  },
+  { 
+    class: "XI", 
+    // subject: "Commerce", 
+    title: "Class XI Commerce", 
+    answerKey: "Class XI Commerce Answer Key",
+    pdfFile: "XI_Commerce_Sample_Paper-I.pdf",
+    answerKeyPdf: "XI_Commerce_Sample_Paper-I_Answer_Key.pdf"
+  },
+  
+];
   // Syllabus PDF files
   const syllabusFiles = [
     {
@@ -358,132 +404,130 @@ const AdmissionsPage: React.FC = () => {
             <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
           </div>
 
-          {/* SCHOOL FEES TABLE */}
-          <div className="mb-12 overflow-hidden rounded-2xl shadow-lg border border-gray-200 bg-white">
-            <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-6">
-              <h3 className="text-2xl font-bold text-center font-['Maven_Pro']">Day Scholar - School Fee Structure</h3>
-            </div>
-            
-            <div className="overflow-x-auto">
-              <table className="min-w-full bg-white">
-                <thead className="bg-gradient-to-r from-gray-50 to-blue-50 border-b-2 border-blue-200">
-                  <tr>
-                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[200px]">
-                      Class
-                    </th>
-                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px]">
-                      Registration Fees
-                    </th>
-                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px]">
-                      Annual School Fees
-                    </th>
-                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[150px]">
-                      Remarks
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[
-                    { class: "Class 1st", reg: "₹11,000", school: "₹90,000", remarks: "Non-refundable" },
-                    { class: "Class 2nd to 4th", reg: "₹11,000", school: "₹99,000", remarks: "Non-refundable" },
-                    { class: "Class 5th to 8th", reg: "₹11,000", school: "₹1,20,000", remarks: "Non-refundable" },
-                    { class: "Class 9th & 10th", reg: "₹11,000", school: "₹1,60,000", remarks: "Non-refundable" },
-                    { class: "Class 11th & 12th (Science)", reg: "₹11,000", school: "₹2,00,000", remarks: "Non-refundable" },
-                    { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", school: "₹1,66,000", remarks: "Non-refundable" },
-                  ].map((item, i) => (
-                    <tr 
-                      key={i} 
-                      className={`transition-all duration-200 hover:bg-blue-50 hover:scale-[1.02] ${
-                        i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
-                      }`}
-                    >
-                      <td className="py-4 px-6 text-center font-semibold text-gray-800 text-base font-['Maven_Pro'] whitespace-nowrap">
-                        {item.class}
-                      </td>
-                      <td className="py-4 px-6 text-center font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap">
-                        {item.reg}
-                      </td>
-                      <td className="py-4 px-6 text-center font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap">
-                        {item.school}
-                      </td>
-                      <td className="py-4 px-6 text-center text-gray-600 text-base font-['Maven_Pro'] whitespace-nowrap">
-                        {item.remarks}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            
-            <div className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 border-t border-gray-200">
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5">
-                  <span className="text-blue-900 text-sm font-bold">ℹ️</span>
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed font-['Maven_Pro']">
-                  <strong>Note:</strong> Registration fees are one-time and non-refundable. School fees are annual and may be payable in installments based on academy policies.
-                </p>
-              </div>
-            </div>
-          </div>
+   <div className="mb-12 overflow-hidden rounded-2xl shadow-lg border border-gray-200 bg-white">
+  <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-6">
+    <h3 className="text-2xl font-bold text-center font-['Maven_Pro']">Day Scholar - School Fee Structure</h3>
+  </div>
+  
+  <div className="overflow-x-auto">
+    <table className="min-w-full bg-white">
+      <thead className="bg-gradient-to-r from-gray-50 to-blue-50 border-b-2 border-blue-200">
+        <tr>
+          <th className="py-4 px-6 font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[200px] text-left">
+            Class
+          </th>
+          <th className="py-4 px-6 font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px] text-center">
+            Registration Fees
+          </th>
+          <th className="py-4 px-6 font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px] text-center">
+            Annual School Fees
+          </th>
+          <th className="py-4 px-6 font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[150px] text-center">
+            Remarks
+          </th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-gray-100">
+        {[
+          { class: "Class 1st", reg: "₹11,000", school: "₹90,000", remarks: "Non-refundable" },
+          { class: "Class 2nd to 4th", reg: "₹11,000", school: "₹99,000", remarks: "Non-refundable" },
+          { class: "Class 5th to 8th", reg: "₹11,000", school: "₹1,20,000", remarks: "Non-refundable" },
+          { class: "Class 9th & 10th", reg: "₹11,000", school: "₹1,60,000", remarks: "Non-refundable" },
+          { class: "Class 11th & 12th (Science)", reg: "₹11,000", school: "₹2,00,000", remarks: "Non-refundable" },
+          { class: "Class 11th & 12th (Commerce)", reg: "₹11,000", school: "₹1,66,000", remarks: "Non-refundable" },
+        ].map((item, i) => (
+          <tr 
+            key={i} 
+            className={`transition-all duration-200 hover:bg-blue-50 hover:scale-[1.02] ${
+              i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+            }`}
+          >
+            <td className="py-4 px-6 font-semibold text-gray-800 text-base font-['Maven_Pro'] whitespace-nowrap text-left">
+              {item.class}
+            </td>
+            <td className="py-4 px-6 font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap text-center">
+              {item.reg}
+            </td>
+            <td className="py-4 px-6 font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap text-center">
+              {item.school}
+            </td>
+            <td className="py-4 px-6 text-gray-600 text-base font-['Maven_Pro'] whitespace-nowrap text-center">
+              {item.remarks}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  
+  <div className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 border-t border-gray-200">
+    <div className="flex items-start space-x-3">
+      <div className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5">
+        <span className="text-blue-900 text-sm font-bold">ℹ️</span>
+      </div>
+      <p className="text-gray-700 text-sm leading-relaxed font-['Maven_Pro']">
+        <strong>Note:</strong> Registration fees are one-time and non-refundable. School fees are annual and may be payable in installments based on academy policies.
+      </p>
+    </div>
+  </div>
+</div>
 
-          {/* HOSTEL FEES TABLE */}
-          <div className="mb-12 overflow-hidden rounded-2xl shadow-lg border border-gray-200 bg-white">
-            <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-6">
-              <h3 className="text-2xl font-bold text-center font-['Maven_Pro']">Hostel Fee Structure</h3>
-            </div>
-            
-            <div className="overflow-x-auto">
-              <table className="min-w-full bg-white">
-                <thead className="bg-gradient-to-r from-gray-50 to-blue-50 border-b-2 border-blue-200">
-                  <tr>
-                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[200px]">
-                      Hostel Name
-                    </th>
-                    <th className="py-4 px-6 text-center font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px]">
-                      Annual Hostel Fees
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-100">
-                  {[
-                    { class: "Passion (For Boys)", hostel: "₹1,90,000" },
-                    { class: "Udaan (5th to 8th Boys)", hostel: "₹2,30,000" },
-                    { class: "Paradise (For Boys)", hostel: "₹2,30,000" },
-                    { class: "Petals (For Boys)", hostel: "₹2,60,000" },
-                    { class: "Divine (Girls 4 Bedded)", hostel: "₹2,60,000" },
-                    { class: "Divine (Girls 5 Bedded)", hostel: "₹2,08,000" },
-                  ].map((item, i) => (
-                    <tr 
-                      key={i} 
-                      className={`transition-all duration-200 hover:bg-blue-50 hover:scale-[1.02] ${
-                        i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
-                      }`}
-                    >
-                      <td className="py-4 px-6 text-center font-semibold text-gray-800 text-base font-['Maven_Pro'] whitespace-nowrap">
-                        {item.class}
-                      </td>
-                      <td className="py-4 px-6 text-center font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap">
-                        {item.hostel}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            
-            <div className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 border-t border-gray-200">
-              <div className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5">
-                  <span className="text-blue-900 text-sm font-bold">ℹ️</span>
-                </div>
-                <p className="text-gray-700 text-sm leading-relaxed font-['Maven_Pro']">
-                  <strong>Note:</strong> Registration fees are one-time and non-refundable. Hostel fees include accommodation, meals, and other amenities. School fees are separate and annual.
-                </p>
-              </div>
-            </div>
-          </div>
-
+{/* HOSTEL FEES TABLE */}
+<div className="mb-12 overflow-hidden rounded-2xl shadow-lg border border-gray-200 bg-white">
+  <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white p-6">
+    <h3 className="text-2xl font-bold text-center font-['Maven_Pro']">Hostel Fee Structure</h3>
+  </div>
+  
+  <div className="overflow-x-auto">
+    <table className="min-w-full bg-white">
+      <thead className="bg-gradient-to-r from-gray-50 to-blue-50 border-b-2 border-blue-200">
+        <tr>
+          <th className="py-4 px-6 font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[200px] text-left">
+            Hostel Name
+          </th>
+          <th className="py-4 px-6 font-bold text-gray-800 text-lg font-['Maven_Pro'] min-w-[180px] text-center">
+            Annual Hostel Fees
+          </th>
+        </tr>
+      </thead>
+      <tbody className="divide-y divide-gray-100">
+        {[
+          { class: "Passion (For Boys)", hostel: "₹1,90,000" },
+          { class: "Udaan (5th to 8th Boys)", hostel: "₹2,30,000" },
+          { class: "Paradise (For Boys)", hostel: "₹2,30,000" },
+          { class: "Petals (For Boys)", hostel: "₹2,60,000" },
+          { class: "Divine (Girls 4 Bedded)", hostel: "₹2,60,000" },
+          { class: "Divine (Girls 5 Bedded)", hostel: "₹2,08,000" },
+        ].map((item, i) => (
+          <tr 
+            key={i} 
+            className={`transition-all duration-200 hover:bg-blue-50 hover:scale-[1.02] ${
+              i % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+            }`}
+          >
+            <td className="py-4 px-6 font-semibold text-gray-800 text-base font-['Maven_Pro'] whitespace-nowrap text-left">
+              {item.class}
+            </td>
+            <td className="py-4 px-6 font-bold text-blue-900 text-lg font-['Maven_Pro'] whitespace-nowrap text-center">
+              {item.hostel}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  
+  <div className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 border-t border-gray-200">
+    <div className="flex items-start space-x-3">
+      <div className="flex-shrink-0 w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5">
+        <span className="text-blue-900 text-sm font-bold">ℹ️</span>
+      </div>
+      <p className="text-gray-700 text-sm leading-relaxed font-['Maven_Pro']">
+        <strong>Note:</strong> Registration fees are one-time and non-refundable. Hostel fees include accommodation, meals, and other amenities. School fees are separate and annual.
+      </p>
+    </div>
+  </div>
+</div>
           {/* CONTACT FOR MORE INFO */}
           <div className="mt-10 text-center">
             <p className="text-gray-600 mb-4 text-lg">
@@ -499,86 +543,76 @@ const AdmissionsPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SAMPLE PAPERS SECTION */}
-      <section className="py-20 px-4 md:px-20 bg-gray-50" id="sample-papers">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Sample Papers - Your Prep Power Tool</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto mb-8">
-              Nervous about the test? Don't be. We've got sample papers designed to help you walk in with confidence.
-            </p>
-            <p className="text-gray-600 max-w-3xl mx-auto mb-8">
-              <strong>What You'll Get:</strong> Subject-specific practice (Maths, Science, English, Aptitude & more) | Past patterns + model questions | Tips on time management
-            </p>
-            <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
-          </div>
+     {/* SAMPLE PAPERS SECTION */}
+<section className="py-20 px-4 md:px-20 bg-gray-50" id="sample-papers">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center mb-8">
+      <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Sample Papers - Your Prep Power Tool</h2>
+      
+      <p className="text-gray-600 max-w-3xl mx-auto mb-8">
+        <strong>What You'll Get:</strong> Subject-specific practice (Maths, Science, English, Aptitude & more) | Past patterns + model questions | Tips on time management
+      </p>
+      <div className="w-24 h-1 bg-blue-500 mx-auto rounded-full"></div>
+    </div>
 
-          <div className="text-center mb-12">
-            <p className="text-gray-600 max-w-3xl mx-auto text-lg">
-              Here you can find the sample papers for best help in your preparation.
-            </p>
-          </div>
+    <div className="text-center mb-12">
+      <p className="text-gray-600 max-w-3xl mx-auto text-lg">
+        Here you can find the sample papers for best help in your preparation.
+      </p>
+    </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {samplePapers.map((paper, i) => (
-              <div
-                key={i}
-                className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
-              >
-                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                  <FileText className="w-5 h-5 text-blue-600" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-blue-900 mb-1">{paper.title}</h3>
-                  <a
-                    href={paper.pdfFile}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
-                  >
-                    <Download className="w-4 h-4" />
-                    Download PDF
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* ANSWER KEYS ROW */}
-          <div className="mt-12">
-            <h3 className="text-xl font-semibold text-blue-900 mb-6 text-center">
-              Answer Keys
-            </h3>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              {samplePapers.map((paper, i) => (
-                <div
-                  key={`key-${i}`}
-                  className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 flex items-center"
-                >
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <FileText className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-blue-900 mb-1">
-                      {paper.answerKey}
-                    </h3>
-                    <a
-                      href={paper.answerKeyPdf}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 text-sm font-medium hover:underline flex items-center gap-1"
-                    >
-                      <Download className="w-4 h-4" />
-                      Download Answer Key
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+  {/* Sample Papers Grid */}
+<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+  {samplePapers.map((paper, i) => (
+    <div
+      key={i}
+      className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 hover:border-blue-300 group"
+    >
+      <div className="flex items-start mb-4">
+        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 group-hover:bg-blue-200 transition-colors duration-300">
+          <FileText className="w-6 h-6 text-blue-600" />
         </div>
-      </section>
+        <div className="flex-1">
+          <h3 className="font-semibold text-blue-900 mb-1 text-lg">{paper.title}</h3>
+          {/* {paper.subject && (
+            <p className="text-gray-500 text-sm mb-2">Subject: {paper.subject}</p>
+          )} */}
+        </div>
+      </div>
+      
+      <div className="space-y-3">
+        {/* Sample Paper Download */}
+        <a
+          href={paper.pdfFile}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 text-sm"
+        >
+          <Download className="w-4 h-4" />
+          Download Sample Paper
+        </a>
+
+        {/* Answer Key - Only show if available */}
+        {paper.answerKey && paper.answerKeyPdf ? (
+          <a
+            href={paper.answerKeyPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2 text-sm"
+          >
+            <FileText className="w-4 h-4" />
+            Download Answer Key
+          </a>
+        ) : null}
+        {/* Removed the "Answer Key Coming Soon" section as requested */}
+      </div>
+    </div>
+  ))}
+</div>
+    {/* Information Note */}
+    
+  </div>
+</section>
 
       {/* SYLLABUS SECTION */}
       <section className="py-20 px-4 md:px-20 bg-white" id="syllabus">

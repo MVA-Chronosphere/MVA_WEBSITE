@@ -451,12 +451,19 @@ const StudentAdmissionForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${errors.admissionForClass ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 sm:text-sm`}
               >
-                <option value="">Select grade level</option>
-                <option value="Pre-Primary">Pre-Primary</option>
-                <option value="Primary">Primary</option>
-                <option value="Middle">Middle</option>
-                <option value="High School">High School</option>
-                <option value="Senior Secondary">Senior Secondary</option>
+                <option value="" selected disabled>Select Grade</option>
+<option value="1">Class 1</option>
+<option value="2">Class 2</option>
+<option value="3">Class 3</option>
+<option value="4">Class 4</option>
+<option value="5">Class 5</option>
+<option value="6">Class 6</option>
+<option value="7">Class 7</option>
+<option value="8">Class 8</option>
+<option value="9">Class 9</option>
+<option value="11">Class 11</option>
+
+
               </select>
               {errors.admissionForClass && <p className="mt-1 text-xs text-red-600">{errors.admissionForClass}</p>}
             </div>
