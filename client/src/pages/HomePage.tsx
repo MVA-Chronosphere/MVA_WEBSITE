@@ -26,13 +26,13 @@ export default function HomePage() {
           </div>
 
           <div className="flex justify-center items-center w-full">
-            <div className="relative bg-white border border-blue-900 shadow-md hover:shadow-lg transition-shadow duration-300 p-2 md:p-3 lg:p-4 w-full max-w-4xl">
+            <div className="relative bg-white   p-2 md:p-3 lg:p-4 w-full max-w-4xl">
               {/* Top-Left L-Border */}
-              <div className="absolute top-0 left-0 w-32 h-1 bg-blue-900"></div>
-              <div className="absolute top-0 left-0 w-1 h-32 bg-blue-900"></div>
+              {/* <div className="absolute top-0 left-0 w-32 h-1 bg-blue-900"></div>
+              <div className="absolute top-0 left-0 w-1 h-32 bg-blue-900"></div> */}
               {/* Bottom-Right L-Border */}
-              <div className="absolute bottom-0 right-0 w-32 h-1 bg-blue-900"></div>
-              <div className="absolute bottom-0 right-0 w-1 h-32 bg-blue-900"></div>
+              {/* <div className="absolute bottom-0 right-0 w-32 h-1 bg-blue-900"></div>
+              <div className="absolute bottom-0 right-0 w-1 h-32 bg-blue-900"></div> */}
               <ImagePopup
                 src="/mva tree2.webp"
                 alt="Macro Vision Academy Tree - Why Choose MVA"

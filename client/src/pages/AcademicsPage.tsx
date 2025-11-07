@@ -109,8 +109,8 @@ const cardData = [
       details: {
       curriculum: [
         <><span className="font-semibold">Science Stream</span>: Physics, Chemistry, Mathematics, Biology, Physical Education, English, Hindi.</>,
-        <><span className="font-semibold">Commerce Stream</span>: Accountancy, Business Studies, Economics, Applied Mathematics, Psychology.</>,
-        <><span className="font-semibold">Skill & Electives</span>: Fine Arts, Informatics Practices, Physical Education.</>,
+        <><span className="font-semibold">Commerce Stream</span>: Accountancy, Business Studies, Economics, Applied Mathematics, Psychology , Physical Education, English, Hindi.</>,
+        <><span className="font-semibold">Skill & Electives</span>: Informatics Practices, Physical Education.</>,
         <><span className="font-semibold">Chronosphere Courses</span>: Python, C++, AI, ML, Data Analytics.</>
       ],
       methodology: [
@@ -192,9 +192,7 @@ export default function AcademicsPage() {
       <div className="bg-gradient-to-r from-primary to-[#0055A4] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Academics</h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Academics at Macro Vision Academy
-          </p>
+          
           <p className="text-base text-white/90 max-w-3xl mx-auto mt-4">
             At Macro Vision Academy, Burhanpur, our academic framework is designed to prepare students for excellence in CBSE board exams, competitive exams, and life beyond school. We provide a balanced curriculum across grade levels, supported by modern pedagogy, experiential learning, and holistic development initiatives.
           </p>
@@ -203,104 +201,104 @@ export default function AcademicsPage() {
 
       <div className="max-w-7xl mx-auto px-4 py-16 space-y-16">
         <section id="grade-groups">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-6 md:mb-8 text-center">Overview by Grade Groups (1–5, 6–8, 9–10, 11–12)</h2>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-6 md:mb-8 text-center">Overview by Grade Groups</h2>
           <p className="text-sm md:text-base text-muted-foreground text-center mb-8 md:mb-12 max-w-4xl mx-auto">
             At Macro Vision Academy, Burhanpur, our academic framework is designed to prepare students for excellence in CBSE board exams, competitive exams, and life beyond school. We provide a balanced curriculum across grade levels, supported by modern pedagogy, experiential learning, and holistic development initiatives.
           </p>
           <ParallaxCards cards={cards} />
         </section>
 
-        {/* Academic Calendar Section */}
-        <section id="academic-calendar" className="scroll-mt-20">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#0055A4] rounded-full mb-6">
-              <CalendarIcon className="w-8 h-8 text-white" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Maven_Pro']">Academic Calendar</h2>
-            <div className="w-24 h-1 bg-[#0055A4] mx-auto mb-6"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Structured academic planning for the 2025-26 academic year
+      {/* Academic Calendar Section */}
+<section id="academic-calendar" className="scroll-mt-20">
+  <div className="text-center mb-16">
+    <div className="inline-flex items-center justify-center w-16 h-16 bg-[#0055A4] rounded-full mb-6">
+      <CalendarIcon className="w-8 h-8 text-white" />
+    </div>
+    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Maven_Pro']">Academic Calendar</h2>
+    <div className="w-24 h-1 bg-[#0055A4] mx-auto mb-6"></div>
+    <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+      Structured academic planning for the 2025-26 academic year
+    </p>
+  </div>
+
+  <div className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
+    <div className="p-8 md:p-12">
+      <div className="grid lg:grid-cols-3 gap-12">
+        {/* Left Column - Information */}
+        <div className="lg:col-span-2">
+          <div className="mb-8">
+            <h4 className="text-2xl font-bold text-gray-900 mb-6 font-['Maven_Pro']">Calendar Overview</h4>
+            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+              The Academic Calendar serves as the official planning document for the 2025-26 academic year, 
+              outlining key dates, examination schedules, holidays, and institutional events to ensure 
+              coordinated planning across all academic activities.
             </p>
           </div>
 
-          <div className="bg-white border border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-            <div className="p-8 md:p-12">
-              <div className="grid lg:grid-cols-3 gap-12">
-                {/* Left Column - Information */}
-                <div className="lg:col-span-2">
-                  <div className="mb-8">
-                    <h4 className="text-2xl font-bold text-gray-900 mb-6 font-['Maven_Pro']">Calendar Overview</h4>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                      The Academic Calendar serves as the official planning document for the 2025-26 academic year, 
-                      outlining key dates, examination schedules, holidays, and institutional events to ensure 
-                      coordinated planning across all academic activities.
-                    </p>
-                  </div>
-
-                  {/* Features Grid */}
-                  <div className="grid md:grid-cols-2 gap-6 mb-8">
-                    <div className="border-l-4 border-[#0055A4] pl-4 py-2">
-                      <h5 className="font-semibold text-gray-900 mb-2">Academic Terms</h5>
-                      <p className="text-gray-600 text-sm">Structured semester system with defined assessment periods</p>
-                    </div>
-                    <div className="border-l-4 border-[#0055A4] pl-4 py-2">
-                      <h5 className="font-semibold text-gray-900 mb-2">Examination Schedule</h5>
-                      <p className="text-gray-600 text-sm">Comprehensive testing calendar with preparatory periods</p>
-                    </div>
-                    <div className="border-l-4 border-[#0055A4] pl-4 py-2">
-                      <h5 className="font-semibold text-gray-900 mb-2">Institutional Events</h5>
-                      <p className="text-gray-600 text-sm">Academic, cultural, and co-curricular activities</p>
-                    </div>
-                    <div className="border-l-4 border-[#0055A4] pl-4 py-2">
-                      <h5 className="font-semibold text-gray-900 mb-2">Administrative Dates</h5>
-                      <p className="text-gray-600 text-sm">Registration, orientation, and administrative deadlines</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Column - Download */}
-                <div className="lg:col-span-1">
-                  <div className="bg-gradient-to-b from-gray-50 to-white border border-gray-200 rounded-xl p-8 shadow-sm sticky top-8">
-                    <div className="text-center mb-6">
-                      <div className="bg-[#0055A4] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      </div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">Download Document</h4>
-                      <p className="text-gray-600 text-sm mb-6">
-                        Official Academic Calendar 2025-26
-                      </p>
-                    </div>
-
-                    <Button 
-                      onClick={() => window.open('academic_calender.pdf', '_blank')}
-                      className="w-full bg-[#0055A4] hover:bg-[#004488] text-white py-4 px-6 text-lg font-semibold rounded-xl transition-colors duration-200 flex items-center justify-center gap-3 shadow-md hover:shadow-lg border border-[#004488]"
-                    >
-                      <CalendarIcon className="w-5 h-5" />
-                      Download PDF
-                    </Button>
-
-                    <div className="mt-6 space-y-3 text-sm text-gray-600">
-                      <div className="flex items-center justify-between py-2 border-b border-gray-200">
-                        <span>File Format</span>
-                        <span className="font-semibold text-gray-900">PDF Document</span>
-                      </div>
-                      <div className="flex items-center justify-between py-2 border-b border-gray-200">
-                        <span>File Size</span>
-                        <span className="font-semibold text-gray-900">2.4 MB</span>
-                      </div>
-                      <div className="flex items-center justify-between py-2 border-b border-gray-200">
-                        <span>Pages</span>
-                        <span className="font-semibold text-gray-900">12 Pages</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="border-l-4 border-[#0055A4] pl-4 py-2">
+              <h5 className="font-semibold text-gray-900 mb-2">Academic Terms</h5>
+              <p className="text-gray-600 text-sm">Structured semester system with defined assessment periods</p>
+            </div>
+            <div className="border-l-4 border-[#0055A4] pl-4 py-2">
+              <h5 className="font-semibold text-gray-900 mb-2">Examination Schedule</h5>
+              <p className="text-gray-600 text-sm">Comprehensive testing calendar with preparatory periods</p>
+            </div>
+            <div className="border-l-4 border-[#0055A4] pl-4 py-2">
+              <h5 className="font-semibold text-gray-900 mb-2">Institutional Events</h5>
+              <p className="text-gray-600 text-sm">Academic, cultural, and co-curricular activities</p>
+            </div>
+            <div className="border-l-4 border-[#0055A4] pl-4 py-2">
+              <h5 className="font-semibold text-gray-900 mb-2">Administrative Dates</h5>
+              <p className="text-gray-600 text-sm">Registration, orientation, and administrative deadlines</p>
             </div>
           </div>
-        </section>
+        </div>
+
+        {/* Right Column - Downloads */}
+        <div className="lg:col-span-1">
+          <div className="bg-gradient-to-b from-gray-50 to-white border border-gray-200 rounded-xl p-8 shadow-sm sticky top-8">
+            <div className="text-center mb-6">
+              <div className="bg-[#0055A4] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h4 className="text-xl font-bold text-gray-900 mb-2">Download Documents</h4>
+              <p className="text-gray-600 text-sm mb-6">
+                Choose the appropriate calendar for your grade level
+              </p>
+            </div>
+
+            {/* Buttons Container */}
+            <div className="space-y-4">
+              {/* Grades 1-8 Button */}
+              <Button 
+                onClick={() => window.open('academic_calender_1_to_8.pdf', '_blank')}
+                className="w-full bg-[#0055A4] hover:bg-[#004488] text-white py-4 px-6 text-lg font-semibold rounded-xl transition-colors duration-200 flex items-center justify-center gap-3 shadow-md hover:shadow-lg border border-[#004488]"
+              >
+                <CalendarIcon className="w-5 h-5" />
+                Grades I-VIII
+              </Button>
+
+              {/* Grades 9-12 Button */}
+              <Button 
+                onClick={() => window.open('academic_calender_9_to_12.pdf', '_blank')}
+                className="w-full bg-white hover:bg-gray-50 text-[#0055A4] border-2 border-[#0055A4] py-4 px-6 text-lg font-semibold rounded-xl transition-colors duration-200 flex items-center justify-center gap-3 shadow-md hover:shadow-lg"
+              >
+                <CalendarIcon className="w-5 h-5" />
+                Grades IX-XII
+              </Button>
+            </div>
+
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
      {/* Chronosphere Section - Consolidated */}
 <section id="chronosphere">
@@ -463,11 +461,12 @@ export default function AcademicsPage() {
             <CpuIcon className="w-6 h-6 text-[#0055A4] mr-3" />
             Innovation Labs & Facilities
           </h3>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-3 gap-3">
             {[
               "Teamwork Zones",
               "Entrepreneurship Hubs", 
               "Animation Studios",
+              "Web Application Labs",
               "Robotics Labs",
               "Coding Labs",
               "AI/ML Labs",
@@ -479,9 +478,7 @@ export default function AcademicsPage() {
               </div>
             ))}
           </div>
-          <p className="text-gray-600 text-sm mt-4 text-center">
-            World-class labs for hands-on experimentation and innovation
-          </p>
+         
         </div>
       </div>
     </div>
@@ -497,7 +494,7 @@ export default function AcademicsPage() {
     </div>
   </div>
 </section>
-        <section id="results">
+        {/* <section id="results">
           <h2 className="text-3xl font-bold text-foreground mb-8">Results</h2>
           <div className="bg-gradient-to-br from-primary/10 to-[#0055A4]/10 rounded-lg p-8">
             <div className="grid md:grid-cols-3 gap-8 text-center">
@@ -515,7 +512,7 @@ export default function AcademicsPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section id="career-counseling">
           <h2 className="text-3xl font-bold text-foreground mb-8">Career and College Counseling</h2>

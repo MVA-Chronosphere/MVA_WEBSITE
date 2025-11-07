@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import InfrastructureGallery from "@/components/InfrastructureGallery";
+// import InfrastructureGallery from "@/components/InfrastructureGallery";
 
 export default function LifeAtMVAPage() {
   const [activeTab, setActiveTab] = useState("boarding");
@@ -371,7 +371,7 @@ export default function LifeAtMVAPage() {
                 <div className="lg:w-1/3 space-y-6">
                   <div className="border-4 border-blue-900 rounded-lg h-48 overflow-hidden">
                     <img 
-                      src="/MVA boarding/swad hostel food 1.webp" 
+                      src="DSC06270.webp" 
                       alt="FSSAI Kitchen" 
                       className="w-full h-full object-cover"
                     />
@@ -960,7 +960,7 @@ export default function LifeAtMVAPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Zenith Circle/Zenith Circle 2.webp" 
+                      src="zenith.webp" 
                       alt="Zenith Circle Image 1" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -968,7 +968,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Zenith Circle/Zenith Circle 1.webp" 
+                      src="zenith2.webp" 
                       alt="Zenith Circle Image 2" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1663,7 +1663,7 @@ export default function LifeAtMVAPage() {
             )}
           </TabsContent>
 
-          <TabsContent value="infrastructure" className="space-y-12 font-maven-pro">
+                  <TabsContent value="infrastructure" className="space-y-12 font-maven-pro">
             <div id="infrastructure" />
             <div className="text-center mb-8">
               <h2 className="text-4xl md:text-5xl font-bold text-foreground inline-block border-b-4 border-black pb-2">
@@ -1796,13 +1796,33 @@ export default function LifeAtMVAPage() {
                 </div>
               </div>
 
+              {/* Library */}
+              <div 
+                className="border-4 border-blue-900 aspect-square flex flex-col cursor-pointer hover:opacity-90 transition-opacity p-4 relative overflow-hidden bg-cover bg-center"
+                id="library"
+                style={{ 
+                  borderRadius: "30px 0 30px 0",
+                  backgroundImage: "url('/infrastructure/library.webp')"
+                }}
+                onClick={() => setInfrastructureModal({
+                  isOpen: true,
+                  title: "Library",
+                  content: "Library – The Knowledge Hub\n\nOur state-of-the-art library is a treasure trove of knowledge with over 15,000 books spanning across various genres, subjects, and reading levels. The library features:\n\n• Extensive collection of academic textbooks, reference books, and competitive exam materials\n• Vast fiction and non-fiction sections to foster reading habits\n• Digital library with e-books and online resources\n• Quiet reading zones and collaborative study areas\n• Regular book clubs and reading sessions\n• Research assistance and academic support\n\nThe library serves as a central hub for intellectual exploration, research, and self-study, providing students with the resources they need to excel academically and develop lifelong learning habits."
+                })}
+              >
+                <div className="flex flex-col items-center relative z-10">
+                  <span className="text-white text-xs md:text-sm text-center font-bold bg-black bg-opacity-60 px-2 py-1 rounded whitespace-nowrap">Library</span>
+                  <span className="text-white text-xs mt-1 text-center font-semibold bg-black bg-opacity-60 px-2 py-1 rounded whitespace-nowrap">Knowledge Hub</span>
+                </div>
+              </div>
+
               {/* Swad Sansad */}
               <div 
                 className="border-4 border-blue-900 aspect-square flex flex-col cursor-pointer hover:opacity-90 transition-opacity p-4 relative overflow-hidden bg-cover bg-center"
                 id="swad-sansad"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/swad hostel food 1.webp')"
+                  backgroundImage: "url('DSC06248.webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,

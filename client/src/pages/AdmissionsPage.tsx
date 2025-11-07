@@ -221,58 +221,58 @@ const AdmissionsPage: React.FC = () => {
         backgroundRepeat: 'no-repeat, no-repeat, repeat',
       }}
     >
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 to-indigo-800 text-white">
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-700 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-700 rounded-full translate-x-1/2 translate-y-1/2 opacity-20"></div>
-          <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-blue-600 rounded-lg rotate-45 opacity-10"></div>
+    {/* HERO SECTION */}
+<section className="relative overflow-hidden bg-gradient-to-br from-blue-900 to-indigo-800 text-white">
+  <div className="absolute inset-0">
+    <div className="absolute top-0 left-0 w-72 h-72 bg-blue-700 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
+    <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-700 rounded-full translate-x-1/2 translate-y-1/2 opacity-20"></div>
+    <div className="absolute top-1/3 right-1/4 w-48 h-48 bg-blue-600 rounded-lg rotate-45 opacity-10"></div>
+  </div>
+  
+  <div className="relative z-10 px-4 py-24 md:py-32 max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="animate-fade-in-left">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Step into a world of <span className="text-blue-300">growth, learning, and achievement</span> with the Macro Vision Academy
+        </h1>
+        <p className="text-xl md:text-2xl max-w-2xl mb-10 leading-relaxed opacity-90">
+          Join our vibrant learning community for the 2026 academic year. Experience holistic education with world-class facilities.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <button 
+            className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105"
+            onClick={handleRegisterNow}
+          >
+            <Calendar className="w-5 h-5" />
+            Register Now
+          </button>
+          <button 
+            className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105"
+            onClick={handleScheduleTour}
+          >
+            Virtual Tour
+          </button>
+        </div>
+      </div>
+      
+      <div className="relative animate-fade-in-right">
+        <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+          <ImageWithFallback 
+            src="campus.webp"
+            alt="Macro Vision Academy Campus"
+            className="w-full h-[28rem] object-cover"
+            fallbackSrc="/images/admissions/campus-fallback.jpg"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-70"></div>
         </div>
         
-        <div className="relative z-10 px-4 py-24 md:py-32 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-left">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Step into a world of <span className="text-blue-300">growth, learning, and achievement</span> with the Macro Vision Academy
-              </h1>
-              <p className="text-xl md:text-2xl max-w-2xl mb-10 leading-relaxed opacity-90">
-                Join our vibrant learning community for the 2026 academic year. Experience holistic education with world-class facilities.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                <button 
-                  className="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105"
-                  onClick={handleRegisterNow}
-                >
-                  <Calendar className="w-5 h-5" />
-                  Register Now
-                </button>
-                <button 
-                  className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                  onClick={handleScheduleTour}
-                >
-                  Schedule a Tour
-                </button>
-              </div>
-            </div>
-            
-            <div className="relative animate-fade-in-right">
-              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                <ImageWithFallback 
-                  src="campus.webp"
-                  alt="Macro Vision Academy Campus"
-                  className="w-full h-96 object-cover"
-                  fallbackSrc="/images/admissions/campus-fallback.jpg"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-70"></div>
-              </div>
-              
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-blue-500 rounded-lg rotate-12 shadow-lg animate-float"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-indigo-500 rounded-lg -rotate-12 shadow-lg animate-float animation-delay-1000"></div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <div className="absolute -top-8 -right-8 w-28 h-28 bg-blue-500 rounded-lg rotate-12 shadow-lg animate-float"></div>
+        <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-indigo-500 rounded-lg -rotate-12 shadow-lg animate-float animation-delay-1000"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* PROCEDURE SECTION */}
       <section className="py-20 px-4 md:px-20 bg-white" id="procedure">
@@ -535,7 +535,7 @@ const AdmissionsPage: React.FC = () => {
             </p>
             <button 
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold shadow-md transition-all duration-300 hover:scale-105"
-              onClick={() => window.location.href = "#registration"}
+               onClick={handleStartApplication}
             >
               Click Here to Fill Online Registration Form
             </button>

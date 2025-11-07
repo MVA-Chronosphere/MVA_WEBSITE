@@ -96,7 +96,7 @@ const aboutData: AboutData = {
     {
       year: "2025",
       title: "The Tech Leap",
-      description: "Celebrating a historic All India Rank of 30 in JEE-Mains, MVA pushed the boundaries of innovation by launching Chronosphere—India's first school-based futuristic technology lab."
+      description: "Celebrating a historic All India Rank of 3 in JEE-Advanced, MVA pushed the boundaries of innovation by launching Chronosphere—India's first school-based futuristic technology lab."
     }
   ],
   
@@ -150,7 +150,7 @@ const aboutData: AboutData = {
       "Member, Mrs. Devanshi Chouksey",
       "Member, Ms. Antra Chouksey"
     ],
-    futurePlans: "In order to further expand our vision for comprehensive medical care and silver highly skilled professionals, The Society further plans for a separate block for Oncology (Cancer Department) by 2027"
+    futurePlans: "In order to further expand our vision for comprehensive medical care with highly skilled professionals, The Society further plans for a separate block for Oncology (Cancer Department) by 2027"
   },
 
   leadership: {
@@ -237,6 +237,30 @@ const aboutData: AboutData = {
       image: "09.webp",
       qualification: "M.Com, MBA & B.Ed",
       description: "With 20+ years in commerce education, Mrs. Suri combines academic excellence with practical business insights to prepare students for modern commercial challenges."
+    },
+    {
+      name: "Mrs. Pratibha Nair",
+      role: "Deputy Principal Divine",
+      // experience: "20+ Years Experience",
+      image: "pratibha ma'am.webp",
+      qualification: "M.Sc. Zoology, PGD & B.Ed",
+      description: "Mrs. Pratibha Nair serves as the Deputy Principal with 22 years of experience, blending academic excellence with leadership proficiency to foster a culture of learning and holistic development."
+    },
+    {
+      name: "Mr. Ashay Tandon",
+      role: "Academic Coordinator",
+      // experience: "20+ Years Experience",
+      image: "ashya toandan.webp",
+      qualification: "M.Tech & B.Ed",
+      description: "Mr. Ashay Tandon serves as the Academic Coordinator with 14 years of experience, integrating technological expertise with educational insight to enhance academic planning and instructional effectiveness."
+    },
+    {
+      name: "Dr.Pradeep Kumar Singh",
+      role: "Academic Coordinator",
+      // experience: "20+ Years Experience",
+      image: "pradeep.webp",
+      qualification: "M.Sc, B.Ed & PHD",
+      description: "Dr. Pradeep Kumar Singh serves as the Academic Coordinator with 14 years of experience, combining scholarly expertise and educational leadership to promote academic excellence and effective teaching practices."
     },
     {
       name: "Dr. Arun Sharma",
@@ -525,7 +549,7 @@ export default function AboutUsPage() {
       <div className="bg-gradient-to-r from-primary to-[#0055A4] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About Macro Vision Academy
+            About Us
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto">
             Empowering minds, nurturing excellence through holistic education since 1995
@@ -705,14 +729,31 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Senior Wing */}
+          {/* Senior Wing */}
       <section className="py-12 sm:py-16 bg-muted/30" id="senior-wing">
         <div className="max-w-7xl mx-auto px-4">
           <SectionHeader 
             title="Senior Wing"
             description="Our experienced senior faculty members bring decades of expertise and dedication to ensure academic excellence and holistic development of our students."
           />
-          <LeadershipGrid people={aboutData.seniorWing} columns="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" />
+          
+          {/* First Row - 3 Cards */}
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-5xl mx-auto">
+            {aboutData.seniorWing.slice(0, 3).map((person, index) => (
+              <div key={index} className="w-full">
+                <FlipCard person={person} />
+              </div>
+            ))}
+          </div>
+
+          {/* Second Row - 4 Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {aboutData.seniorWing.slice(3).map((person, index) => (
+              <div key={index} className="w-full">
+                <FlipCard person={person} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
