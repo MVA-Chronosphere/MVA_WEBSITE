@@ -583,7 +583,7 @@ export default function LifeAtMVAPage() {
                   <div className="lg:w-1/2">
                     <div className="border-4 border-blue-900 rounded-lg h-64 lg:h-80 overflow-hidden">
                       <img 
-                        src="/MVA boarding/Regular Health Monitoring.webp" 
+                        src="healthcheckup.webp" 
                         alt="Regular Health Monitoring" 
                         className="w-full h-full object-cover"
                       />
@@ -976,7 +976,7 @@ export default function LifeAtMVAPage() {
                   </div>
                   <div className="border-4 border-blue-900 h-48 md:h-56 overflow-hidden" style={{ borderRadius: "20px 0 20px 0" }}>
                     <img 
-                      src="/MVA Culture/Zenith Circle/Zenith Circle 3.webp" 
+                      src="zenith3.webp" 
                       alt="Zenith Circle Image 3" 
                       className="w-full h-full object-cover"
                       loading="lazy"
@@ -1802,7 +1802,7 @@ export default function LifeAtMVAPage() {
                 id="library"
                 style={{ 
                   borderRadius: "30px 0 30px 0",
-                  backgroundImage: "url('/infrastructure/library.webp')"
+                  backgroundImage: "url('DSC00220 (1).webp')"
                 }}
                 onClick={() => setInfrastructureModal({
                   isOpen: true,
