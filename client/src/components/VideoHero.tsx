@@ -34,7 +34,7 @@ export default function VideoHero() {
         {/* Animated Tagline */}
         <p className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium leading-tight sm:leading-relaxed mb-4 sm:mb-6">
           Empowering minds through{" "}
-          <span key={i} className="font-bold text-white fade-in inline-block min-w-[120px]">
+          <span key={i} className="font-bold text-white fade-in inline-block min-w-[10px]">
             {words[i]}
           </span>
           , Values & Holistic Development
@@ -58,7 +58,7 @@ export default function VideoHero() {
         {/* Buttons - Improved Mobile Layout */}
         <div className="flex flex-col-2 xs:flex-row gap-3 sm:gap-4 items-start">
           <Link
-            to="/admissions"
+            to="/studentAdmissionForm"
             className="bg-[#0051a8] hover:bg-[#004080] text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base text-center min-w-[120px] sm:min-w-[140px] flex items-center justify-center"
           >
             Apply Now

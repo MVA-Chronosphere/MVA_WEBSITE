@@ -20,7 +20,7 @@ import ContactPage from "@/pages/ContactPage";
 import StudentAdmissionForm from "./pages/StudentAdmissionForm";
 import AlumniConnectPage from "./pages/AlumniConnectPage";
 import SportsCompetitionHighlights from "./pages/SportsCompetitionHighlights";
-
+import AdminBlogPage from "./pages/AdminBlogPage";
 declare global {
   interface Window {
     Tawk_API?: any;
@@ -41,6 +41,8 @@ function AppRoutes() {
       <Route path="/achievements/:category?/:subcategory?" element={<AchievementsPage />} />
       <Route path="/careers/:section?" element={<CareersPage />} />
       <Route path="/blogs/:category?" element={<BlogsPage />} />
+      <Route path="/admin/blogs" element={<AdminBlogPage />} />
+
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/studentAdmissionForm" element={<StudentAdmissionForm />} />
       <Route path="/alumni/connect" element={<AlumniConnectPage />} />

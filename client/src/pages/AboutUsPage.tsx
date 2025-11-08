@@ -85,7 +85,7 @@ const aboutData: AboutData = {
     },
     {
       year: "2015",
-      title: "An Apple Partnership",
+      title: "Apple Partnership",
       description: "In a milestone collaboration, Macro Vision was distinguished as India's first residential 'Apple Distinguished School,' marking a new era of technology-infused education."
     },
     {

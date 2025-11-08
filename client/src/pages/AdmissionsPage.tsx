@@ -203,9 +203,10 @@ const AdmissionsPage: React.FC = () => {
     navigate('/studentAdmissionForm');
   };
 
-  const handleScheduleTour = () => {
-    // Placeholder
-  };
+const handleScheduleTour = () => {
+  window.open("https://youtu.be/E63Zwb6gSFY?si=0KiamYwgBS6cBEva", "_blank");
+};
+
 
   return (
     <div 
