@@ -58,7 +58,7 @@ export default function VideoHero() {
         {/* Buttons - Improved Mobile Layout */}
         <div className="flex flex-col-2 xs:flex-row gap-3 sm:gap-4 items-start">
           <Link
-            to="/studentAdmissionForm"
+            to="/admissions"
             className="bg-[#0051a8] hover:bg-[#004080] text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm sm:text-base text-center min-w-[120px] sm:min-w-[140px] flex items-center justify-center"
           >
             Apply Now
