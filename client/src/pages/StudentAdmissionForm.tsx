@@ -85,6 +85,9 @@ const StudentAdmissionForm: React.FC = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const formRef = useRef<HTMLFormElement>(null);
 
+  // Web3Forms Configuration
+  const WEB3FORMS_ACCESS_KEY = "cb2e59bf-4f5b-404d-a2f8-e2bbae10d6ef";
+
   // Class options for different levels
   const classOptions = {
     'Pre-Primary': ['Nursery', 'LKG', 'UKG'],
@@ -334,7 +337,7 @@ const StudentAdmissionForm: React.FC = () => {
     setErrors({});
   };
 
-  // Handle form submission
+  // Handle form submission with Web3Forms
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -351,36 +354,53 @@ const StudentAdmissionForm: React.FC = () => {
       return;
     }
 
-    const formDataToSend = new FormData();
-    
-    // Add all form data to FormData
-    Object.entries(formData).forEach(([key, value]) => {
-      formDataToSend.append(key, value);
-    });
-    
-    // Add terms and other required fields
-    formDataToSend.append('terms', terms.toString());
-    formDataToSend.append('_subject', `New Admission Form: ${formData.studentName}`);
-    formDataToSend.append('_template', 'table');
-    formDataToSend.append('_captcha', 'false');
-
     try {
-      const response = await fetch("https://formsubmit.co/ajax/digitalmarketing@mvaburhanpur.com", {
-        method: "POST",
-        body: formDataToSend,
+      // Create FormData object for Web3Forms
+      const formDataToSend = new FormData();
+      
+      // Add Web3Forms required fields
+      formDataToSend.append("access_key", WEB3FORMS_ACCESS_KEY);
+      formDataToSend.append("subject", `New Admission Form: ${formData.studentName}`);
+      formDataToSend.append("from_name", "MVA Admission Form");
+      formDataToSend.append("botcheck", ""); // Anti-bot field
+
+      // Add all form data
+      Object.entries(formData).forEach(([key, value]) => {
+        if (value) {
+          // Format field names for better readability in email
+          const formattedKey = key
+            .replace(/([A-Z])/g, ' $1')
+            .replace(/^./, str => str.toUpperCase())
+            .trim();
+          formDataToSend.append(formattedKey, value.toString());
+        }
       });
 
-      const result = await response.json();
+      // Add terms and timestamp
+      formDataToSend.append("Terms Accepted", terms ? "Yes" : "No");
+      formDataToSend.append("Submission Date", new Date().toLocaleString());
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend
+      });
+
+      const data = await response.json();
       
-      if (response.ok && result.success === "true") {
+      if (data.success) {
         setSubmitStatus("success");
         resetForm();
         if (formRef.current) {
           formRef.current.reset();
         }
+        
+        // Auto-hide success message after 10 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 10000);
       } else {
         setSubmitStatus("error");
-        console.error('Form submission failed:', result);
+        console.error('Web3Forms submission failed:', data);
       }
     } catch (error) {
       setSubmitStatus("error");
@@ -419,17 +439,27 @@ const StudentAdmissionForm: React.FC = () => {
         {/* Status Messages */}
         {submitStatus === "success" && (
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 m-6">
-            <p className="text-green-800 font-medium text-center">
-              ✅ Thank you for your admission enquiry! We'll get back to you soon.
-            </p>
+            <div className="flex items-center justify-center">
+              <svg className="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <p className="text-green-800 font-medium text-center">
+                ✅ Thank you for your admission enquiry! We'll get back to you soon.
+              </p>
+            </div>
           </div>
         )}
         
         {submitStatus === "error" && (
           <div className="bg-red-50 border border-red-200 rounded-lg p-4 m-6">
-            <p className="text-red-800 font-medium text-center">
-              ❌ There was an error submitting your form. Please try again or contact us directly.
-            </p>
+            <div className="flex items-center justify-center">
+              <svg className="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+              <p className="text-red-800 font-medium text-center">
+                ❌ There was an error submitting your form. Please try again or contact us directly.
+              </p>
+            </div>
           </div>
         )}
 
@@ -451,20 +481,18 @@ const StudentAdmissionForm: React.FC = () => {
                 onChange={handleChange}
                 className={`mt-1 block w-full px-3 py-2 border ${errors.admissionForClass ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-blue-900 sm:text-sm`}
               >
-                <option value="" selected disabled>Select Grade</option>
-<option value="1">Class 1</option>
-<option value="2">Class 2</option>
-<option value="3">Class 3</option>
-<option value="4">Class 4</option>
-<option value="5">Class 5</option>
-<option value="6">Class 6</option>
-<option value="7">Class 7</option>
-<option value="8">Class 8</option>
-<option value="9">Class 9</option>
-<option value="9">Class 10</option>
-<option value="11">Class 11</option>
-
-
+                <option value="" disabled>Select Grade</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4</option>
+                <option value="5">Class 5</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
               </select>
               {errors.admissionForClass && <p className="mt-1 text-xs text-red-600">{errors.admissionForClass}</p>}
             </div>

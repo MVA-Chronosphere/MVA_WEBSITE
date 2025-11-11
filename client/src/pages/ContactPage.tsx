@@ -13,6 +13,9 @@ export default function ContactPage() {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const location = useLocation();
 
+  // Web3Forms Configuration
+  const WEB3FORMS_ACCESS_KEY = "96139969-e93c-40df-8fb3-b10530a88698";
+
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get("topic") === "career") {
@@ -75,32 +78,50 @@ export default function ContactPage() {
     const form = e.currentTarget;
     const formData = new FormData(form);
     
-    // Add all form data
-    if (selectedSubTopic) {
-      formData.append('subtopic', selectedSubTopic);
-    }
+    // Add Web3Forms required fields
+    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formData.append("subject", `New Contact Form: ${selectedTopic}`);
+    formData.append("from_name", "MVA Contact Form");
+    formData.append("botcheck", ""); // Anti-bot field
+
+    // Add all form data with formatted names
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+    const message = formData.get('message');
+
+    // Clear and re-add with formatted names for better email readability
+    formData.delete('name');
+    formData.delete('email');
+    formData.delete('phone');
+    formData.delete('message');
+    formData.delete('topic');
+    formData.delete('subtopic');
+
+    if (name) formData.append("Full Name", name.toString());
+    if (email) formData.append("Email Address", email.toString());
+    if (phone) formData.append("Phone Number", phone.toString());
+    if (selectedTopic) formData.append("Main Topic", selectedTopic);
+    if (selectedSubTopic) formData.append("Sub Topic", selectedSubTopic);
+    if (message) formData.append("Message", message.toString());
     
     // Add resume file if exists
     if (resumeFile) {
       formData.append('resume', resumeFile);
     }
-    
-    // FormSubmit specific fields
-    formData.append('_subject', `New Contact Form: ${selectedTopic}`);
-    formData.append('_template', 'table');
-    formData.append('_captcha', 'false');
-    formData.append('_autoresponse', 'Thank you for your message! We will get back to you soon.');
+
+    // Add timestamp
+    formData.append("Submission Date", new Date().toLocaleString());
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/digitalmarketing@mvaburhanpur.com", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData,
-        // Don't set Content-Type header - let browser set it with boundary
       });
 
-      const result = await response.json();
+      const data = await response.json();
       
-      if (response.ok && result.success === "true") {
+      if (data.success) {
         setSubmitStatus("success");
         form.reset();
         setSelectedTopic("");
@@ -108,7 +129,7 @@ export default function ContactPage() {
         setResumeFile(null);
       } else {
         setSubmitStatus("error");
-        console.error('Form submission failed:', result);
+        console.error('Form submission failed:', data);
       }
     } catch (error) {
       setSubmitStatus("error");

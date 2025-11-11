@@ -21,6 +21,7 @@ import StudentAdmissionForm from "./pages/StudentAdmissionForm";
 import AlumniConnectPage from "./pages/AlumniConnectPage";
 import SportsCompetitionHighlights from "./pages/SportsCompetitionHighlights";
 import AdminBlogPage from "./pages/AdminBlogPage";
+import AlumniAdmin from "./pages/AlumniAdmin";
 declare global {
   interface Window {
     Tawk_API?: any;
@@ -36,7 +37,10 @@ function AppRoutes() {
       <Route path="/life-at-mva/:category?/:subcategory?" element={<LifeAtMVAPage />} />
       <Route path="/academics/:section?" element={<AcademicsPage />} />
       <Route path="/admissions/:section?" element={<AdmissionsPage />} />
-      <Route path="/alumni/:section?" element={<AlumniPage />} />
+      {/* <Route path="/alumni/:section?" element={<AlumniPage />} /> */}
+      {/* <Route path="/alumni" element={<AlumniPage />} /> */}
+        {/* <Route path="/admin" element={<AlumniAdmin />} /> */}
+
       <Route path="/alumni/form" element={<AlumniFormPage />} />
       <Route path="/achievements/:category?/:subcategory?" element={<AchievementsPage />} />
       <Route path="/careers/:section?" element={<CareersPage />} />
