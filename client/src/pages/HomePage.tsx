@@ -101,7 +101,7 @@ export default function HomePage() {
           { value: 52, label: "12th CBSE 2025\nMore than 90%" },
           { value: 122, label: "10th CBSE 2025\nMore than 90%" },
           { value: 19, label: "10th CBSE 2025\n100 out of 100 Marks" },
-          { value: 7, label: "12th CBSE 2023\n100 out of 100 Marks" }
+          { value: 7, label: "12th CBSE 2025\n100 out of 100 Marks" }
         ]}
         title="OUR RESULTS"
         showDividers={false}

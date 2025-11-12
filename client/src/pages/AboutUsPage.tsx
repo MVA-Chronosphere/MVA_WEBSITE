@@ -637,7 +637,7 @@ export default function AboutUsPage() {
                 <video
                   className="w-full h-full object-cover"
                   controls
-                  // poster="/founder-poster.jpg" // Optional: add a poster image
+                  poster="foundermess.jpeg" // Optional: add a poster image
                   preload="metadata"
                 >
                   <source src="founderswords.webm" type="video/webm" />

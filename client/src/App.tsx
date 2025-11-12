@@ -38,8 +38,8 @@ function AppRoutes() {
       <Route path="/academics/:section?" element={<AcademicsPage />} />
       <Route path="/admissions/:section?" element={<AdmissionsPage />} />
       {/* <Route path="/alumni/:section?" element={<AlumniPage />} /> */}
-      {/* <Route path="/alumni" element={<AlumniPage />} /> */}
-        {/* <Route path="/admin" element={<AlumniAdmin />} /> */}
+      <Route path="/alumni" element={<AlumniPage />} />
+        <Route path="/admin" element={<AlumniAdmin />} />
 
       <Route path="/alumni/form" element={<AlumniFormPage />} />
       <Route path="/achievements/:category?/:subcategory?" element={<AchievementsPage />} />
